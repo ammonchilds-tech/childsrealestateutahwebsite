@@ -10,7 +10,6 @@ import {
   ShieldCheck,
   Key,
   Home,
-  Lightbulb,
   AlertTriangle,
   CheckCircle2,
   Lock,
@@ -19,10 +18,7 @@ import {
   Wrench,
   Heart,
   FolderOpen,
-  TrendingUp,
-  MapPin,
   BarChart3,
-  Building2,
   Clock,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -190,37 +186,58 @@ export default function HomeBuyingGuidePage() {
         </div>
       </section>
 
-      {/* Table of Contents */}
+      {/* Journey Timeline TOC */}
       <section className="py-16 md:py-20">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-12">
             <h2 className="font-heading text-2xl md:text-3xl text-primary mb-3">
-              What We&apos;ll Cover
+              Your Journey
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto">
-              Click any step to jump directly to that section.
+              Eight steps from financial prep to closing day. Click any step to jump ahead.
             </p>
           </div>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+
+          {/* Desktop horizontal timeline */}
+          <div className="hidden lg:block relative mb-4">
+            <div className="absolute top-5 left-[6%] right-[6%] h-px bg-border" />
+            <div className="grid grid-cols-8 gap-1">
+              {TOC_ITEMS.map((item) => (
+                <a
+                  key={item.step}
+                  href={`#step-${item.step}`}
+                  className="group flex flex-col items-center text-center"
+                >
+                  <div className="relative z-10 w-10 h-10 rounded-full border-2 border-border bg-background group-hover:border-accent group-hover:bg-accent transition-all duration-200 flex items-center justify-center mb-3 shadow-sm">
+                    <span className="font-heading text-sm font-semibold text-muted-foreground group-hover:text-white transition-colors">
+                      {item.step}
+                    </span>
+                  </div>
+                  <span className="text-[11px] font-semibold text-primary group-hover:text-accent transition-colors leading-tight px-1">
+                    {item.title}
+                  </span>
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Mobile 2-column list */}
+          <div className="lg:hidden grid grid-cols-2 gap-3">
             {TOC_ITEMS.map((item) => (
               <a
                 key={item.step}
                 href={`#step-${item.step}`}
-                className="group block"
+                className="flex items-center gap-3 group p-3 rounded-lg hover:bg-accent/5 transition-colors"
               >
-                <Card className="h-full border-border/50 hover:border-accent/40 hover:shadow-md transition-all">
-                  <CardContent className="p-5">
-                    <span className="font-heading text-2xl text-accent font-semibold">
-                      {item.step}
-                    </span>
-                    <h3 className="font-heading text-sm font-semibold text-primary mt-2 mb-1 group-hover:text-accent transition-colors">
-                      {item.title}
-                    </h3>
-                    <p className="text-xs text-muted-foreground leading-relaxed">
-                      {item.description}
-                    </p>
-                  </CardContent>
-                </Card>
+                <div className="w-9 h-9 rounded-full border-2 border-border flex items-center justify-center flex-shrink-0 group-hover:border-accent group-hover:bg-accent transition-all">
+                  <span className="text-xs font-semibold text-muted-foreground group-hover:text-white transition-colors">
+                    {item.step}
+                  </span>
+                </div>
+                <div>
+                  <div className="text-sm font-semibold text-primary group-hover:text-accent transition-colors">{item.title}</div>
+                  <div className="text-xs text-muted-foreground leading-tight">{item.description}</div>
+                </div>
               </a>
             ))}
           </div>
@@ -228,24 +245,27 @@ export default function HomeBuyingGuidePage() {
       </section>
 
       {/* Step 1 — Assess Your Readiness */}
-      <section id="step-1" className="py-20 md:py-28 bg-muted scroll-mt-20">
+      <section id="step-1" className="py-20 md:py-28 bg-gradient-to-br from-accent/[0.06] via-background to-background scroll-mt-20">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="flex items-center gap-3 mb-4">
-            <div className="h-px w-12 bg-accent/60" />
-            <span className="text-accent text-sm font-medium tracking-[0.2em] uppercase">
+          <div className="relative overflow-hidden mb-8">
+            <span className="absolute -top-4 right-0 font-heading text-[130px] leading-none text-primary/[0.04] select-none pointer-events-none hidden md:block">
+              01
+            </span>
+            <span className="inline-block text-xs font-semibold text-accent uppercase tracking-[0.2em] bg-accent/10 px-3 py-1.5 rounded-full mb-4">
               Step 1
             </span>
-            <div className="h-px w-12 bg-accent/60" />
+            <h2 className="relative font-heading text-3xl md:text-4xl text-primary">
+              Assess Your <span className="text-accent">Readiness</span>
+            </h2>
           </div>
-          <h2 className="font-heading text-3xl md:text-4xl text-primary mb-6">
-            Assess Your <span className="text-accent">Readiness</span>
-          </h2>
 
           <div className="grid lg:grid-cols-2 gap-10 items-start">
             <div>
+              <p className="text-lg italic text-muted-foreground leading-relaxed mb-5 border-l-2 border-accent/30 pl-4">
+                Before you start browsing listings, take an honest look at where you stand financially and personally.
+              </p>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                Before you start browsing listings, take an honest look at where you
-                stand. Buying a home is one of the biggest financial decisions
+                Buying a home is one of the biggest financial decisions
                 you&apos;ll make, and preparation is the difference between a smooth
                 process and a stressful one.
               </p>
@@ -254,24 +274,21 @@ export default function HomeBuyingGuidePage() {
                 the down payment for emergencies? Are you planning to stay in the
                 area for at least 3–5 years? Is your debt manageable?
               </p>
-              <p className="text-muted-foreground leading-relaxed mb-6">
+              <p className="text-muted-foreground leading-relaxed mb-8">
                 Utah&apos;s housing market moves fast, especially along the Wasatch
                 Front. Being financially and emotionally prepared means you can act
                 with confidence when the right home comes along.
               </p>
 
-              {/* Pro Tip */}
-              <div className="border-l-4 border-accent bg-accent/5 rounded-r-lg p-5">
-                <div className="flex items-center gap-2 mb-2">
-                  <Lightbulb className="h-5 w-5 text-accent" />
-                  <span className="font-heading text-sm font-semibold text-primary">
-                    Pro Tip
-                  </span>
-                </div>
-                <p className="text-sm text-muted-foreground leading-relaxed">
+              {/* Pull-quote */}
+              <div className="relative py-6 text-center border-t border-b border-accent/20 my-2">
+                <div className="font-heading text-7xl text-accent/15 leading-none select-none -mb-5" aria-hidden="true">&ldquo;</div>
+                <p className="relative text-base md:text-lg italic text-muted-foreground leading-relaxed max-w-md mx-auto">
                   Get pre-approved before you start house hunting. It tells you
-                  exactly what you can afford and shows sellers you&apos;re serious.
-                  In competitive Utah markets, pre-approval can make or break your offer.
+                  exactly what you can afford — and shows sellers you mean business.
+                </p>
+                <p className="text-xs font-semibold text-accent uppercase tracking-[0.15em] mt-5">
+                  — Childs Real Estate
                 </p>
               </div>
             </div>
@@ -300,16 +317,17 @@ export default function HomeBuyingGuidePage() {
       {/* Step 2 — Financial Preparation */}
       <section id="step-2" className="py-20 md:py-28 scroll-mt-20">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="flex items-center gap-3 mb-4">
-            <div className="h-px w-12 bg-accent/60" />
-            <span className="text-accent text-sm font-medium tracking-[0.2em] uppercase">
+          <div className="relative overflow-hidden mb-8">
+            <span className="absolute -top-4 right-0 font-heading text-[130px] leading-none text-primary/[0.04] select-none pointer-events-none hidden md:block">
+              02
+            </span>
+            <span className="inline-block text-xs font-semibold text-accent uppercase tracking-[0.2em] bg-accent/10 px-3 py-1.5 rounded-full mb-4">
               Step 2
             </span>
-            <div className="h-px w-12 bg-accent/60" />
+            <h2 className="relative font-heading text-3xl md:text-4xl text-primary">
+              Financial <span className="text-accent">Preparation</span>
+            </h2>
           </div>
-          <h2 className="font-heading text-3xl md:text-4xl text-primary mb-6">
-            Financial <span className="text-accent">Preparation</span>
-          </h2>
 
           <div className="grid lg:grid-cols-2 gap-10">
             <div>
@@ -394,18 +412,19 @@ export default function HomeBuyingGuidePage() {
       </section>
 
       {/* Step 3 — Assemble Your Team */}
-      <section id="step-3" className="py-20 md:py-28 bg-muted scroll-mt-20">
+      <section id="step-3" className="py-20 md:py-28 bg-gradient-to-br from-accent/[0.06] via-background to-background scroll-mt-20">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="flex items-center gap-3 mb-4">
-            <div className="h-px w-12 bg-accent/60" />
-            <span className="text-accent text-sm font-medium tracking-[0.2em] uppercase">
+          <div className="relative overflow-hidden mb-6">
+            <span className="absolute -top-4 right-0 font-heading text-[130px] leading-none text-primary/[0.04] select-none pointer-events-none hidden md:block">
+              03
+            </span>
+            <span className="inline-block text-xs font-semibold text-accent uppercase tracking-[0.2em] bg-accent/10 px-3 py-1.5 rounded-full mb-4">
               Step 3
             </span>
-            <div className="h-px w-12 bg-accent/60" />
+            <h2 className="relative font-heading text-3xl md:text-4xl text-primary">
+              Assemble Your <span className="text-accent">Team</span>
+            </h2>
           </div>
-          <h2 className="font-heading text-3xl md:text-4xl text-primary mb-4">
-            Assemble Your <span className="text-accent">Team</span>
-          </h2>
           <p className="text-muted-foreground max-w-2xl leading-relaxed mb-10">
             Buying a home is a team effort. Surround yourself with experienced
             professionals who know the Utah market and will protect your interests.
@@ -451,19 +470,24 @@ export default function HomeBuyingGuidePage() {
       {/* Step 4 — Finding Your Home */}
       <section id="step-4" className="py-20 md:py-28 scroll-mt-20">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="flex items-center gap-3 mb-4">
-            <div className="h-px w-12 bg-accent/60" />
-            <span className="text-accent text-sm font-medium tracking-[0.2em] uppercase">
+          <div className="relative overflow-hidden mb-8">
+            <span className="absolute -top-4 right-0 font-heading text-[130px] leading-none text-primary/[0.04] select-none pointer-events-none hidden md:block">
+              04
+            </span>
+            <span className="inline-block text-xs font-semibold text-accent uppercase tracking-[0.2em] bg-accent/10 px-3 py-1.5 rounded-full mb-4">
               Step 4
             </span>
-            <div className="h-px w-12 bg-accent/60" />
+            <h2 className="relative font-heading text-3xl md:text-4xl text-primary">
+              Finding Your <span className="text-accent">Home</span>
+            </h2>
           </div>
-          <h2 className="font-heading text-3xl md:text-4xl text-primary mb-6">
-            Finding Your <span className="text-accent">Home</span>
-          </h2>
 
           <div className="grid lg:grid-cols-2 gap-10 items-start">
             <div>
+              <p className="text-lg italic text-muted-foreground leading-relaxed mb-6 border-l-2 border-accent/30 pl-4">
+                The search is one of the most exciting parts. But having the right strategy will save you time, heartache, and money.
+              </p>
+
               <h3 className="font-heading text-xl font-semibold text-primary mb-3">
                 Define Your Must-Haves
               </h3>
@@ -519,18 +543,19 @@ export default function HomeBuyingGuidePage() {
       </section>
 
       {/* Step 5 — Making an Offer */}
-      <section id="step-5" className="py-20 md:py-28 bg-muted scroll-mt-20">
+      <section id="step-5" className="py-20 md:py-28 bg-gradient-to-br from-accent/[0.06] via-background to-background scroll-mt-20">
         <div className="max-w-4xl mx-auto px-6">
-          <div className="flex items-center gap-3 mb-4">
-            <div className="h-px w-12 bg-accent/60" />
-            <span className="text-accent text-sm font-medium tracking-[0.2em] uppercase">
+          <div className="relative overflow-hidden mb-6">
+            <span className="absolute -top-4 right-0 font-heading text-[130px] leading-none text-primary/[0.04] select-none pointer-events-none hidden md:block">
+              05
+            </span>
+            <span className="inline-block text-xs font-semibold text-accent uppercase tracking-[0.2em] bg-accent/10 px-3 py-1.5 rounded-full mb-4">
               Step 5
             </span>
-            <div className="h-px w-12 bg-accent/60" />
+            <h2 className="relative font-heading text-3xl md:text-4xl text-primary">
+              Making an <span className="text-accent">Offer</span>
+            </h2>
           </div>
-          <h2 className="font-heading text-3xl md:text-4xl text-primary mb-4">
-            Making an <span className="text-accent">Offer</span>
-          </h2>
           <p className="text-muted-foreground max-w-2xl leading-relaxed mb-10">
             Found the one? Here&apos;s how the offer process works in Utah, from
             pricing strategy to getting your offer accepted.
@@ -572,16 +597,17 @@ export default function HomeBuyingGuidePage() {
       {/* Step 6 — Due Diligence & Inspections */}
       <section id="step-6" className="py-20 md:py-28 scroll-mt-20">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="flex items-center gap-3 mb-4">
-            <div className="h-px w-12 bg-accent/60" />
-            <span className="text-accent text-sm font-medium tracking-[0.2em] uppercase">
+          <div className="relative overflow-hidden mb-8">
+            <span className="absolute -top-4 right-0 font-heading text-[130px] leading-none text-primary/[0.04] select-none pointer-events-none hidden md:block">
+              06
+            </span>
+            <span className="inline-block text-xs font-semibold text-accent uppercase tracking-[0.2em] bg-accent/10 px-3 py-1.5 rounded-full mb-4">
               Step 6
             </span>
-            <div className="h-px w-12 bg-accent/60" />
+            <h2 className="relative font-heading text-3xl md:text-4xl text-primary">
+              Due Diligence & <span className="text-accent">Inspections</span>
+            </h2>
           </div>
-          <h2 className="font-heading text-3xl md:text-4xl text-primary mb-6">
-            Due Diligence & <span className="text-accent">Inspections</span>
-          </h2>
 
           <div className="grid lg:grid-cols-2 gap-10">
             <div>
@@ -606,8 +632,8 @@ export default function HomeBuyingGuidePage() {
               </div>
             </div>
 
-            <div>
-              {/* Warning Callout */}
+            <div className="space-y-6">
+              {/* Warning box */}
               <div className="border-l-4 border-red-400 bg-red-50 rounded-r-lg p-5">
                 <div className="flex items-center gap-2 mb-2">
                   <AlertTriangle className="h-5 w-5 text-red-500" />
@@ -623,18 +649,15 @@ export default function HomeBuyingGuidePage() {
                 </p>
               </div>
 
-              {/* Pro Tip */}
-              <div className="border-l-4 border-accent bg-accent/5 rounded-r-lg p-5 mt-6">
-                <div className="flex items-center gap-2 mb-2">
-                  <Lightbulb className="h-5 w-5 text-accent" />
-                  <span className="font-heading text-sm font-semibold text-primary">
-                    Pro Tip
-                  </span>
-                </div>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  Attend the inspection in person. Walk through the home with the
-                  inspector, ask questions, and learn how your future home&apos;s
-                  systems work. This knowledge is invaluable for long-term maintenance.
+              {/* Pull-quote */}
+              <div className="relative py-6 text-center border-t border-b border-accent/20">
+                <div className="font-heading text-7xl text-accent/15 leading-none select-none -mb-5" aria-hidden="true">&ldquo;</div>
+                <p className="relative text-base italic text-muted-foreground leading-relaxed max-w-sm mx-auto">
+                  Attend the inspection in person. Walk the home with the inspector and
+                  learn how your future home&apos;s systems work — it&apos;s invaluable knowledge.
+                </p>
+                <p className="text-xs font-semibold text-accent uppercase tracking-[0.15em] mt-5">
+                  — Childs Real Estate
                 </p>
               </div>
             </div>
@@ -643,21 +666,25 @@ export default function HomeBuyingGuidePage() {
       </section>
 
       {/* Step 7 — Closing Day */}
-      <section id="step-7" className="py-20 md:py-28 bg-muted scroll-mt-20">
+      <section id="step-7" className="py-20 md:py-28 bg-gradient-to-br from-accent/[0.06] via-background to-background scroll-mt-20">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="flex items-center gap-3 mb-4">
-            <div className="h-px w-12 bg-accent/60" />
-            <span className="text-accent text-sm font-medium tracking-[0.2em] uppercase">
+          <div className="relative overflow-hidden mb-8">
+            <span className="absolute -top-4 right-0 font-heading text-[130px] leading-none text-primary/[0.04] select-none pointer-events-none hidden md:block">
+              07
+            </span>
+            <span className="inline-block text-xs font-semibold text-accent uppercase tracking-[0.2em] bg-accent/10 px-3 py-1.5 rounded-full mb-4">
               Step 7
             </span>
-            <div className="h-px w-12 bg-accent/60" />
+            <h2 className="relative font-heading text-3xl md:text-4xl text-primary">
+              Closing <span className="text-accent">Day</span>
+            </h2>
           </div>
-          <h2 className="font-heading text-3xl md:text-4xl text-primary mb-6">
-            Closing <span className="text-accent">Day</span>
-          </h2>
 
           <div className="grid lg:grid-cols-2 gap-10">
             <div>
+              <p className="text-lg italic text-muted-foreground leading-relaxed mb-6 border-l-2 border-accent/30 pl-4">
+                This is the day everything becomes official. Here&apos;s what to expect so nothing catches you off guard.
+              </p>
               <h3 className="font-heading text-xl font-semibold text-primary mb-3">
                 What to Expect
               </h3>
@@ -708,16 +735,17 @@ export default function HomeBuyingGuidePage() {
       {/* Step 8 — After You Move In */}
       <section id="step-8" className="py-20 md:py-28 scroll-mt-20">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="flex items-center gap-3 mb-4">
-            <div className="h-px w-12 bg-accent/60" />
-            <span className="text-accent text-sm font-medium tracking-[0.2em] uppercase">
+          <div className="relative overflow-hidden mb-6">
+            <span className="absolute -top-4 right-0 font-heading text-[130px] leading-none text-primary/[0.04] select-none pointer-events-none hidden md:block">
+              08
+            </span>
+            <span className="inline-block text-xs font-semibold text-accent uppercase tracking-[0.2em] bg-accent/10 px-3 py-1.5 rounded-full mb-4">
               Step 8
             </span>
-            <div className="h-px w-12 bg-accent/60" />
+            <h2 className="relative font-heading text-3xl md:text-4xl text-primary">
+              After You <span className="text-accent">Move In</span>
+            </h2>
           </div>
-          <h2 className="font-heading text-3xl md:text-4xl text-primary mb-4">
-            After You <span className="text-accent">Move In</span>
-          </h2>
           <p className="text-muted-foreground max-w-2xl leading-relaxed mb-10">
             Congratulations! You&apos;re a homeowner. Here are the essential tasks
             to tackle in your first few weeks.

@@ -37,6 +37,8 @@ const RESOURCES = [
     icon: DollarSign,
     category: "Finance",
     readTime: "8 min read",
+    href: "/resources/mortgage-tips",
+    isLive: true,
   },
   {
     title: "Moving Checklist",
