@@ -7,6 +7,7 @@ import {
   TrendingUp,
   Key,
   Building2,
+  ArrowRight,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -26,6 +27,8 @@ const RESOURCES = [
     icon: BookOpen,
     category: "Buyers",
     readTime: "12 min read",
+    href: "/resources/home-buying-guide",
+    isLive: true,
   },
   {
     title: "Mortgage Tips & Options",
@@ -123,44 +126,57 @@ export default function ResourcesPage() {
 
           {/* Resource Grid */}
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {RESOURCES.map((resource) => (
-              <Card
-                key={resource.title}
-                className="group border-border/50 hover:border-accent/30 hover:shadow-lg transition-all relative overflow-hidden"
-              >
-                <CardContent className="p-8">
-                  {/* Coming Soon Badge */}
-                  <div className="absolute top-4 right-4">
-                    <Badge variant="accent" className="text-[10px] uppercase tracking-wider">
-                      Coming Soon
-                    </Badge>
-                  </div>
+            {RESOURCES.map((resource) => {
+              const cardContent = (
+                <Card
+                  className={`group border-border/50 hover:border-accent/30 hover:shadow-lg transition-all relative overflow-hidden h-full${resource.isLive ? " cursor-pointer" : ""}`}
+                >
+                  <CardContent className="p-8">
+                    {/* Badge */}
+                    <div className="absolute top-4 right-4">
+                      {resource.isLive ? (
+                        <ArrowRight className="h-5 w-5 text-accent opacity-0 group-hover:opacity-100 transition-opacity" />
+                      ) : (
+                        <Badge variant="accent" className="text-[10px] uppercase tracking-wider">
+                          Coming Soon
+                        </Badge>
+                      )}
+                    </div>
 
-                  {/* Icon */}
-                  <div className="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mb-5 group-hover:bg-accent/20 transition-colors">
-                    <resource.icon className="h-7 w-7 text-accent" />
-                  </div>
+                    {/* Icon */}
+                    <div className="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mb-5 group-hover:bg-accent/20 transition-colors">
+                      <resource.icon className="h-7 w-7 text-accent" />
+                    </div>
 
-                  {/* Category & Read Time */}
-                  <div className="flex items-center gap-3 mb-3">
-                    <span className="text-xs font-medium text-accent uppercase tracking-wider">
-                      {resource.category}
-                    </span>
-                    <span className="text-xs text-muted-foreground">
-                      {resource.readTime}
-                    </span>
-                  </div>
+                    {/* Category & Read Time */}
+                    <div className="flex items-center gap-3 mb-3">
+                      <span className="text-xs font-medium text-accent uppercase tracking-wider">
+                        {resource.category}
+                      </span>
+                      <span className="text-xs text-muted-foreground">
+                        {resource.readTime}
+                      </span>
+                    </div>
 
-                  {/* Title & Description */}
-                  <h3 className="font-heading text-lg font-semibold text-primary mb-2 group-hover:text-accent transition-colors">
-                    {resource.title}
-                  </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    {resource.description}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
+                    {/* Title & Description */}
+                    <h3 className="font-heading text-lg font-semibold text-primary mb-2 group-hover:text-accent transition-colors">
+                      {resource.title}
+                    </h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      {resource.description}
+                    </p>
+                  </CardContent>
+                </Card>
+              );
+
+              return resource.isLive && resource.href ? (
+                <Link key={resource.title} href={resource.href} className="block">
+                  {cardContent}
+                </Link>
+              ) : (
+                <div key={resource.title}>{cardContent}</div>
+              );
+            })}
           </div>
         </div>
       </section>
