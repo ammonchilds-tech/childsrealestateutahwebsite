@@ -11,7 +11,7 @@ import {
   Award,
   Users,
   Shield,
-  Heart,
+  BadgeCheck,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -105,7 +105,7 @@ export default function AboutPage() {
                   client relationship.
                 </p>
                 <p>
-                  With over 15 years of combined experience and hundreds of
+                  With over 26 years of combined experience and hundreds of
                   successful closings, our team has the track record and local
                   expertise to deliver exceptional results. We don&apos;t just
                   close deals — we build lasting relationships.
@@ -116,23 +116,43 @@ export default function AboutPage() {
               {[
                 {
                   icon: Award,
-                  label: "Years of Experience",
-                  value: "15+",
+                  label: "Combined Experience",
+                  value: "26+",
                 },
                 {
                   icon: Users,
                   label: "Happy Clients",
-                  value: "200+",
+                  value: "550+",
                 },
                 {
-                  icon: Shield,
-                  label: "Trusted Partner",
-                  value: "BHHS",
+                  icon: BadgeCheck,
+                  label: "Divorce Certified",
+                  value: "CDC®",
                 },
                 {
-                  icon: Heart,
-                  label: "5-Star Reviews",
-                  value: "100+",
+                  icon: BadgeCheck,
+                  label: "55+ Certified",
+                  value: "SRES®",
+                },
+                {
+                  icon: BadgeCheck,
+                  label: "Accredited Buyer's Agent",
+                  value: "ABR®",
+                },
+                {
+                  icon: BadgeCheck,
+                  label: "Certified Listing Agent",
+                  value: "ALHS®",
+                },
+                {
+                  icon: BadgeCheck,
+                  label: "Negotiation Expert",
+                  value: "CNE®",
+                },
+                {
+                  icon: BadgeCheck,
+                  label: "Valuation Expert",
+                  value: "CVE®",
                 },
               ].map((stat) => (
                 <Card
