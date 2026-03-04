@@ -336,14 +336,18 @@ export default function AboutPage() {
           <Card className="border-border/50 overflow-hidden">
             <CardContent className="p-0">
               <div className="grid md:grid-cols-2">
-                {/* Map Placeholder */}
-                <div className="bg-secondary/10 flex items-center justify-center min-h-[280px] md:min-h-full">
-                  <div className="text-center p-8">
-                    <MapPin className="h-12 w-12 text-accent mx-auto mb-3" />
-                    <p className="text-sm text-muted-foreground">
-                      Interactive map coming soon
-                    </p>
-                  </div>
+                {/* Interactive Map */}
+                <div className="min-h-[280px] md:min-h-full">
+                  <iframe
+                    src="https://www.google.com/maps?q=825+E+1180+S+300,+American+Fork,+UT+84003&output=embed"
+                    width="100%"
+                    height="100%"
+                    style={{ minHeight: "280px", border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Childs Real Estate Office Location"
+                  />
                 </div>
                 {/* Details */}
                 <div className="p-8 md:p-10">
