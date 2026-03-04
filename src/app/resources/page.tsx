@@ -77,6 +77,8 @@ const RESOURCES = [
     icon: Building2,
     category: "Investing",
     readTime: "15 min read",
+    href: "/resources/investment-properties",
+    isLive: true,
   },
 ];
 
