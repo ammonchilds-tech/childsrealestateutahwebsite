@@ -41,7 +41,7 @@ export const TEAM = [
   },
 ];
 
-export const NAV_LINKS = [
+export const NAV_LINKS: Array<{ label: string; href: string; external?: boolean }> = [
   { label: "Home", href: "/" },
   { label: "Search", href: "/properties" },
   { label: "About", href: "/about" },
