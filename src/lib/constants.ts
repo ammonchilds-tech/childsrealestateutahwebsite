@@ -48,6 +48,7 @@ export const NAV_LINKS: Array<{ label: string; href: string; external?: boolean 
   { label: "Sell", href: "/sell" },
   { label: "Resources", href: "/resources" },
   { label: "Vendors", href: "/vendors" },
+  { label: "Calculator", href: "/mortgage-calculator" },
   { label: "Contact", href: "/contact" },
 ];
 
