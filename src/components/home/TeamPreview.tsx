@@ -46,7 +46,8 @@ export function TeamPreview() {
                     alt={member.name}
                     width={112}
                     height={112}
-                    className="w-full h-full object-cover object-top"
+                    className="w-full h-full object-cover"
+                    style={{ objectPosition: (member as any).objectPosition ?? "50% 0%" }}
                   />
                 ) : (
                   <div className="w-full h-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center">

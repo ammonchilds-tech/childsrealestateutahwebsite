@@ -83,99 +83,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Story */}
-      <section className="py-20 md:py-28">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
-            <div>
-              <h2 className="font-heading text-3xl md:text-4xl text-primary mb-6">
-                Rooted in Community,{" "}
-                <span className="text-accent">Driven by Excellence</span>
-              </h2>
-              <div className="space-y-4 text-muted-foreground leading-relaxed">
-                <p>
-                  {SITE_NAME} was founded with a simple belief: buying or
-                  selling a home should be one of life&apos;s most rewarding
-                  experiences. Ammon and Tasha Childs built their practice on
-                  this principle, combining deep local knowledge with a
-                  white-glove approach to every transaction.
-                </p>
-                <p>
-                  Based in Utah County, we specialize in luxury and residential
-                  real estate across the Wasatch Front. From first-time
-                  homebuyers to seasoned investors, we bring the same level of
-                  dedication, market insight, and personal attention to every
-                  client relationship.
-                </p>
-                <p>
-                  With over 26 years of combined experience and hundreds of
-                  successful closings, our team has the track record and local
-                  expertise to deliver exceptional results. We don&apos;t just
-                  close deals — we build lasting relationships.
-                </p>
-              </div>
-            </div>
-            <div className="grid grid-cols-2 gap-4">
-              {[
-                {
-                  icon: Award,
-                  label: "Combined Experience",
-                  value: "26+",
-                },
-                {
-                  icon: Users,
-                  label: "Happy Clients",
-                  value: "550+",
-                },
-                {
-                  icon: BadgeCheck,
-                  label: "Divorce Certified",
-                  value: "CDC®",
-                },
-                {
-                  icon: BadgeCheck,
-                  label: "55+ Certified",
-                  value: "SRES®",
-                },
-                {
-                  icon: BadgeCheck,
-                  label: "Accredited Buyer's Agent",
-                  value: "ABR®",
-                },
-                {
-                  icon: BadgeCheck,
-                  label: "Certified Listing Agent",
-                  value: "ALHS®",
-                },
-                {
-                  icon: BadgeCheck,
-                  label: "Negotiation Expert",
-                  value: "CNE®",
-                },
-                {
-                  icon: BadgeCheck,
-                  label: "Valuation Expert",
-                  value: "CVE®",
-                },
-              ].map((stat) => (
-                <Card
-                  key={stat.label}
-                  className="text-center p-6 border-border/50 hover:border-accent/30 transition-colors"
-                >
-                  <stat.icon className="h-8 w-8 text-accent mx-auto mb-3" />
-                  <p className="font-heading text-2xl font-semibold text-primary">
-                    {stat.value}
-                  </p>
-                  <p className="text-sm text-muted-foreground mt-1">
-                    {stat.label}
-                  </p>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Team */}
       <section className="py-20 md:py-28 bg-muted">
         <div className="max-w-6xl mx-auto px-6">
@@ -250,11 +157,11 @@ export default function AboutPage() {
                         Ammon: (801) 735-8460
                       </a>
                       <a
-                        href="mailto:ammonchilds@gmail.com"
+                        href="mailto:ammon@childsrealestateutah.com"
                         className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
                       >
                         <Mail className="h-3.5 w-3.5 text-accent" />
-                        ammonchilds@gmail.com
+                        ammon@childsrealestateutah.com
                       </a>
                     </div>
                     <div className="space-y-2">
@@ -266,11 +173,11 @@ export default function AboutPage() {
                         Tasha: (801) 602-8856
                       </a>
                       <a
-                        href="mailto:tashalchilds@gmail.com"
+                        href="mailto:tasha@childsrealestateutah.com"
                         className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
                       >
                         <Mail className="h-3.5 w-3.5 text-accent" />
-                        tashalchilds@gmail.com
+                        tasha@childsrealestateutah.com
                       </a>
                     </div>
                   </div>
@@ -373,6 +280,99 @@ export default function AboutPage() {
                 </CardContent>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Story */}
+      <section className="py-20 md:py-28">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+            <div>
+              <h2 className="font-heading text-3xl md:text-4xl text-primary mb-6">
+                Rooted in Community,{" "}
+                <span className="text-accent">Driven by Excellence</span>
+              </h2>
+              <div className="space-y-4 text-muted-foreground leading-relaxed">
+                <p>
+                  {SITE_NAME} was founded with a simple belief: buying or
+                  selling a home should be one of life&apos;s most rewarding
+                  experiences. Ammon and Tasha Childs built their practice on
+                  this principle, combining deep local knowledge with a
+                  white-glove approach to every transaction.
+                </p>
+                <p>
+                  Based in Utah County, we specialize in luxury and residential
+                  real estate across the Wasatch Front. From first-time
+                  homebuyers to seasoned investors, we bring the same level of
+                  dedication, market insight, and personal attention to every
+                  client relationship.
+                </p>
+                <p>
+                  With over 26 years of combined experience and hundreds of
+                  successful closings, our team has the track record and local
+                  expertise to deliver exceptional results. We don&apos;t just
+                  close deals — we build lasting relationships.
+                </p>
+              </div>
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              {[
+                {
+                  icon: Award,
+                  label: "Combined Experience",
+                  value: "26+",
+                },
+                {
+                  icon: Users,
+                  label: "Happy Clients",
+                  value: "550+",
+                },
+                {
+                  icon: BadgeCheck,
+                  label: "Divorce Certified",
+                  value: "CDC®",
+                },
+                {
+                  icon: BadgeCheck,
+                  label: "55+ Certified",
+                  value: "SRES®",
+                },
+                {
+                  icon: BadgeCheck,
+                  label: "Accredited Buyer's Agent",
+                  value: "ABR®",
+                },
+                {
+                  icon: BadgeCheck,
+                  label: "Certified Listing Agent",
+                  value: "ALHS®",
+                },
+                {
+                  icon: BadgeCheck,
+                  label: "Negotiation Expert",
+                  value: "CNE®",
+                },
+                {
+                  icon: BadgeCheck,
+                  label: "Valuation Expert",
+                  value: "CVE®",
+                },
+              ].map((stat) => (
+                <Card
+                  key={stat.label}
+                  className="text-center p-6 border-border/50 hover:border-accent/30 transition-colors"
+                >
+                  <stat.icon className="h-8 w-8 text-accent mx-auto mb-3" />
+                  <p className="font-heading text-2xl font-semibold text-primary">
+                    {stat.value}
+                  </p>
+                  <p className="text-sm text-muted-foreground mt-1">
+                    {stat.label}
+                  </p>
+                </Card>
+              ))}
+            </div>
           </div>
         </div>
       </section>

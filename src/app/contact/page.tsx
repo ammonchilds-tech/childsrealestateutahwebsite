@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, MessageSquare } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { TEAM, OFFICE, SITE_NAME } from "@/lib/constants";
 import { ContactForm } from "./_components/ContactForm";
@@ -76,6 +76,60 @@ export default function ContactPage() {
 
             {/* Right: Office Info */}
             <div className="lg:col-span-2 space-y-8">
+              {/* Team Quick Cards */}
+              <div>
+                <h3 className="font-heading text-lg font-semibold text-primary mb-4">
+                  Reach Out Directly
+                </h3>
+                <div className="space-y-3">
+                  {TEAM.map((member) => (
+                    <Card
+                      key={member.name}
+                      className="border-border/50 hover:border-accent/30 transition-colors"
+                    >
+                      <CardContent className="p-4">
+                        <div className="flex items-center gap-3 mb-3">
+                          <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center flex-shrink-0">
+                            <span className="text-xs font-heading font-semibold text-white">
+                              {getInitials(member.name)}
+                            </span>
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <p className="text-sm font-medium text-primary truncate">
+                              {member.name}
+                            </p>
+                            <p className="text-xs text-accent">{member.title}</p>
+                          </div>
+                        </div>
+                        <div className="space-y-1.5 pl-1">
+                          <a
+                            href={`tel:${member.phone}`}
+                            className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+                          >
+                            <Phone className="h-3.5 w-3.5 text-accent flex-shrink-0" />
+                            {member.phone}
+                          </a>
+                          <a
+                            href={`sms:${member.phone}`}
+                            className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+                          >
+                            <MessageSquare className="h-3.5 w-3.5 text-accent flex-shrink-0" />
+                            Text us
+                          </a>
+                          <a
+                            href={`mailto:${member.email}`}
+                            className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+                          >
+                            <Mail className="h-3.5 w-3.5 text-accent flex-shrink-0" />
+                            {member.email}
+                          </a>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+              </div>
+
               {/* Office Details */}
               <div>
                 <h2 className="font-heading text-2xl font-semibold text-primary mb-6">
@@ -100,7 +154,7 @@ export default function ContactPage() {
                       <Phone className="h-5 w-5 text-accent" />
                     </div>
                     <div>
-                      <p className="text-sm font-medium text-primary">Phone</p>
+                      <p className="text-sm font-medium text-primary">Call or Text</p>
                       <a
                         href={`tel:${OFFICE.phone}`}
                         className="text-sm text-muted-foreground hover:text-primary transition-colors"
@@ -143,61 +197,18 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              {/* Map Placeholder */}
-              <div className="rounded-xl bg-secondary/5 border border-border/50 overflow-hidden">
-                <div className="flex items-center justify-center h-48">
-                  <div className="text-center">
-                    <MapPin className="h-8 w-8 text-accent mx-auto mb-2" />
-                    <p className="text-xs text-muted-foreground">
-                      Interactive map coming soon
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Team Quick Cards */}
-              <div>
-                <h3 className="font-heading text-lg font-semibold text-primary mb-4">
-                  Reach Out Directly
-                </h3>
-                <div className="space-y-3">
-                  {TEAM.map((member) => (
-                    <Card
-                      key={member.name}
-                      className="border-border/50 hover:border-accent/30 transition-colors"
-                    >
-                      <CardContent className="p-4">
-                        <div className="flex items-center gap-3">
-                          <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center flex-shrink-0">
-                            <span className="text-xs font-heading font-semibold text-white">
-                              {getInitials(member.name)}
-                            </span>
-                          </div>
-                          <div className="flex-1 min-w-0">
-                            <p className="text-sm font-medium text-primary truncate">
-                              {member.name}
-                            </p>
-                            <p className="text-xs text-accent">{member.title}</p>
-                          </div>
-                          <div className="flex items-center gap-2 flex-shrink-0">
-                            <a
-                              href={`tel:${member.phone}`}
-                              className="w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center text-accent hover:bg-accent hover:text-white transition-colors"
-                            >
-                              <Phone className="h-3.5 w-3.5" />
-                            </a>
-                            <a
-                              href={`mailto:${member.email}`}
-                              className="w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center text-accent hover:bg-accent hover:text-white transition-colors"
-                            >
-                              <Mail className="h-3.5 w-3.5" />
-                            </a>
-                          </div>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  ))}
-                </div>
+              {/* Interactive Map */}
+              <div className="rounded-xl border border-border/50 overflow-hidden">
+                <iframe
+                  title="Childs Real Estate Office"
+                  src="https://maps.google.com/maps?q=825+E+1180+S+%23300,+American+Fork,+UT+84003&output=embed"
+                  width="100%"
+                  height="240"
+                  style={{ border: 0, display: "block" }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
               </div>
             </div>
           </div>

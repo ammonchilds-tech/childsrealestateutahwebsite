@@ -35,14 +35,13 @@ export function HomeCTA() {
         </div>
 
         <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl text-white leading-tight">
-          Ready to Find Your
-          <span className="block mt-1">Perfect Home?</span>
+          Ready to List Your
+          <span className="block mt-1">Home?</span>
         </h2>
 
         <p className="mt-6 text-white/70 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-          Whether you are buying, selling, or just exploring, our team is here
-          to guide you every step of the way. Let us help you make your next
-          move your best one.
+          Find out what your home is worth and let our team create a
+          personalized selling strategy to get you the best possible outcome.
         </p>
 
         {/* Buttons */}
@@ -52,8 +51,8 @@ export function HomeCTA() {
             size="lg"
             className="bg-white text-primary hover:bg-white/90 font-semibold h-13 px-8 rounded-lg group"
           >
-            <Link href="/properties">
-              Browse Properties
+            <Link href="/sell">
+              Get Free Home Valuation
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
           </Button>

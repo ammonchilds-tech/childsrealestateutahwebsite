@@ -9,6 +9,8 @@ import {
   Building2,
   ArrowRight,
   Home,
+  Paintbrush,
+  MapPin,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -21,6 +23,26 @@ export const metadata: Metadata = {
 };
 
 const RESOURCES = [
+  {
+    title: "Home Selling Guide",
+    description:
+      "21 proven ways to prepare and sell your home for top dollar in Utah. From decluttering and staging to pricing strategy, offers, and closing day.",
+    icon: Home,
+    category: "Sellers",
+    readTime: "10 min read",
+    href: "/resources/home-selling-guide",
+    isLive: true,
+  },
+  {
+    title: "Home Staging Tips",
+    description:
+      "How to stage your home to sell faster and for more money. Practical tips on decluttering, furniture arrangement, lighting, and curb appeal.",
+    icon: Paintbrush,
+    category: "Sellers",
+    readTime: "7 min read",
+    href: "/resources/home-staging-tips",
+    isLive: true,
+  },
   {
     title: "Home Buying Guide",
     description:
@@ -82,13 +104,13 @@ const RESOURCES = [
     isLive: true,
   },
   {
-    title: "Home Selling Guide",
+    title: "Neighborhood Guide: Utah County",
     description:
-      "21 proven ways to prepare and sell your home for top dollar in Utah. From decluttering and staging to pricing strategy, offers, and closing day.",
-    icon: Home,
-    category: "Sellers",
-    readTime: "10 min read",
-    href: "/resources/home-selling-guide",
+      "An in-depth look at the top cities and communities in Utah County — Highland, Alpine, American Fork, Lehi, and more. Find the right fit for your family.",
+    icon: MapPin,
+    category: "Market",
+    readTime: "15 min read",
+    href: "/resources/neighborhood-guide",
     isLive: true,
   },
 ];

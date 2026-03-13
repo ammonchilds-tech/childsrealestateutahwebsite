@@ -70,8 +70,11 @@ export function Header() {
                 {link.label}
               </Link>
             ))}
-            <Button asChild className="ml-3">
-              <Link href="/contact">Get In Touch</Link>
+            <Button asChild className="ml-3 gap-2">
+              <Link href="/contact">
+                <Image src="/images/logo-icon.png" alt="" width={18} height={18} className="w-[18px] h-[18px] shrink-0" />
+                Get In Touch
+              </Link>
             </Button>
           </nav>
 

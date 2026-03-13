@@ -7,7 +7,7 @@ export const OFFICE = {
   name: "Berkshire Hathaway HomeServices Elite Real Estate",
   address: "825 E 1180 S 300, American Fork, UT 84003",
   phone: "(801) 735-8460",
-  email: "ammonchilds@gmail.com",
+  email: "ammon@childsrealestateutah.com",
   lat: 40.3766,
   lng: -111.7465,
 };
@@ -17,7 +17,7 @@ export const TEAM = [
     name: "Ammon Childs",
     title: "Broker / Owner",
     phone: "(801) 735-8460",
-    email: "ammonchilds@gmail.com",
+    email: "ammon@childsrealestateutah.com",
     bio: "With over 15 years of experience in Utah real estate, Ammon brings deep market knowledge and a commitment to exceptional client service. As broker and owner, he leads the Childs Real Estate team with integrity and results-driven strategies.",
     image: "/images/team/ammon.jpg",
     imagePosition: "top",
@@ -31,7 +31,7 @@ export const TEAM = [
     name: "Tasha Childs",
     title: "Realtor / Co-Owner",
     phone: "(801) 602-8856",
-    email: "tashalchilds@gmail.com",
+    email: "tasha@childsrealestateutah.com",
     bio: "Tasha is passionate about helping families find their dream homes throughout Utah County. Her attention to detail, design eye, and warm approach make the buying and selling process seamless and enjoyable.",
     image: "/images/team/tasha.jpg",
     objectPosition: "50% 15%",
@@ -44,7 +44,7 @@ export const TEAM = [
 
 export const NAV_LINKS: Array<{ label: string; href: string; external?: boolean }> = [
   { label: "Home", href: "/" },
-  { label: "Search", href: "/properties" },
+  { label: "Buyers", href: "/buyers" },
   { label: "About", href: "/about" },
   { label: "Sell", href: "/sell" },
   { label: "Resources", href: "/resources" },
