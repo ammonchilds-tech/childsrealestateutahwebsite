@@ -9,7 +9,6 @@ import {
   OFFICE,
   MLS_DISCLAIMER,
   BHHS_DISCLAIMER,
-  FEATURED_AREAS,
 } from "@/lib/constants";
 
 export function Footer() {
@@ -19,7 +18,7 @@ export function Footer() {
     <footer className="bg-primary text-white">
       {/* Main footer */}
       <div className="mx-auto max-w-7xl px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {/* Brand */}
           <div className="space-y-4">
             <Image
@@ -68,60 +67,6 @@ export function Footer() {
                     className="text-white/70 hover:text-accent transition-colors"
                   >
                     {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Areas */}
-          <div>
-            <h4 className="font-heading text-lg font-semibold mb-4 text-white">
-              Service Areas
-            </h4>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <Link
-                  href="/properties?county=Utah+County"
-                  className="text-white/70 hover:text-accent transition-colors font-medium"
-                >
-                  Utah County
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/properties?county=Salt+Lake+County"
-                  className="text-white/70 hover:text-accent transition-colors font-medium"
-                >
-                  Salt Lake County
-                </Link>
-              </li>
-              {FEATURED_AREAS.map((area) => (
-                <li key={area.slug}>
-                  <Link
-                    href={`/properties?city=${encodeURIComponent(area.name)}`}
-                    className="text-white/70 hover:text-accent transition-colors"
-                  >
-                    {area.name}
-                  </Link>
-                </li>
-              ))}
-              {[
-                "Provo",
-                "Draper",
-                "Sandy",
-                "South Jordan",
-                "Saratoga Springs",
-                "Eagle Mountain",
-                "Pleasant Grove",
-                "Springville",
-              ].map((city) => (
-                <li key={city}>
-                  <Link
-                    href={`/properties?city=${encodeURIComponent(city)}`}
-                    className="text-white/70 hover:text-accent transition-colors"
-                  >
-                    {city}
                   </Link>
                 </li>
               ))}

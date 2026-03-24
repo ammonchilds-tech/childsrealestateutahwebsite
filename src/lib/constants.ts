@@ -44,12 +44,12 @@ export const TEAM = [
 
 export const NAV_LINKS: Array<{ label: string; href: string; external?: boolean }> = [
   { label: "Home", href: "/" },
-  { label: "Buyers", href: "/buyers" },
-  { label: "About", href: "/about" },
   { label: "Sell", href: "/sell" },
+  { label: "Buy", href: "/buyers" },
   { label: "Resources", href: "/resources" },
   { label: "Vendors", href: "/vendors" },
   { label: "Calculator", href: "/mortgage-calculator" },
+  { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];
 

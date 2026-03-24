@@ -4,7 +4,7 @@ import { SellerHero } from "@/components/home/SellerHero";
 import { MarketStats } from "@/components/home/MarketStats";
 import { SellingProcessPreview } from "@/components/home/SellingProcessPreview";
 import { HomeValuationCTA } from "@/components/home/HomeValuationCTA";
-import { FeaturedAreas } from "@/components/home/FeaturedAreas";
+// import { FeaturedAreas } from "@/components/home/FeaturedAreas"; // archived
 import { TeamPreview } from "@/components/home/TeamPreview";
 import { Testimonials } from "@/components/home/Testimonials";
 import { HomeCTA } from "@/components/home/HomeCTA";
@@ -91,7 +91,7 @@ export default function HomePage() {
 
       <SellingProcessPreview />
       <HomeValuationCTA />
-      <FeaturedAreas />
+      {/* <FeaturedAreas /> archived */}
       <TeamPreview />
       <Testimonials />
       <HomeCTA />
