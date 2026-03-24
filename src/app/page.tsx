@@ -1,6 +1,10 @@
 import Link from "next/link";
 import { TrendingUp, Sparkles, Users, Home } from "lucide-react";
 import { SellerHero } from "@/components/home/SellerHero";
+import { MarketStats } from "@/components/home/MarketStats";
+import { SellingProcessPreview } from "@/components/home/SellingProcessPreview";
+import { HomeValuationCTA } from "@/components/home/HomeValuationCTA";
+import { FeaturedAreas } from "@/components/home/FeaturedAreas";
 import { TeamPreview } from "@/components/home/TeamPreview";
 import { Testimonials } from "@/components/home/Testimonials";
 import { HomeCTA } from "@/components/home/HomeCTA";
@@ -36,6 +40,7 @@ export default function HomePage() {
   return (
     <>
       <SellerHero />
+      <MarketStats />
 
       {/* Why Sell With Us */}
       <section className="py-20 md:py-28 bg-background">
@@ -84,6 +89,9 @@ export default function HomePage() {
         </div>
       </section>
 
+      <SellingProcessPreview />
+      <HomeValuationCTA />
+      <FeaturedAreas />
       <TeamPreview />
       <Testimonials />
       <HomeCTA />
