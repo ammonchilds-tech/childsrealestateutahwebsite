@@ -1,10 +1,6 @@
 {
   "name": "childs-real-estate",
-  "main": ".open-next/worker.js",
+  "pages_build_output_dir": ".open-next/assets",
   "compatibility_date": "2024-12-30",
-  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
-  "assets": {
-    "directory": ".open-next/assets",
-    "binding": "ASSETS"
-  }
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"]
 }
