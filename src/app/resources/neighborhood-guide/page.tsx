@@ -17,6 +17,17 @@ export const metadata: Metadata = {
   title: `Neighborhood Guide: Utah County | ${SITE_NAME}`,
   description:
     "An in-depth look at the top cities and communities in Utah County — Highland, Alpine, American Fork, Lehi, and more. Find the right fit for your family.",
+  openGraph: {
+    title: `Neighborhood Guide: Utah County | ${SITE_NAME}`,
+    description: "An in-depth look at the top cities and communities in Utah County — Highland, Alpine, American Fork, Lehi, and more. Find the right fit for your family.",
+    url: "/resources/neighborhood-guide",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `Neighborhood Guide: Utah County | ${SITE_NAME}`,
+    description: "An in-depth look at the top cities and communities in Utah County — Highland, Alpine, American Fork, Lehi, and more. Find the right fit for your family.",
+  },
 };
 
 const NEIGHBORHOODS = [

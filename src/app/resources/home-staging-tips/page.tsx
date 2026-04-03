@@ -17,6 +17,17 @@ export const metadata: Metadata = {
   title: `Home Staging Tips | ${SITE_NAME}`,
   description:
     "How to stage your home to sell faster and for more money. Practical tips on decluttering, furniture, lighting, and curb appeal — from the Childs Real Estate team.",
+  openGraph: {
+    title: `Home Staging Tips | ${SITE_NAME}`,
+    description: "How to stage your home to sell faster and for more money. Practical tips on decluttering, furniture, lighting, and curb appeal — from the Childs Real Estate team.",
+    url: "/resources/home-staging-tips",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `Home Staging Tips | ${SITE_NAME}`,
+    description: "How to stage your home to sell faster and for more money. Practical tips on decluttering, furniture, lighting, and curb appeal — from the Childs Real Estate team.",
+  },
 };
 
 const TIPS = [

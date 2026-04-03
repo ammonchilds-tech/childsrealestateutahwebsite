@@ -26,6 +26,17 @@ import { SITE_NAME } from "@/lib/constants";
 export const metadata: Metadata = {
   title: "Mortgage Tips & Options | Utah Home Financing Guide",
   description: `Understand your mortgage options, interest rates, down payment strategies, and how to secure the best financing for your Utah home purchase. ${SITE_NAME}`,
+  openGraph: {
+    title: "Mortgage Tips & Options | Utah Home Financing Guide",
+    description: "Understand your mortgage options, interest rates, down payment strategies, and how to secure the best financing for your Utah home purchase.",
+    url: "/resources/mortgage-tips",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Mortgage Tips & Options | Utah Home Financing Guide",
+    description: "Understand your mortgage options, interest rates, down payment strategies, and how to secure the best financing for your Utah home purchase.",
+  },
 };
 
 const TOC_ITEMS = [

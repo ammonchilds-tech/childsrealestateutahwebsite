@@ -20,6 +20,17 @@ import { TEAM, OFFICE, SITE_NAME } from "@/lib/constants";
 export const metadata: Metadata = {
   title: "About Us",
   description: `Learn about ${SITE_NAME} — our story, our team, and our commitment to exceptional real estate service in Utah County and the Salt Lake Valley.`,
+  openGraph: {
+    title: `About Us | ${SITE_NAME}`,
+    description: `Learn about ${SITE_NAME} — our story, our team, and our commitment to exceptional real estate service in Utah County and the Salt Lake Valley.`,
+    url: "/about",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `About Us | ${SITE_NAME}`,
+    description: `Learn about ${SITE_NAME} — our story, our team, and our commitment to exceptional real estate service in Utah County and the Salt Lake Valley.`,
+  },
 };
 
 function getInitials(name: string) {

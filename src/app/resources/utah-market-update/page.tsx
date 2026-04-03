@@ -8,6 +8,17 @@ export const metadata: Metadata = {
   title: `Utah Market Update | ${SITE_NAME}`,
   description:
     "Current Utah County and Salt Lake Valley real estate market stats — median prices, days on market, inventory, and what it means for buyers and sellers.",
+  openGraph: {
+    title: `Utah Market Update | ${SITE_NAME}`,
+    description: "Current Utah County and Salt Lake Valley real estate market stats — median prices, days on market, inventory, and what it means for buyers and sellers.",
+    url: "/resources/utah-market-update",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `Utah Market Update | ${SITE_NAME}`,
+    description: "Current Utah County and Salt Lake Valley real estate market stats — median prices, days on market, inventory, and what it means for buyers and sellers.",
+  },
 };
 
 const UTAH_COUNTY_STATS = [

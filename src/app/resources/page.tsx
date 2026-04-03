@@ -20,6 +20,17 @@ import { SITE_NAME } from "@/lib/constants";
 export const metadata: Metadata = {
   title: "Resources & Guides",
   description: `Real estate guides, market insights, and helpful resources from ${SITE_NAME}. Everything you need to make informed buying and selling decisions.`,
+  openGraph: {
+    title: `Resources & Guides | ${SITE_NAME}`,
+    description: `Real estate guides, market insights, and helpful resources from ${SITE_NAME}. Everything you need to make informed buying and selling decisions.`,
+    url: "/resources",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `Resources & Guides | ${SITE_NAME}`,
+    description: `Real estate guides, market insights, and helpful resources from ${SITE_NAME}. Everything you need to make informed buying and selling decisions.`,
+  },
 };
 
 const RESOURCES = [

@@ -17,6 +17,17 @@ export const metadata: Metadata = {
   title: `Home Selling Guide | ${SITE_NAME}`,
   description:
     "21 proven ways to prepare and sell your home for top dollar in Utah. From curb appeal to closing day — a practical, easy-to-follow guide.",
+  openGraph: {
+    title: `Home Selling Guide | ${SITE_NAME}`,
+    description: "21 proven ways to prepare and sell your home for top dollar in Utah. From curb appeal to closing day — a practical, easy-to-follow guide.",
+    url: "/resources/home-selling-guide",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `Home Selling Guide | ${SITE_NAME}`,
+    description: "21 proven ways to prepare and sell your home for top dollar in Utah. From curb appeal to closing day — a practical, easy-to-follow guide.",
+  },
 };
 
 const TIPS = [

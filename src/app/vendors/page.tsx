@@ -4,6 +4,17 @@ import { SITE_NAME } from "@/lib/constants";
 export const metadata: Metadata = {
   title: "Vendors",
   description: `Trusted vendors and service providers recommended by ${SITE_NAME}.`,
+  openGraph: {
+    title: `Trusted Vendors | ${SITE_NAME}`,
+    description: `Trusted vendors and service providers recommended by ${SITE_NAME}.`,
+    url: "/vendors",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `Trusted Vendors | ${SITE_NAME}`,
+    description: `Trusted vendors and service providers recommended by ${SITE_NAME}.`,
+  },
 };
 
 const categories = [

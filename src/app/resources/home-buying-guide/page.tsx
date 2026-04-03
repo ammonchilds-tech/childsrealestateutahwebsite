@@ -29,6 +29,17 @@ import { SITE_NAME } from "@/lib/constants";
 export const metadata: Metadata = {
   title: "Home Buying Guide | Complete Utah Home Buying Process",
   description: `A comprehensive walkthrough of the home buying process in Utah — from pre-approval to closing day. Everything first-time and experienced buyers need to know. ${SITE_NAME}`,
+  openGraph: {
+    title: `Home Buying Guide | Complete Utah Home Buying Process`,
+    description: `A comprehensive walkthrough of the home buying process in Utah — from pre-approval to closing day. Everything first-time and experienced buyers need to know.`,
+    url: "/resources/home-buying-guide",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `Home Buying Guide | Complete Utah Home Buying Process`,
+    description: `A comprehensive walkthrough of the home buying process in Utah — from pre-approval to closing day. Everything first-time and experienced buyers need to know.`,
+  },
 };
 
 const TOC_ITEMS = [

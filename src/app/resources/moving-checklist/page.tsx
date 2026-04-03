@@ -12,6 +12,17 @@ export const metadata: Metadata = {
   title: `Moving Checklist | ${SITE_NAME}`,
   description:
     "Your complete moving checklist from 8 weeks out to move-in day. Stay organized and stress-free with our timeline of essential tasks.",
+  openGraph: {
+    title: `Moving Checklist | ${SITE_NAME}`,
+    description: "Your complete moving checklist from 8 weeks out to move-in day. Stay organized and stress-free with our timeline of essential tasks.",
+    url: "/resources/moving-checklist",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `Moving Checklist | ${SITE_NAME}`,
+    description: "Your complete moving checklist from 8 weeks out to move-in day. Stay organized and stress-free with our timeline of essential tasks.",
+  },
 };
 
 const CHECKLIST = [

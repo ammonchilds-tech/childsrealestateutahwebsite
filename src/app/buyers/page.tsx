@@ -17,12 +17,23 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { BuyerFAQ } from "@/components/buyers/BuyerFAQ";
-import { OFFICE } from "@/lib/constants";
+import { OFFICE, SITE_NAME } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Buy a Home in Utah",
   description:
     "Work with Utah's most trusted real estate team to find and buy your perfect home. Expert guidance through every step of the buying process.",
+  openGraph: {
+    title: `Buy a Home in Utah | ${SITE_NAME}`,
+    description: "Work with Utah's most trusted real estate team to find and buy your perfect home. Expert guidance through every step of the buying process.",
+    url: "/buyers",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `Buy a Home in Utah | ${SITE_NAME}`,
+    description: "Work with Utah's most trusted real estate team to find and buy your perfect home. Expert guidance through every step of the buying process.",
+  },
 };
 
 const BUYING_STEPS = [

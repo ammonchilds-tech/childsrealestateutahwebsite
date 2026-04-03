@@ -7,6 +7,17 @@ import { ContactForm } from "./_components/ContactForm";
 export const metadata: Metadata = {
   title: "Contact Us",
   description: `Get in touch with ${SITE_NAME}. We're here to help with buying, selling, or any real estate questions you may have.`,
+  openGraph: {
+    title: `Contact Us | ${SITE_NAME}`,
+    description: `Get in touch with ${SITE_NAME}. We're here to help with buying, selling, or any real estate questions you may have.`,
+    url: "/contact",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `Contact Us | ${SITE_NAME}`,
+    description: `Get in touch with ${SITE_NAME}. We're here to help with buying, selling, or any real estate questions you may have.`,
+  },
 };
 
 function getInitials(name: string) {

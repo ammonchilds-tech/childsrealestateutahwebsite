@@ -20,6 +20,17 @@ import { ValuationForm } from "./_components/ValuationForm";
 export const metadata: Metadata = {
   title: "Sell Your Home",
   description: `List and sell your home with ${SITE_NAME}. Get a free market analysis, professional marketing, and expert guidance throughout the selling process.`,
+  openGraph: {
+    title: `Sell Your Home | ${SITE_NAME}`,
+    description: `List and sell your home with ${SITE_NAME}. Get a free market analysis, professional marketing, and expert guidance throughout the selling process.`,
+    url: "/sell",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `Sell Your Home | ${SITE_NAME}`,
+    description: `List and sell your home with ${SITE_NAME}. Get a free market analysis, professional marketing, and expert guidance throughout the selling process.`,
+  },
 };
 
 const SELLING_STEPS = [

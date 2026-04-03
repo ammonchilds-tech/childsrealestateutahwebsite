@@ -5,6 +5,17 @@ import { SITE_NAME } from "@/lib/constants";
 export const metadata: Metadata = {
   title: "Mortgage Calculator",
   description: `Estimate your monthly mortgage payment with ${SITE_NAME}'s free calculator. Includes principal, interest, taxes, and insurance for Utah home buyers.`,
+  openGraph: {
+    title: `Mortgage Calculator | ${SITE_NAME}`,
+    description: `Estimate your monthly mortgage payment with ${SITE_NAME}'s free calculator. Includes principal, interest, taxes, and insurance for Utah home buyers.`,
+    url: "/mortgage-calculator",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `Mortgage Calculator | ${SITE_NAME}`,
+    description: `Estimate your monthly mortgage payment with ${SITE_NAME}'s free calculator. Includes principal, interest, taxes, and insurance for Utah home buyers.`,
+  },
 };
 
 export default function MortgageCalculatorPage() {

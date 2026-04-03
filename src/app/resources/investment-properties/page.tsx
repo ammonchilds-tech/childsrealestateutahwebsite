@@ -21,6 +21,17 @@ export const metadata: Metadata = {
   title: `Investment Properties 101 | ${SITE_NAME}`,
   description:
     "A plain-English guide to buying investment properties in Utah — how to analyze deals, calculate returns, choose the right property type, and build long-term wealth.",
+  openGraph: {
+    title: `Investment Properties 101 | ${SITE_NAME}`,
+    description: "A plain-English guide to buying investment properties in Utah — how to analyze deals, calculate returns, choose the right property type, and build long-term wealth.",
+    url: "/resources/investment-properties",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `Investment Properties 101 | ${SITE_NAME}`,
+    description: "A plain-English guide to buying investment properties in Utah — how to analyze deals, calculate returns, choose the right property type, and build long-term wealth.",
+  },
 };
 
 const STEPS = [

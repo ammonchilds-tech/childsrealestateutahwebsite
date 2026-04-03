@@ -19,6 +19,17 @@ export const metadata: Metadata = {
   title: `First-Time Buyer Programs | ${SITE_NAME}`,
   description:
     "Easy-to-understand guide for first-time home buyers in Utah — programs, down payment help, what to expect, and how to get started.",
+  openGraph: {
+    title: `First-Time Buyer Programs | ${SITE_NAME}`,
+    description: "Easy-to-understand guide for first-time home buyers in Utah — programs, down payment help, what to expect, and how to get started.",
+    url: "/resources/first-time-buyers",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `First-Time Buyer Programs | ${SITE_NAME}`,
+    description: "Easy-to-understand guide for first-time home buyers in Utah — programs, down payment help, what to expect, and how to get started.",
+  },
 };
 
 const STEPS = [

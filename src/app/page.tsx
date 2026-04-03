@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { TrendingUp, Sparkles, Users, Home } from "lucide-react";
+import { SITE_NAME, SITE_DESCRIPTION, SITE_URL, OFFICE } from "@/lib/constants";
 import { SellerHero } from "@/components/home/SellerHero";
 import { MarketStats } from "@/components/home/MarketStats";
 import { SellingProcessPreview } from "@/components/home/SellingProcessPreview";
@@ -36,9 +37,55 @@ const SELLER_BENEFITS = [
   },
 ];
 
+const localBusinessJsonLd = {
+  "@context": "https://schema.org",
+  "@type": ["RealEstateAgent", "LocalBusiness"],
+  name: SITE_NAME,
+  description: SITE_DESCRIPTION,
+  url: SITE_URL,
+  telephone: OFFICE.phone,
+  email: OFFICE.email,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "825 E 1180 S 300",
+    addressLocality: "American Fork",
+    addressRegion: "UT",
+    postalCode: "84003",
+    addressCountry: "US",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: OFFICE.lat,
+    longitude: OFFICE.lng,
+  },
+  areaServed: [
+    { "@type": "City", "name": "American Fork", "addressRegion": "UT" },
+    { "@type": "City", "name": "Provo", "addressRegion": "UT" },
+    { "@type": "City", "name": "Orem", "addressRegion": "UT" },
+    { "@type": "City", "name": "Lehi", "addressRegion": "UT" },
+    { "@type": "City", "name": "Salt Lake City", "addressRegion": "UT" },
+    { "@type": "City", "name": "Draper", "addressRegion": "UT" },
+    { "@type": "City", "name": "Sandy", "addressRegion": "UT" },
+    { "@type": "City", "name": "Saratoga Springs", "addressRegion": "UT" },
+  ],
+  memberOf: {
+    "@type": "Organization",
+    name: "Berkshire Hathaway HomeServices Elite Real Estate",
+  },
+  sameAs: [
+    "https://www.facebook.com/childsrealestateutah",
+    "https://www.instagram.com/childsrealestateutah",
+    SITE_URL,
+  ],
+};
+
 export default function HomePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
+      />
       <SellerHero />
       <MarketStats />
 

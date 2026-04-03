@@ -22,16 +22,16 @@ export function Footer() {
           {/* Brand */}
           <div className="space-y-4">
             <Image
-              src="/images/logo.png"
+              src="/images/logo-white.png"
               alt="Childs Real Estate"
               width={480}
               height={180}
-              className="w-56 h-auto rounded-lg"
+              className="w-56 h-auto"
             />
-            <p className="text-white/70 text-sm leading-relaxed">
+            <p className="text-white text-sm leading-relaxed">
               {OFFICE.name}
             </p>
-            <div className="space-y-2 text-sm text-white/70">
+            <div className="space-y-2 text-sm text-white">
               <a
                 href={`tel:${OFFICE.phone}`}
                 className="flex items-center gap-2 hover:text-accent transition-colors"
@@ -64,7 +64,7 @@ export function Footer() {
                   <Link
                     href={link.href}
                     {...(link.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                    className="text-white/70 hover:text-accent transition-colors"
+                    className="text-white hover:text-accent transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -80,22 +80,22 @@ export function Footer() {
             </h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="/terms" className="text-white/70 hover:text-accent transition-colors">
+                <Link href="/terms" className="text-white hover:text-accent transition-colors">
                   Terms of Service
                 </Link>
               </li>
               <li>
-                <Link href="/privacy" className="text-white/70 hover:text-accent transition-colors">
+                <Link href="/privacy" className="text-white hover:text-accent transition-colors">
                   Privacy Policy
                 </Link>
               </li>
               <li>
-                <Link href="/accessibility" className="text-white/70 hover:text-accent transition-colors">
+                <Link href="/accessibility" className="text-white hover:text-accent transition-colors">
                   Accessibility
                 </Link>
               </li>
               <li>
-                <Link href="/fair-housing" className="text-white/70 hover:text-accent transition-colors">
+                <Link href="/fair-housing" className="text-white hover:text-accent transition-colors">
                   Fair Housing Statement
                 </Link>
               </li>
@@ -118,7 +118,7 @@ export function Footer() {
             </div>
           </div>
 
-          <p className="text-white/50 text-xs leading-relaxed mb-4">
+          <p className="text-white text-xs leading-relaxed mb-4">
             {BHHS_DISCLAIMER}
           </p>
 
@@ -126,7 +126,7 @@ export function Footer() {
           <div>
             <button
               onClick={() => setMlsExpanded(!mlsExpanded)}
-              className="flex items-center gap-1 text-white/50 text-xs hover:text-white/70 transition-colors"
+              className="flex items-center gap-1 text-white text-xs hover:text-white/70 transition-colors"
               aria-expanded={mlsExpanded}
             >
               MLS Disclaimer
@@ -137,7 +137,7 @@ export function Footer() {
               )}
             </button>
             {mlsExpanded && (
-              <p className="text-white/40 text-xs leading-relaxed mt-2">
+              <p className="text-white text-xs leading-relaxed mt-2">
                 {MLS_DISCLAIMER}
               </p>
             )}
