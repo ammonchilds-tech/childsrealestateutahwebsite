@@ -1,7 +1,7 @@
 export const SITE_NAME = "Childs Real Estate";
 export const SITE_DESCRIPTION =
   "Ammon & Tasha Childs — Luxury real estate in Utah County and the Salt Lake Valley. Berkshire Hathaway HomeServices Elite Real Estate.";
-export const SITE_URL = "https://childsrealestate.com";
+export const SITE_URL = "https://childsrealestateutah.com";
 
 export const OFFICE = {
   name: "Berkshire Hathaway HomeServices Elite Real Estate",
