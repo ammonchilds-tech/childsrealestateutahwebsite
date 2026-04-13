@@ -1,6 +1,6 @@
 export const SITE_NAME = "Childs Real Estate";
 export const SITE_DESCRIPTION =
-  "Ammon & Tasha Childs — Luxury real estate in Utah County and the Salt Lake Valley. Berkshire Hathaway HomeServices Elite Real Estate.";
+  "Ammon & Tasha Childs help buyers and sellers across Utah County and the Salt Lake Valley. Expert guidance, proven results, backed by Berkshire Hathaway HomeServices Elite Real Estate.";
 export const SITE_URL = "https://childsrealestateutah.com";
 
 export const OFFICE = {

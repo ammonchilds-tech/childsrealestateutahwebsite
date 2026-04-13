@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 import { SITE_NAME, SITE_DESCRIPTION } from "@/lib/constants";
 
-export const alt = `${SITE_NAME} | Utah Luxury Real Estate`;
+export const alt = `${SITE_NAME} | Utah Real Estate Specialists`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -58,7 +58,7 @@ export default async function Image() {
             display: "flex",
           }}
         >
-          Utah Luxury Real Estate
+          Utah Real Estate Specialists
         </div>
 
         {/* Subheadline */}
