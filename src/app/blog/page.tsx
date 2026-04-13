@@ -21,6 +21,15 @@ export const metadata: Metadata = {
 
 const POSTS = [
   {
+    slug: "the-two-speed-market-why-pricing-your-home-right-has-never-mattered-more",
+    title: "The Two-Speed Market: Why Pricing Your Home Right Has Never Mattered More",
+    excerpt:
+      "Well-priced homes are selling in 63 days. Overpriced homes are sitting for 121. That 58-day gap is costing sellers thousands — here's how to make sure you're on the right side of it.",
+    date: "April 13, 2026",
+    readTime: "6 min read",
+    category: "Sellers",
+  },
+  {
     slug: "spring-market-2026-tips-to-get-your-home-ready-to-list",
     title: "The Spring Market Is Here: Tips & Tricks to Get Your Home Ready to List",
     excerpt:
