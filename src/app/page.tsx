@@ -3,12 +3,14 @@ import { TrendingUp, Sparkles, Users, Home } from "lucide-react";
 import { SITE_NAME, SITE_DESCRIPTION, SITE_URL, OFFICE } from "@/lib/constants";
 import { SellerHero } from "@/components/home/SellerHero";
 import { MarketStats } from "@/components/home/MarketStats";
+import { PromoBanner } from "@/components/home/PromoBanner";
 import { SellingProcessPreview } from "@/components/home/SellingProcessPreview";
 import { HomeValuationCTA } from "@/components/home/HomeValuationCTA";
 // import { FeaturedAreas } from "@/components/home/FeaturedAreas"; // archived
 import { TeamPreview } from "@/components/home/TeamPreview";
 import { Testimonials } from "@/components/home/Testimonials";
 import { HomeCTA } from "@/components/home/HomeCTA";
+import { ListingPackages } from "@/components/home/ListingPackages";
 
 const SELLER_BENEFITS = [
   {
@@ -86,6 +88,7 @@ export default function HomePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
       />
+      <PromoBanner />
       <SellerHero />
       <MarketStats />
 
@@ -136,6 +139,7 @@ export default function HomePage() {
         </div>
       </section>
 
+      <ListingPackages />
       <SellingProcessPreview />
       <HomeValuationCTA />
       {/* <FeaturedAreas /> archived */}
