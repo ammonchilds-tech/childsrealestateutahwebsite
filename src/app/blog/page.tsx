@@ -21,6 +21,15 @@ export const metadata: Metadata = {
 
 const POSTS = [
   {
+    slug: "how-to-sell-your-home-for-top-dollar-in-utah",
+    title: "How to Sell Your Home for Top Dollar in Utah's 2026 Market",
+    excerpt:
+      "Pricing, presentation, and negotiation — here's the proven playbook for getting the most money out of your Utah home sale in 2026.",
+    date: "April 20, 2026",
+    readTime: "7 min read",
+    category: "Sellers",
+  },
+  {
     slug: "the-two-speed-market-why-pricing-your-home-right-has-never-mattered-more",
     title: "The Two-Speed Market: Why Pricing Your Home Right Has Never Mattered More",
     excerpt:

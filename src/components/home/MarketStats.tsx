@@ -2,17 +2,17 @@ const COUNTIES = [
   {
     name: "Utah County",
     stats: [
-      { label: "Median Sale Price", value: "$510K" },
-      { label: "Avg. Days on Market", value: "68" },
-      { label: "List-to-Sale Ratio", value: "98.6%" },
+      { label: "Median Sale Price", value: "$529K" },
+      { label: "Median Days on Market", value: "34" },
+      { label: "Number of Sales", value: "132" },
     ],
   },
   {
     name: "Salt Lake County",
     stats: [
-      { label: "Median Sale Price", value: "$544K" },
-      { label: "Avg. Days on Market", value: "70" },
-      { label: "List-to-Sale Ratio", value: "98.2%" },
+      { label: "Median Sale Price", value: "$548K" },
+      { label: "Median Days on Market", value: "30" },
+      { label: "Number of Sales", value: "198" },
     ],
   },
 ];
