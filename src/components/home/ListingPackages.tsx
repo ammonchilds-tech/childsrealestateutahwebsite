@@ -74,7 +74,7 @@ export function ListingPackages() {
           <div className="mt-8 inline-flex items-center gap-2.5 bg-accent border-2 border-accent rounded-full px-6 py-2.5 shadow-md">
             <span className="w-2.5 h-2.5 rounded-full bg-primary animate-pulse flex-shrink-0" />
             <p className="text-sm font-bold text-primary tracking-wide">
-              Limited Time: Prestige package at the Distinction price — just 2%
+              Transparent, flat-rate listing fees — no surprises at closing
             </p>
           </div>
         </div>
@@ -131,7 +131,7 @@ export function ListingPackages() {
               </p>
               <h3 className="font-heading text-2xl text-white mb-1">Distinction</h3>
               <div className="flex items-baseline gap-1 mt-3">
-                <span className="font-heading text-4xl text-accent font-semibold">2%</span>
+                <span className="font-heading text-4xl text-accent font-semibold">1.99%</span>
                 <span className="text-white/60 text-sm">listing fee</span>
               </div>
             </div>
@@ -157,7 +157,7 @@ export function ListingPackages() {
           <div className="bg-background rounded-2xl border-2 border-accent/50 p-8 flex flex-col relative shadow-lg">
             <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
               <Badge className="text-xs font-semibold px-4 py-1 rounded-full shadow bg-accent/20 text-accent border border-accent/40">
-                Limited Time Offer
+                White-Glove Service
               </Badge>
             </div>
 
@@ -166,14 +166,10 @@ export function ListingPackages() {
                 Listing Fee
               </p>
               <h3 className="font-heading text-2xl text-foreground mb-1">Prestige</h3>
-              <div className="flex items-baseline gap-2 mt-3">
-                <span className="font-heading text-4xl text-accent font-semibold">2%</span>
-                <span className="text-muted-foreground text-sm line-through decoration-red-400 decoration-2">2.5%</span>
+              <div className="flex items-baseline gap-1 mt-3">
+                <span className="font-heading text-4xl text-accent font-semibold">2.49%</span>
                 <span className="text-muted-foreground text-sm">listing fee</span>
               </div>
-              <p className="text-xs text-accent font-medium mt-1">
-                Prestige value at Distinction price — limited time only
-              </p>
             </div>
 
             <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-3">
@@ -186,16 +182,19 @@ export function ListingPackages() {
             </ul>
 
             <Button asChild variant="accent" className="mt-8 w-full">
-              <Link href="/contact">Claim This Offer</Link>
+              <Link href="/contact">Get Started</Link>
             </Button>
           </div>
         </div>
 
         {/* Footnote */}
-        <p className="text-center text-xs text-muted-foreground mt-8">
-          Buyer&apos;s agent commission is negotiated separately and not included in the listing fee.
-          Commission rates are negotiable and not set by law. All fees subject to listing agreement terms.
-        </p>
+        <div className="mt-10 mx-auto max-w-2xl border border-border/60 rounded-lg px-6 py-4 bg-background/60">
+          <p className="text-center text-xs text-muted-foreground leading-relaxed">
+            <span className="font-semibold text-foreground/70">Disclaimer: </span>
+            Buyer&apos;s agent commission is negotiated separately and not included in the listing fee.
+            Commission rates are negotiable and not set by law. All fees subject to listing agreement terms.
+          </p>
+        </div>
       </div>
     </section>
   );

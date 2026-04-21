@@ -19,8 +19,19 @@ const COUNTIES = [
 
 export function MarketStats() {
   return (
-    <section className="bg-primary py-8 border-b border-white/10">
+    <section className="bg-primary py-10 border-b border-white/10">
       <div className="max-w-7xl mx-auto px-6">
+        <div className="text-center mb-8">
+          <p className="text-accent text-xs font-medium tracking-[0.2em] uppercase mb-2">
+            Week of April 21, 2026
+          </p>
+          <h2 className="font-heading text-2xl md:text-3xl text-white">
+            This Week&apos;s Market Snapshot
+          </h2>
+          <p className="mt-3 text-white/60 text-sm max-w-xl mx-auto leading-relaxed">
+            Homes are moving quickly across Utah and Salt Lake counties — with median days on market holding steady in the low 30s. If you&apos;re thinking of selling, now is a strong time to list.
+          </p>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-0 md:divide-x md:divide-white/20">
           {COUNTIES.map((county) => (
             <div key={county.name} className="px-6">
