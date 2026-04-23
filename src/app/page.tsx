@@ -89,6 +89,7 @@ export default function HomePage() {
       <PromoBanner />
       <SellerHero />
       <MarketStats />
+      <ListingPackages />
 
       {/* Featured Testimonial */}
       <section className="py-14 bg-muted/50 border-y border-border/40">
@@ -165,7 +166,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      <ListingPackages />
       <SellingProcessPreview />
       {/* <FeaturedAreas /> archived */}
       <TeamPreview />
