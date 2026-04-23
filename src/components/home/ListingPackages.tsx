@@ -128,7 +128,7 @@ export function ListingPackages() {
         {/* Link to full details */}
         <div className="mt-10 text-center">
           <Button asChild variant="accent" size="lg" className="group">
-            <Link href="/sell#listing-packages">
+            <Link href="/packages">
               See full package details
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
