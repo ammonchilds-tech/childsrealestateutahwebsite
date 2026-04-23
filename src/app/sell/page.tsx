@@ -187,7 +187,7 @@ export default function SellPage() {
       </section>
 
       {/* Selling Process Timeline */}
-      <section className="py-20 md:py-28 bg-muted">
+      <section id="process" className="py-20 md:py-28 bg-muted scroll-mt-20">
         <div className="max-w-4xl mx-auto px-6">
           <div className="text-center mb-16">
             <div className="flex items-center justify-center gap-3 mb-4">
