@@ -1,76 +1,67 @@
 import Link from "next/link";
-import { Check, Minus } from "lucide-react";
+import { Check, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
-const FOUNDATION_FEATURES = [
-  "MLS listing + full web syndication",
-  "Zillow, Realtor.com, Homes.com",
-  "Professional photography (25 photos)",
-  "Yard sign + electronic lockbox",
-  "Seller's net sheet",
-  "Expert contract negotiation",
-  "Full closing coordination",
-  "Easy-exit listing agreement",
+const PACKAGES = [
+  {
+    name: "Foundation",
+    fee: "1%",
+    minFee: "$5,000 minimum",
+    highlights: [
+      "MLS + full web syndication",
+      "Professional photography",
+      "Expert negotiation & closing",
+    ],
+    badge: null,
+    featured: false,
+  },
+  {
+    name: "Distinction",
+    fee: "1.99%",
+    minFee: null,
+    highlights: [
+      "Everything in Foundation",
+      "Staging consultation + social media",
+      "Email blast + open house",
+    ],
+    badge: "Most Popular",
+    featured: true,
+  },
+  {
+    name: "Prestige",
+    fee: "2.49%",
+    minFee: null,
+    highlights: [
+      "Everything in Distinction",
+      "Zillow Showcase + video/Reels",
+      "Coming soon campaign + paid ads",
+    ],
+    badge: "White-Glove",
+    featured: false,
+  },
 ];
-
-const DISTINCTION_EXTRAS = [
-  "Staging consultation (1 hour)",
-  "Social media marketing (Instagram + Facebook)",
-  "Email blast to buyer agent network",
-  "Property highlights flyer",
-  "1 hosted open house",
-];
-
-const PRESTIGE_EXTRAS = [
-  "Zillow Showcase (premium placement)",
-  "Professional video + Instagram Reel",
-  "Coming soon pre-launch campaign",
-  "Just Listed postcard to neighborhood",
-  "2 hosted open houses",
-  "Paid social ad boost",
-  "Weekly marketing activity report",
-  "Priority response & white-glove service",
-];
-
-function FeatureRow({ text, included = true }: { text: string; included?: boolean }) {
-  return (
-    <li className="flex items-start gap-2.5 text-sm">
-      {included ? (
-        <Check className="h-4 w-4 text-accent flex-shrink-0 mt-0.5" />
-      ) : (
-        <Minus className="h-4 w-4 text-muted-foreground/40 flex-shrink-0 mt-0.5" />
-      )}
-      <span className={included ? "text-foreground" : "text-muted-foreground/50"}>
-        {text}
-      </span>
-    </li>
-  );
-}
 
 export function ListingPackages() {
   return (
-    <section
-      id="listing-packages"
-      className="py-20 md:py-28 bg-muted scroll-mt-20"
-    >
+    <section id="listing-packages" className="py-20 md:py-28 bg-muted scroll-mt-20">
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
-        <div className="text-center mb-14">
+        <div className="text-center mb-12">
           <p className="text-accent text-sm font-medium tracking-[0.2em] uppercase mb-3">
-            Listing Service Packages
+            The Childs Clear Commission Program
           </p>
           <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl text-foreground">
-            Choose the Right Package
+            More Service. Less Commission.
           </h2>
           <div className="mt-4 mx-auto w-16 h-0.5 bg-accent rounded-full" />
           <p className="mt-6 text-muted-foreground text-lg max-w-2xl mx-auto">
-            Every home is different. Choose the level of marketing and service
-            that fits your goals — from essential coverage to our full
-            white-glove experience.
+            Most agents charge more and deliver less. Our program gives you full-service
+            marketing, expert negotiation, and white-glove support — at a flat rate that puts
+            more money in your pocket at closing.
           </p>
 
-          {/* Promo callout */}
+          {/* Value callout */}
           <div className="mt-8 inline-flex items-center gap-2.5 bg-accent border-2 border-accent rounded-full px-6 py-2.5 shadow-md">
             <span className="w-2.5 h-2.5 rounded-full bg-primary animate-pulse flex-shrink-0" />
             <p className="text-sm font-bold text-primary tracking-wide">
@@ -79,120 +70,71 @@ export function ListingPackages() {
           </div>
         </div>
 
-        {/* Cards */}
-        <div className="grid md:grid-cols-3 gap-6 lg:gap-8 items-start">
+        {/* Compact 3-tier grid */}
+        <div className="grid md:grid-cols-3 gap-6">
+          {PACKAGES.map((pkg) => (
+            <div
+              key={pkg.name}
+              className={`relative rounded-2xl p-8 flex flex-col ${
+                pkg.featured
+                  ? "bg-primary border-2 border-primary shadow-xl"
+                  : "bg-background border border-border/60"
+              }`}
+            >
+              {pkg.badge && (
+                <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
+                  <Badge
+                    variant={pkg.featured ? "accent" : undefined}
+                    className={
+                      pkg.featured
+                        ? "text-xs font-semibold px-4 py-1 rounded-full shadow"
+                        : "text-xs font-semibold px-4 py-1 rounded-full shadow bg-accent/20 text-accent border border-accent/40"
+                    }
+                  >
+                    {pkg.badge}
+                  </Badge>
+                </div>
+              )}
 
-          {/* Foundation */}
-          <div className="bg-background rounded-2xl border border-border/60 p-8 flex flex-col">
-            <div className="mb-6">
-              <p className="text-xs font-medium tracking-widest uppercase text-muted-foreground mb-2">
-                Listing Fee
-              </p>
-              <h3 className="font-heading text-2xl text-foreground mb-1">Foundation</h3>
-              <div className="flex items-baseline gap-1 mt-3">
-                <span className="font-heading text-4xl text-accent font-semibold">1%</span>
-                <span className="text-muted-foreground text-sm">listing fee</span>
+              <h3 className={`font-heading text-2xl mb-1 ${pkg.featured ? "text-white" : "text-foreground"}`}>
+                {pkg.name}
+              </h3>
+              <div className="flex items-baseline gap-1 mt-2 mb-1">
+                <span className="font-heading text-4xl text-accent font-semibold">{pkg.fee}</span>
+                <span className={`text-sm ${pkg.featured ? "text-white/60" : "text-muted-foreground"}`}>
+                  listing fee
+                </span>
               </div>
-              <p className="text-xs text-muted-foreground mt-1">Minimum fee: $5,000</p>
-            </div>
-
-            <ul className="space-y-2.5 flex-1">
-              {FOUNDATION_FEATURES.map((f) => (
-                <FeatureRow key={f} text={f} />
-              ))}
-              <li className="pt-2 border-t border-border/50">
-                <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-2">
-                  Not included
+              {pkg.minFee && (
+                <p className={`text-xs mb-4 ${pkg.featured ? "text-white/50" : "text-muted-foreground"}`}>
+                  {pkg.minFee}
                 </p>
-                <ul className="space-y-2">
-                  {["Staging consultation", "Social media marketing", "Open house", "Video / Reels", "Zillow Showcase"].map((f) => (
-                    <FeatureRow key={f} text={f} included={false} />
-                  ))}
-                </ul>
-              </li>
-            </ul>
+              )}
 
-            <Button asChild variant="outline" className="mt-8 w-full">
-              <Link href="/contact">Get Started</Link>
-            </Button>
-          </div>
-
-          {/* Distinction */}
-          <div className="bg-primary rounded-2xl border-2 border-primary p-8 flex flex-col relative shadow-xl">
-            <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
-              <Badge variant="accent" className="text-xs font-semibold px-4 py-1 rounded-full shadow">
-                Most Popular
-              </Badge>
+              <ul className="space-y-2.5 mt-4 flex-1">
+                {pkg.highlights.map((h) => (
+                  <li key={h} className="flex items-start gap-2.5 text-sm">
+                    <Check className="h-4 w-4 text-accent flex-shrink-0 mt-0.5" />
+                    <span className={pkg.featured ? "text-white/90" : "text-foreground"}>
+                      {h}
+                    </span>
+                  </li>
+                ))}
+              </ul>
             </div>
-
-            <div className="mb-6">
-              <p className="text-xs font-medium tracking-widest uppercase text-white/50 mb-2">
-                Listing Fee
-              </p>
-              <h3 className="font-heading text-2xl text-white mb-1">Distinction</h3>
-              <div className="flex items-baseline gap-1 mt-3">
-                <span className="font-heading text-4xl text-accent font-semibold">1.99%</span>
-                <span className="text-white/60 text-sm">listing fee</span>
-              </div>
-            </div>
-
-            <p className="text-xs font-medium text-white/50 uppercase tracking-wider mb-3">
-              Everything in Foundation, plus:
-            </p>
-            <ul className="space-y-2.5 flex-1">
-              {[...FOUNDATION_FEATURES, ...DISTINCTION_EXTRAS].map((f) => (
-                <li key={f} className="flex items-start gap-2.5 text-sm">
-                  <Check className="h-4 w-4 text-accent flex-shrink-0 mt-0.5" />
-                  <span className="text-white/90">{f}</span>
-                </li>
-              ))}
-            </ul>
-
-            <Button asChild variant="accent" className="mt-8 w-full">
-              <Link href="/contact">Get Started</Link>
-            </Button>
-          </div>
-
-          {/* Prestige */}
-          <div className="bg-background rounded-2xl border-2 border-accent/50 p-8 flex flex-col relative shadow-lg">
-            <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
-              <Badge className="text-xs font-semibold px-4 py-1 rounded-full shadow bg-accent/20 text-accent border border-accent/40">
-                White-Glove Service
-              </Badge>
-            </div>
-
-            <div className="mb-6">
-              <p className="text-xs font-medium tracking-widest uppercase text-muted-foreground mb-2">
-                Listing Fee
-              </p>
-              <h3 className="font-heading text-2xl text-foreground mb-1">Prestige</h3>
-              <div className="flex items-baseline gap-1 mt-3">
-                <span className="font-heading text-4xl text-accent font-semibold">2.49%</span>
-                <span className="text-muted-foreground text-sm">listing fee</span>
-              </div>
-            </div>
-
-            <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-3">
-              Everything in Distinction, plus:
-            </p>
-            <ul className="space-y-2.5 flex-1">
-              {[...FOUNDATION_FEATURES, ...DISTINCTION_EXTRAS, ...PRESTIGE_EXTRAS].map((f) => (
-                <FeatureRow key={f} text={f} />
-              ))}
-            </ul>
-
-            <Button asChild variant="accent" className="mt-8 w-full">
-              <Link href="/contact">Get Started</Link>
-            </Button>
-          </div>
+          ))}
         </div>
 
-        {/* Footnote */}
-        <div className="mt-10 mx-auto max-w-2xl border border-border/60 rounded-lg px-6 py-4 bg-background/60">
-          <p className="text-center text-xs text-muted-foreground leading-relaxed">
-            <span className="font-semibold text-foreground/70">Disclaimer: </span>
-            Buyer&apos;s agent commission is negotiated separately and not included in the listing fee.
-            Commission rates are negotiable and not set by law. All fees subject to listing agreement terms.
+        {/* Link to full details */}
+        <div className="mt-10 text-center">
+          <Button asChild variant="accent" size="lg" className="group">
+            <Link href="/sell#listing-packages">
+              See full package details
+              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </Link>
+          </Button>
+          <p className="mt-4 text-xs text-muted-foreground">
+            Buyer&apos;s agent commission negotiated separately. All fees subject to listing agreement.
           </p>
         </div>
       </div>
