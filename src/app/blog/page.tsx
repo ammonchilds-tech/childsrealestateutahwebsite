@@ -21,6 +21,15 @@ export const metadata: Metadata = {
 
 const POSTS = [
   {
+    slug: "how-interest-rates-affect-your-buying-power",
+    title: "How Interest Rates Affect Your Buying Power — and How Smart Buyers Win Anyway",
+    excerpt:
+      "Interest rates change what you can afford, how you compete, and when you should move. Here's what every Utah buyer needs to understand before entering the market.",
+    date: "April 28, 2026",
+    readTime: "8 min read",
+    category: "Buyers",
+  },
+  {
     slug: "how-to-sell-your-home-for-top-dollar-in-utah",
     title: "How to Sell Your Home for Top Dollar in Utah's 2026 Market",
     excerpt:
