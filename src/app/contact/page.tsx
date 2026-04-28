@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Phone, Mail, MapPin, Clock, MessageSquare } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, MessageSquare, CalendarDays } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { TEAM, OFFICE, SITE_NAME } from "@/lib/constants";
 import { ContactForm } from "./_components/ContactForm";
@@ -139,6 +139,31 @@ export default function ContactPage() {
                     </Card>
                   ))}
                 </div>
+              </div>
+
+              {/* Schedule a Meeting */}
+              <div>
+                <Card className="border-accent/30 bg-accent/5">
+                  <CardContent className="p-5">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0">
+                        <CalendarDays className="h-5 w-5 text-accent" />
+                      </div>
+                      <div>
+                        <p className="text-sm font-medium text-primary">Schedule a Meeting</p>
+                        <p className="text-xs text-muted-foreground">Pick a time that works for you</p>
+                      </div>
+                    </div>
+                    <a
+                      href="https://calendar.app.google/pLYzk4KoBHBjjhgG8"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block w-full text-center bg-accent text-accent-foreground text-sm font-semibold py-2.5 rounded-lg hover:bg-accent/90 transition-colors"
+                    >
+                      Book a Time Slot →
+                    </a>
+                  </CardContent>
+                </Card>
               </div>
 
               {/* Office Details */}

@@ -70,6 +70,16 @@ export function Footer() {
                   </Link>
                 </li>
               ))}
+              <li>
+                <a
+                  href="https://calendar.app.google/pLYzk4KoBHBjjhgG8"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white hover:text-accent transition-colors"
+                >
+                  Schedule a Meeting
+                </a>
+              </li>
             </ul>
           </div>
 

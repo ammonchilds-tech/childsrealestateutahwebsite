@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Phone } from "lucide-react";
+import { ArrowRight, Phone, CalendarDays } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { OFFICE } from "@/lib/constants";
 
@@ -62,10 +62,14 @@ export function HomeCTA() {
             variant="outline"
             className="border-white/30 text-white hover:bg-white/10 hover:text-white font-semibold h-13 px-8 rounded-lg"
           >
-            <Link href="/contact">
-              <Phone className="mr-2 h-4 w-4" />
-              Contact Us
-            </Link>
+            <a
+              href="https://calendar.app.google/pLYzk4KoBHBjjhgG8"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <CalendarDays className="mr-2 h-4 w-4" />
+              Schedule a Meeting
+            </a>
           </Button>
         </div>
 
