@@ -118,6 +118,12 @@ const categories = [
     ],
   },
   {
+    name: "Financial Services",
+    vendors: [
+      { business: "Ryan Pace", contact: "Ryan Pace", phone: "801.979.2271", email: "ryan.pace@nm.com", services: "Financial Services" },
+    ],
+  },
+  {
     name: "Sewer Scope",
     vendors: [
       { business: "Utah Trenchless", contact: "Garrett", phone: "405.421.1888", email: "", services: "Sewer Scope" },
