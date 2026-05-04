@@ -118,6 +118,12 @@ const categories = [
     ],
   },
   {
+    name: "Tax Services",
+    vendors: [
+      { business: "Mansker Tax Service CPA", contact: "", phone: "385.482.5470", email: "", services: "Tax Services / CPA" },
+    ],
+  },
+  {
     name: "Financial Services",
     vendors: [
       { business: "Ryan Pace", contact: "Ryan Pace", phone: "801.979.2271", email: "ryan.pace@nm.com", services: "Financial Services" },
