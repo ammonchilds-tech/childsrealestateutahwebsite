@@ -171,137 +171,6 @@ export default function ClearCommissionPage() {
         <div className="absolute bottom-0 inset-x-0 h-16 bg-gradient-to-t from-background to-transparent" />
       </section>
 
-      {/* ── Valuation Form + Contact ── */}
-      <section id="valuation" className="py-16 md:py-24 bg-background scroll-mt-20">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid lg:grid-cols-5 gap-12 lg:gap-16">
-
-            {/* Form */}
-            <div className="lg:col-span-3">
-              <div className="mb-8">
-                <p className="text-xs font-semibold tracking-widest uppercase text-accent mb-2">
-                  Free · No Obligation
-                </p>
-                <h2 className="font-heading text-3xl md:text-4xl text-primary mb-3">
-                  Request Your Free Home Valuation
-                </h2>
-                <p className="text-muted-foreground">
-                  Fill out the form and we&apos;ll prepare a personalized market analysis
-                  of your home and reach out within one business day.
-                </p>
-              </div>
-              <Card className="border-border/50 shadow-lg">
-                <CardContent className="p-8 md:p-10">
-                  <ValuationForm />
-                </CardContent>
-              </Card>
-            </div>
-
-            {/* Sidebar */}
-            <div className="lg:col-span-2 space-y-6">
-              <div>
-                <h3 className="font-heading text-lg font-semibold text-primary mb-4">
-                  Prefer to Talk Now?
-                </h3>
-                <div className="space-y-3">
-                  <a
-                    href={`tel:${OFFICE.phone}`}
-                    className="flex items-center gap-3 p-4 rounded-xl border border-border/60 hover:border-accent/40 transition-colors group"
-                  >
-                    <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0 group-hover:bg-accent/20 transition-colors">
-                      <Phone className="h-5 w-5 text-accent" />
-                    </div>
-                    <div>
-                      <p className="text-xs text-muted-foreground">Call or Text</p>
-                      <p className="text-sm font-semibold text-primary">{OFFICE.phone}</p>
-                    </div>
-                  </a>
-
-                  <a
-                    href={`mailto:${OFFICE.email}`}
-                    className="flex items-center gap-3 p-4 rounded-xl border border-border/60 hover:border-accent/40 transition-colors group"
-                  >
-                    <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0 group-hover:bg-accent/20 transition-colors">
-                      <Mail className="h-5 w-5 text-accent" />
-                    </div>
-                    <div>
-                      <p className="text-xs text-muted-foreground">Email Us</p>
-                      <p className="text-sm font-semibold text-primary">{OFFICE.email}</p>
-                    </div>
-                  </a>
-
-                  <Card className="border-accent/30 bg-accent/5">
-                    <CardContent className="p-5">
-                      <div className="flex items-center gap-3 mb-3">
-                        <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0">
-                          <CalendarDays className="h-5 w-5 text-accent" />
-                        </div>
-                        <div>
-                          <p className="text-sm font-medium text-primary">Schedule a Meeting</p>
-                          <p className="text-xs text-muted-foreground">Pick a time that works for you</p>
-                        </div>
-                      </div>
-                      <a
-                        href="https://calendar.app.google/pLYzk4KoBHBjjhgG8"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="block w-full text-center bg-accent text-accent-foreground text-sm font-semibold py-2.5 rounded-lg hover:bg-accent/90 transition-colors"
-                      >
-                        Book a Time Slot →
-                      </a>
-                    </CardContent>
-                  </Card>
-                </div>
-              </div>
-
-              {/* Trust badges */}
-              <div className="rounded-xl border border-border/60 p-5 bg-muted/30 space-y-3">
-                <p className="text-xs font-semibold tracking-widest uppercase text-muted-foreground">
-                  Why Homeowners Choose Us
-                </p>
-                {[
-                  "15+ years of Utah real estate experience",
-                  "Hundreds of homes sold across Utah County",
-                  "Backed by Berkshire Hathaway HomeServices",
-                  "Easy-exit listing — no lock-in contracts",
-                  "Transparent fees, no surprises at closing",
-                ].map((item) => (
-                  <div key={item} className="flex items-start gap-2.5">
-                    <Check className="h-4 w-4 text-accent flex-shrink-0 mt-0.5" />
-                    <p className="text-sm text-muted-foreground">{item}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── Why Now ── */}
-      <section className="py-16 md:py-20 bg-muted/30 border-y border-border/40">
-        <div className="max-w-5xl mx-auto px-6">
-          <div className="text-center mb-12">
-            <p className="text-xs font-semibold tracking-widest uppercase text-accent mb-2">
-              The Smart Way to Sell
-            </p>
-            <h2 className="font-heading text-3xl md:text-4xl text-primary">
-              More Service. Less Commission.
-            </h2>
-          </div>
-          <div className="grid sm:grid-cols-3 gap-6">
-            {WHY_NOW.map(({ icon: Icon, title, body }) => (
-              <div key={title} className="bg-background rounded-2xl border border-border/60 p-6 shadow-sm">
-                <div className="w-11 h-11 rounded-xl bg-accent/10 flex items-center justify-center mb-4">
-                  <Icon className="h-5 w-5 text-accent" />
-                </div>
-                <h3 className="font-heading text-lg font-semibold text-primary mb-2">{title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{body}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ── Packages ── */}
       <section className="py-16 md:py-24 bg-background">
         <div className="max-w-7xl mx-auto px-6">
@@ -424,6 +293,137 @@ export default function ClearCommissionPage() {
                 <span className="text-accent mt-0.5 flex-shrink-0">◆</span>
                 {d}
               </p>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Valuation Form + Contact ── */}
+      <section id="valuation" className="py-16 md:py-24 bg-muted/30 border-y border-border/40 scroll-mt-20">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="grid lg:grid-cols-5 gap-12 lg:gap-16">
+
+            {/* Form */}
+            <div className="lg:col-span-3">
+              <div className="mb-8">
+                <p className="text-xs font-semibold tracking-widest uppercase text-accent mb-2">
+                  Free · No Obligation
+                </p>
+                <h2 className="font-heading text-3xl md:text-4xl text-primary mb-3">
+                  Request Your Free Home Valuation
+                </h2>
+                <p className="text-muted-foreground">
+                  Fill out the form and we&apos;ll prepare a personalized market analysis
+                  of your home and reach out within one business day.
+                </p>
+              </div>
+              <Card className="border-border/50 shadow-lg">
+                <CardContent className="p-8 md:p-10">
+                  <ValuationForm />
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* Sidebar */}
+            <div className="lg:col-span-2 space-y-6">
+              <div>
+                <h3 className="font-heading text-lg font-semibold text-primary mb-4">
+                  Prefer to Talk Now?
+                </h3>
+                <div className="space-y-3">
+                  <a
+                    href={`tel:${OFFICE.phone}`}
+                    className="flex items-center gap-3 p-4 rounded-xl border border-border/60 hover:border-accent/40 transition-colors group"
+                  >
+                    <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0 group-hover:bg-accent/20 transition-colors">
+                      <Phone className="h-5 w-5 text-accent" />
+                    </div>
+                    <div>
+                      <p className="text-xs text-muted-foreground">Call or Text</p>
+                      <p className="text-sm font-semibold text-primary">{OFFICE.phone}</p>
+                    </div>
+                  </a>
+
+                  <a
+                    href={`mailto:${OFFICE.email}`}
+                    className="flex items-center gap-3 p-4 rounded-xl border border-border/60 hover:border-accent/40 transition-colors group"
+                  >
+                    <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0 group-hover:bg-accent/20 transition-colors">
+                      <Mail className="h-5 w-5 text-accent" />
+                    </div>
+                    <div>
+                      <p className="text-xs text-muted-foreground">Email Us</p>
+                      <p className="text-sm font-semibold text-primary">{OFFICE.email}</p>
+                    </div>
+                  </a>
+
+                  <Card className="border-accent/30 bg-accent/5">
+                    <CardContent className="p-5">
+                      <div className="flex items-center gap-3 mb-3">
+                        <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0">
+                          <CalendarDays className="h-5 w-5 text-accent" />
+                        </div>
+                        <div>
+                          <p className="text-sm font-medium text-primary">Schedule a Meeting</p>
+                          <p className="text-xs text-muted-foreground">Pick a time that works for you</p>
+                        </div>
+                      </div>
+                      <a
+                        href="https://calendar.app.google/pLYzk4KoBHBjjhgG8"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block w-full text-center bg-accent text-accent-foreground text-sm font-semibold py-2.5 rounded-lg hover:bg-accent/90 transition-colors"
+                      >
+                        Book a Time Slot →
+                      </a>
+                    </CardContent>
+                  </Card>
+                </div>
+              </div>
+
+              {/* Trust badges */}
+              <div className="rounded-xl border border-border/60 p-5 bg-muted/30 space-y-3">
+                <p className="text-xs font-semibold tracking-widest uppercase text-muted-foreground">
+                  Why Homeowners Choose Us
+                </p>
+                {[
+                  "15+ years of Utah real estate experience",
+                  "Hundreds of homes sold across Utah County",
+                  "Backed by Berkshire Hathaway HomeServices",
+                  "Easy-exit listing — no lock-in contracts",
+                  "Transparent fees, no surprises at closing",
+                ].map((item) => (
+                  <div key={item} className="flex items-start gap-2.5">
+                    <Check className="h-4 w-4 text-accent flex-shrink-0 mt-0.5" />
+                    <p className="text-sm text-muted-foreground">{item}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Why Now ── */}
+      <section className="py-16 md:py-20 bg-background border-t border-border/40">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <p className="text-xs font-semibold tracking-widest uppercase text-accent mb-2">
+              The Smart Way to Sell
+            </p>
+            <h2 className="font-heading text-3xl md:text-4xl text-primary">
+              More Service. Less Commission.
+            </h2>
+          </div>
+          <div className="grid sm:grid-cols-3 gap-6">
+            {WHY_NOW.map(({ icon: Icon, title, body }) => (
+              <div key={title} className="bg-muted/30 rounded-2xl border border-border/60 p-6 shadow-sm">
+                <div className="w-11 h-11 rounded-xl bg-accent/10 flex items-center justify-center mb-4">
+                  <Icon className="h-5 w-5 text-accent" />
+                </div>
+                <h3 className="font-heading text-lg font-semibold text-primary mb-2">{title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{body}</p>
+              </div>
             ))}
           </div>
         </div>
