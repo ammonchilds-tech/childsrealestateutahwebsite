@@ -69,8 +69,8 @@ export async function POST(req: NextRequest) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      from: "Childs Real Estate <onboarding@resend.dev>",
-      to: ["ammonchilds@gmail.com"],
+      from: "Childs Real Estate <noreply@childsrealestateutah.com>",
+      to: ["ammon@childsrealestateutah.com"],
       reply_to: email || undefined,
       subject: `New Home Valuation Request — ${name}`,
       html,
