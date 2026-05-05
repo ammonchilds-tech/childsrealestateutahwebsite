@@ -19,7 +19,7 @@ export async function POST(req: NextRequest) {
 
   try {
     await resend.emails.send({
-      from: "Childs Real Estate <noreply@childsrealestateutah.com>",
+      from: "Childs Real Estate <onboarding@resend.dev>",
       to: ["ammon@childsrealestateutah.com"],
       replyTo: email || undefined,
       subject: `New Home Valuation Request — ${name}`,
