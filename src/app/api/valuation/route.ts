@@ -70,7 +70,7 @@ export async function POST(req: NextRequest) {
     },
     body: JSON.stringify({
       from: "Childs Real Estate <onboarding@resend.dev>",
-      to: ["ammon@childsrealestateutah.com"],
+      to: ["ammonchilds@gmail.com"],
       reply_to: email || undefined,
       subject: `New Home Valuation Request — ${name}`,
       html,
