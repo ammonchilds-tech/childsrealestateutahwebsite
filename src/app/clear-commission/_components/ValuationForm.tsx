@@ -1,21 +1,44 @@
 "use client";
 
 import { useState } from "react";
-import { Send, CheckCircle } from "lucide-react";
+import { Send, CheckCircle, AlertCircle } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 
 export function ValuationForm() {
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState(false);
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setIsSubmitting(true);
-    setTimeout(() => {
-      setIsSubmitting(false);
+    setError(false);
+
+    const form = e.currentTarget;
+    const data = {
+      name: (form.elements.namedItem("val-name") as HTMLInputElement).value,
+      phone: (form.elements.namedItem("val-phone") as HTMLInputElement).value,
+      email: (form.elements.namedItem("val-email") as HTMLInputElement).value,
+      address: (form.elements.namedItem("val-address") as HTMLInputElement).value,
+      timeline: (form.elements.namedItem("val-timeline") as HTMLSelectElement).value,
+      notes: (form.elements.namedItem("val-notes") as HTMLTextAreaElement).value,
+    };
+
+    try {
+      const res = await fetch("/api/valuation", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      if (!res.ok) throw new Error("Failed");
       setSubmitted(true);
-    }, 1200);
+    } catch {
+      setError(true);
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   if (submitted) {
@@ -30,6 +53,27 @@ export function ValuationForm() {
         <p className="text-muted-foreground max-w-sm mx-auto">
           We&apos;ll reach out within one business day to schedule your free, no-obligation home valuation.
         </p>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="text-center py-12">
+        <div className="w-16 h-16 rounded-full bg-red-50 flex items-center justify-center mx-auto mb-4">
+          <AlertCircle className="h-8 w-8 text-red-500" />
+        </div>
+        <h3 className="font-heading text-xl font-semibold text-primary mb-2">
+          Something went wrong
+        </h3>
+        <p className="text-muted-foreground max-w-sm mx-auto mb-6">
+          Please call or text us directly at{" "}
+          <a href="tel:(801) 735-8460" className="text-accent font-medium">(801) 735-8460</a>{" "}
+          and we&apos;ll get you taken care of right away.
+        </p>
+        <Button variant="outline" onClick={() => setError(false)}>
+          Try Again
+        </Button>
       </div>
     );
   }
