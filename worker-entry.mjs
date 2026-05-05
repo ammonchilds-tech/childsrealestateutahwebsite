@@ -24,7 +24,7 @@ export default {
     // This handles /_next/static/*, /images/*, favicon.ico, etc.
     if (env.ASSETS) {
       const assetResponse = await env.ASSETS.fetch(request.clone());
-      if (assetResponse.status !== 404) {
+      if (assetResponse.status !== 404 && assetResponse.status !== 405) {
         return assetResponse;
       }
     }
