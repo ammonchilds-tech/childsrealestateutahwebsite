@@ -120,7 +120,7 @@ const categories = [
   {
     name: "Tax Services",
     vendors: [
-      { business: "Mansker Tax Service CPA", contact: "", phone: "385.482.5470", email: "", services: "Tax Services / CPA" },
+      { business: "Mansker Tax Service", contact: "", phone: "385.482.5470", email: "", services: "Tax Services / CPA" },
     ],
   },
   {

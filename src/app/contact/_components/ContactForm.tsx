@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Send, CheckCircle } from "lucide-react";
+import { Send, CheckCircle, AlertCircle } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import {
@@ -17,15 +17,36 @@ const SUBJECTS = ["Buying", "Selling", "General Inquiry"];
 export function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState(false);
   const [subject, setSubject] = useState("");
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setIsSubmitting(true);
-    setTimeout(() => {
-      setIsSubmitting(false);
+    setError(false);
+
+    const form = e.currentTarget;
+    const data = {
+      name: (form.elements.namedItem("contact-name") as HTMLInputElement).value,
+      email: (form.elements.namedItem("contact-email") as HTMLInputElement).value,
+      phone: (form.elements.namedItem("contact-phone") as HTMLInputElement).value,
+      subject,
+      message: (form.elements.namedItem("contact-message") as HTMLTextAreaElement).value,
+    };
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      if (!res.ok) throw new Error("Failed");
       setSubmitted(true);
-    }, 1200);
+    } catch {
+      setError(true);
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   if (submitted) {
@@ -44,9 +65,30 @@ export function ContactForm() {
         <Button
           variant="outline"
           className="mt-6"
-          onClick={() => setSubmitted(false)}
+          onClick={() => { setSubmitted(false); setSubject(""); }}
         >
           Send Another Message
+        </Button>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="text-center py-16">
+        <div className="w-16 h-16 rounded-full bg-red-50 flex items-center justify-center mx-auto mb-4">
+          <AlertCircle className="h-8 w-8 text-red-500" />
+        </div>
+        <h3 className="font-heading text-xl font-semibold text-primary mb-2">
+          Something went wrong
+        </h3>
+        <p className="text-muted-foreground max-w-md mx-auto mb-6">
+          Please call or text us directly at{" "}
+          <a href="tel:(801) 735-8460" className="text-accent font-medium">(801) 735-8460</a>{" "}
+          and we&apos;ll get you taken care of right away.
+        </p>
+        <Button variant="outline" onClick={() => setError(false)}>
+          Try Again
         </Button>
       </div>
     );
