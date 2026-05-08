@@ -19,5 +19,8 @@
       "tag": "v1",
       "new_sqlite_classes": ["DOQueueHandler", "DOShardedTagCache", "BucketCachePurge"]
     }
+  ],
+  "routes": [
+    { "pattern": "www.childsrealestateutah.com", "custom_domain": true, "zone_name": "childsrealestateutah.com" }
   ]
 }
