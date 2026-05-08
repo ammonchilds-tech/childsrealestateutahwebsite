@@ -1,22 +1,44 @@
 "use client";
 
 import { useState } from "react";
-import { Send, CheckCircle } from "lucide-react";
+import { Send, CheckCircle, AlertCircle } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 
 export function ValuationForm() {
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState(false);
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setIsSubmitting(true);
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
+    setError(false);
+
+    const form = e.currentTarget;
+    const data = {
+      name: (form.elements.namedItem("val-name") as HTMLInputElement).value,
+      phone: (form.elements.namedItem("val-phone") as HTMLInputElement).value,
+      email: (form.elements.namedItem("val-email") as HTMLInputElement).value,
+      address: (form.elements.namedItem("val-address") as HTMLInputElement).value,
+      timeline: (form.elements.namedItem("val-timeline") as HTMLSelectElement).value,
+      notes: (form.elements.namedItem("val-notes") as HTMLTextAreaElement).value,
+    };
+
+    try {
+      const res = await fetch("/api/valuation", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      if (!res.ok) throw new Error("Failed");
       setSubmitted(true);
-    }, 1200);
+    } catch {
+      setError(true);
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   if (submitted) {
@@ -36,90 +58,87 @@ export function ValuationForm() {
     );
   }
 
+  if (error) {
+    return (
+      <div className="text-center py-12">
+        <div className="w-16 h-16 rounded-full bg-red-50 flex items-center justify-center mx-auto mb-4">
+          <AlertCircle className="h-8 w-8 text-red-500" />
+        </div>
+        <h3 className="font-heading text-xl font-semibold text-primary mb-2">
+          Something went wrong
+        </h3>
+        <p className="text-muted-foreground max-w-sm mx-auto mb-6">
+          Please call or text us directly at{" "}
+          <a href="tel:(801) 735-8460" className="text-accent font-medium">(801) 735-8460</a>{" "}
+          and we&apos;ll get you taken care of right away.
+        </p>
+        <Button variant="outline" onClick={() => setError(false)}>
+          Try Again
+        </Button>
+      </div>
+    );
+  }
+
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
+      <div className="grid sm:grid-cols-2 gap-4">
+        <div>
+          <label htmlFor="val-name" className="block text-sm font-medium text-primary mb-1.5">
+            Full Name *
+          </label>
+          <Input id="val-name" placeholder="John Smith" required />
+        </div>
+        <div>
+          <label htmlFor="val-phone" className="block text-sm font-medium text-primary mb-1.5">
+            Phone *
+          </label>
+          <Input id="val-phone" type="tel" placeholder="(801) 555-0123" required />
+        </div>
+      </div>
+
       <div>
-        <label
-          htmlFor="val-address"
-          className="block text-sm font-medium text-primary mb-1.5"
-        >
+        <label htmlFor="val-email" className="block text-sm font-medium text-primary mb-1.5">
+          Email
+        </label>
+        <Input id="val-email" type="email" placeholder="you@email.com" />
+      </div>
+
+      <div>
+        <label htmlFor="val-address" className="block text-sm font-medium text-primary mb-1.5">
           Property Address *
         </label>
-        <Input
-          id="val-address"
-          placeholder="123 Main Street, City, UT"
-          required
-        />
+        <Input id="val-address" placeholder="123 Main St, American Fork, UT" required />
       </div>
-      <div className="grid grid-cols-3 gap-4">
-        <div>
-          <label
-            htmlFor="val-beds"
-            className="block text-sm font-medium text-primary mb-1.5"
-          >
-            Beds
-          </label>
-          <Input
-            id="val-beds"
-            type="number"
-            placeholder="4"
-            min={0}
-            required
-          />
-        </div>
-        <div>
-          <label
-            htmlFor="val-baths"
-            className="block text-sm font-medium text-primary mb-1.5"
-          >
-            Baths
-          </label>
-          <Input
-            id="val-baths"
-            type="number"
-            placeholder="3"
-            min={0}
-            step={0.5}
-            required
-          />
-        </div>
-        <div>
-          <label
-            htmlFor="val-sqft"
-            className="block text-sm font-medium text-primary mb-1.5"
-          >
-            Sqft
-          </label>
-          <Input
-            id="val-sqft"
-            type="number"
-            placeholder="3,200"
-            min={0}
-            required
-          />
-        </div>
-      </div>
+
       <div>
-        <label
-          htmlFor="val-email"
-          className="block text-sm font-medium text-primary mb-1.5"
-        >
-          Your Email *
+        <label htmlFor="val-timeline" className="block text-sm font-medium text-primary mb-1.5">
+          Selling Timeline
         </label>
-        <Input
-          id="val-email"
-          type="email"
-          placeholder="you@email.com"
-          required
+        <select
+          id="val-timeline"
+          className="flex w-full rounded-md border border-border bg-white px-3 py-2 text-sm ring-offset-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
+        >
+          <option value="">Select a timeline</option>
+          <option value="asap">As soon as possible</option>
+          <option value="1-3months">1 – 3 months</option>
+          <option value="3-6months">3 – 6 months</option>
+          <option value="6plus">6+ months / Just exploring</option>
+        </select>
+      </div>
+
+      <div>
+        <label htmlFor="val-notes" className="block text-sm font-medium text-primary mb-1.5">
+          Anything else we should know?
+        </label>
+        <textarea
+          id="val-notes"
+          rows={3}
+          placeholder="Updates, upgrades, special circumstances..."
+          className="flex w-full rounded-md border border-border bg-white px-3 py-2 text-sm ring-offset-white placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 resize-none"
         />
       </div>
-      <Button
-        type="submit"
-        variant="accent"
-        size="lg"
-        className="w-full mt-2"
-        disabled={isSubmitting}
-      >
+
+      <Button type="submit" variant="accent" size="lg" className="w-full mt-2" disabled={isSubmitting}>
         {isSubmitting ? (
           <span className="flex items-center gap-2">
             <span className="h-4 w-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
@@ -132,6 +151,7 @@ export function ValuationForm() {
           </span>
         )}
       </Button>
+
       <p className="text-xs text-muted-foreground text-center">
         No obligation. Your information is kept confidential.
       </p>
