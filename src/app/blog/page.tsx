@@ -21,6 +21,15 @@ export const metadata: Metadata = {
 
 const POSTS = [
   {
+    slug: "timing-the-market-vs-time-in-the-market",
+    title: "Timing the Market vs. Time in the Market — Why Waiting Is Costing You More Than You Think",
+    excerpt:
+      "Buyers and sellers who keep waiting for the 'perfect moment' are quietly losing money every month. Here's the data on why time in the market almost always beats trying to time it.",
+    date: "May 11, 2026",
+    readTime: "7 min read",
+    category: "Buyers & Sellers",
+  },
+  {
     slug: "how-interest-rates-affect-your-buying-power",
     title: "How Interest Rates Affect Your Buying Power — and How Smart Buyers Win Anyway",
     excerpt:
