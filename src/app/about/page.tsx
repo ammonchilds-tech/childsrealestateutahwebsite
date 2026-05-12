@@ -88,8 +88,10 @@ export default function AboutPage() {
             About {SITE_NAME}
           </h1>
           <p className="text-white/70 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-            Trusted partners in Utah real estate, guided by integrity,
-            expertise, and a genuine passion for helping families find home.
+            Childs Real Estate are Utah&apos;s premier listing agents — helping
+            homeowners across the state sell smarter, faster, and for more.
+            With deep local market expertise and a proven track record,
+            we&apos;re the team sellers trust when it matters most.
           </p>
         </div>
       </section>
@@ -306,18 +308,18 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  {SITE_NAME} was founded with a simple belief: buying or
-                  selling a home should be one of life&apos;s most rewarding
-                  experiences. Ammon and Tasha Childs built their practice on
-                  this principle, combining deep local knowledge with a
-                  white-glove approach to every transaction.
+                  As Utah real estate listing specialists, {SITE_NAME} was
+                  founded on a simple belief: selling a home should be one of
+                  life&apos;s most rewarding experiences. Ammon and Tasha Childs
+                  built their practice on this principle, combining deep local
+                  knowledge with a white-glove approach to every transaction.
                 </p>
                 <p>
-                  Based in Utah County, we specialize in luxury and residential
-                  real estate across the Wasatch Front. From first-time
-                  homebuyers to seasoned investors, we bring the same level of
-                  dedication, market insight, and personal attention to every
-                  client relationship.
+                  Based in Utah County, our expert home sellers&apos; agents
+                  specialize in listing representation across the Wasatch Front.
+                  From first-time sellers to seasoned homeowners, we bring the
+                  same level of dedication, market insight, and personal
+                  attention to every client relationship.
                 </p>
                 <p>
                   With over 26 years of combined experience and hundreds of
