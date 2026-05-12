@@ -52,6 +52,7 @@ export const NAV_LINKS: Array<{ label: string; href: string; external?: boolean 
   { label: "Vendors", href: "/vendors" },
   { label: "Calculator", href: "/mortgage-calculator" },
   { label: "About", href: "/about" },
+  { label: "FAQ", href: "/faq" },
 ];
 
 export const FEATURED_AREAS = [
