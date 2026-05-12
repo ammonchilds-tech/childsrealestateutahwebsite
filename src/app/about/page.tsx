@@ -325,6 +325,9 @@ export default function AboutPage() {
                   expertise to deliver exceptional results. We don&apos;t just
                   close deals — we build lasting relationships.
                 </p>
+                <p>
+                  Childs Real Estate specializes in listing representation across Utah. As top listing agents, we focus exclusively on helping homeowners maximize their sale price, minimize days on market, and navigate every step of the selling process with confidence.
+                </p>
               </div>
             </div>
             <div className="grid grid-cols-2 gap-4">

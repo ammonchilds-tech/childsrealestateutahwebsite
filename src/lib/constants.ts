@@ -1,6 +1,6 @@
 export const SITE_NAME = "Childs Real Estate";
 export const SITE_DESCRIPTION =
-  "Ammon & Tasha Childs help buyers and sellers across Utah County and the Salt Lake Valley. Expert guidance, proven results, backed by Berkshire Hathaway HomeServices Elite Real Estate.";
+  "Childs Real Estate are Utah's premier listing agents. We help homeowners sell faster and for more — with expert pricing, marketing, and local market knowledge.";
 export const SITE_URL = "https://childsrealestateutah.com";
 
 export const OFFICE = {
