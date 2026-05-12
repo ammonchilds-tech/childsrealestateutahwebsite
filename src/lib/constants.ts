@@ -1,7 +1,7 @@
 export const SITE_NAME = "Childs Real Estate";
 export const SITE_DESCRIPTION =
   "Childs Real Estate are Utah's premier listing agents. We help homeowners sell faster and for more — with expert pricing, marketing, and local market knowledge.";
-export const SITE_URL = "https://childsrealestateutah.com";
+export const SITE_URL = "https://www.childsrealestateutah.com";
 
 export const OFFICE = {
   name: "Berkshire Hathaway HomeServices Elite Real Estate",
