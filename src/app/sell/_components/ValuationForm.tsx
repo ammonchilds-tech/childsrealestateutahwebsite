@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Send, CheckCircle, AlertCircle } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { OFFICE } from "@/lib/constants";
 
 export function ValuationForm() {
   const [submitted, setSubmitted] = useState(false);
@@ -69,7 +70,7 @@ export function ValuationForm() {
         </h3>
         <p className="text-muted-foreground max-w-sm mx-auto mb-6">
           Please call or text us directly at{" "}
-          <a href="tel:(801) 735-8460" className="text-accent font-medium">(801) 735-8460</a>{" "}
+          <a href={`tel:${OFFICE.phone}`} className="text-accent font-medium">{OFFICE.phone}</a>{" "}
           and we&apos;ll get you taken care of right away.
         </p>
         <Button variant="outline" onClick={() => setError(false)}>

@@ -5,7 +5,7 @@ export const SITE_URL = "https://childsrealestateutah.com";
 
 export const OFFICE = {
   name: "Berkshire Hathaway HomeServices Elite Real Estate",
-  address: "825 E 1180 S 300, American Fork, UT 84003",
+  address: "825 E 1180 S Ste 300, American Fork, UT 84003",
   phone: "(801) 735-8460",
   email: "ammon@childsrealestateutah.com",
   lat: 40.3766,

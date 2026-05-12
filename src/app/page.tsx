@@ -64,7 +64,7 @@ const localBusinessJsonLd = {
   email: OFFICE.email,
   address: {
     "@type": "PostalAddress",
-    streetAddress: "825 E 1180 S 300",
+    streetAddress: "825 E 1180 S Ste 300",
     addressLocality: "American Fork",
     addressRegion: "UT",
     postalCode: "84003",

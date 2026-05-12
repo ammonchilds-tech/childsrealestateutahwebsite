@@ -451,7 +451,7 @@ export default function AboutPage() {
                 {/* Interactive Map */}
                 <div className="min-h-[280px] md:min-h-full">
                   <iframe
-                    src="https://www.google.com/maps?q=825+E+1180+S+300,+American+Fork,+UT+84003&output=embed"
+                    src="https://www.google.com/maps?q=825+E+1180+S+Ste+300,+American+Fork,+UT+84003&output=embed"
                     width="100%"
                     height="100%"
                     style={{ minHeight: "280px", border: 0 }}
