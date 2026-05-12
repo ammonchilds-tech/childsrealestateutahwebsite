@@ -4,6 +4,7 @@ import { useState, useEffect, useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { Star, Quote } from "lucide-react";
+import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { TESTIMONIALS } from "@/lib/constants";
 
@@ -128,8 +129,15 @@ export function Testimonials() {
           ))}
         </div>
 
-        {/* Google reviews CTA */}
-        <div className="text-center mt-10">
+        {/* CTAs */}
+        <div className="text-center mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <Link
+            href="/testimonials"
+            className="text-sm font-medium text-accent hover:underline underline-offset-4 transition-colors"
+          >
+            See all {TESTIMONIALS.length} reviews →
+          </Link>
+          <span className="hidden sm:inline text-border">|</span>
           <a
             href="https://www.google.com/search?q=Childs+Real+Estate&stick=H4sIAAAAAAAA_-NgU1I1qLAwN0mxMLZMTjQySjFONEqzMqgwNLNMMbFIMzNNtDQ0sEhKWcQq5JyRmZNSrBCUmpij4FpckliSCgA2HWwFPgAAAA&hl=en&mat=CTPrws4sXXiMElcBTVDHntFmCXBfP8pcSgcuv8S0W4ONlrQkMlPz_0YYw1oyp2MQfVMqizjxlFK5zT0zEDuKJAzJIplra5s-oGfkdvnxLYdqWBjIqyzj5OheeMrggUkpHVA&authuser=0"
             target="_blank"
@@ -142,7 +150,7 @@ export function Testimonials() {
               <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
               <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
             </svg>
-            See all our reviews on Google
+            View on Google
           </a>
         </div>
       </div>
