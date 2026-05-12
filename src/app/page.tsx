@@ -1,6 +1,23 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { TrendingUp, Sparkles, Users, Home, Star } from "lucide-react";
 import { SITE_NAME, SITE_DESCRIPTION, SITE_URL, OFFICE } from "@/lib/constants";
+
+export const metadata: Metadata = {
+  title: `Utah's Top Listing Agents | ${SITE_NAME}`,
+  description: SITE_DESCRIPTION,
+  openGraph: {
+    title: `Utah's Top Listing Agents | ${SITE_NAME}`,
+    description: SITE_DESCRIPTION,
+    url: "/",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `Utah's Top Listing Agents | ${SITE_NAME}`,
+    description: SITE_DESCRIPTION,
+  },
+};
 import { SellerHero } from "@/components/home/SellerHero";
 import { MarketStats } from "@/components/home/MarketStats";
 import { PromoBanner } from "@/components/home/PromoBanner";
@@ -133,6 +150,9 @@ export default function HomePage() {
             <p className="mt-6 text-muted-foreground text-lg max-w-2xl mx-auto">
               When you list with us, you get a full-service team dedicated to
               getting you the best outcome — not just a sign in the yard.
+            </p>
+            <p className="mt-4 text-muted-foreground text-base max-w-2xl mx-auto">
+              Childs Real Estate specializes in listing representation across Utah. As top listing agents, we focus exclusively on helping homeowners maximize their sale price, minimize days on market, and navigate every step of the selling process with confidence.
             </p>
           </div>
 

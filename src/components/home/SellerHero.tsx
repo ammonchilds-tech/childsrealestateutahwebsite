@@ -44,8 +44,8 @@ export function SellerHero() {
 
         {/* Main heading */}
         <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white leading-[1.1] mb-6">
-          Get Top Dollar for
-          <span className="block text-accent mt-2">Your Utah Home</span>
+          Utah&apos;s Premier
+          <span className="block text-accent mt-2">Listing Specialists</span>
         </h1>
 
         {/* Subtitle */}
