@@ -5,37 +5,37 @@ import { Badge } from "@/components/ui/badge";
 
 const PACKAGES = [
   {
-    name: "Foundation",
+    name: "Gold",
     fee: "1%",
-    minFee: "$5,000 minimum",
+    minFee: null,
     highlights: [
-      "MLS + full web syndication",
-      "Professional photography",
-      "Expert negotiation & closing",
+      "HDR photos + MLS + 500+ websites",
+      "Professional market analysis",
+      "24/7 showing service + expert negotiation",
     ],
     badge: null,
     featured: false,
   },
   {
-    name: "Distinction",
+    name: "Diamond",
     fee: "1.99%",
     minFee: null,
     highlights: [
-      "Everything in Foundation",
-      "Staging consultation + social media",
-      "Email blast + open house",
+      "Everything in Gold",
+      "Drone photos + dedicated showing agent",
+      "Open house + weekly social media ads",
     ],
     badge: "Most Popular",
     featured: true,
   },
   {
-    name: "Prestige",
+    name: "Platinum",
     fee: "2.49%",
     minFee: null,
     highlights: [
-      "Everything in Distinction",
-      "Zillow Showcase + video/Reels",
-      "Coming soon campaign + paid ads",
+      "Everything in Diamond",
+      "Zillow Showcase ★ + 3D home tour",
+      "Virtual staging + paid social ads",
     ],
     badge: "White-Glove",
     featured: false,
@@ -49,7 +49,7 @@ export function ListingPackages() {
         {/* Header */}
         <div className="text-center mb-12">
           <p className="text-accent text-sm font-medium tracking-[0.2em] uppercase mb-3">
-            The Childs Clear Commission Program
+            Smart Seller Programs
           </p>
           <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl text-foreground">
             More Service. Less Commission.

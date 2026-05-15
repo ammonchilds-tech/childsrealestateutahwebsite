@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Check, Minus, Phone, Mail, CalendarDays, TrendingDown, DollarSign, Shield, Star } from "lucide-react";
+import { Check, Phone, Mail, CalendarDays, TrendingDown, DollarSign, Shield, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
@@ -17,50 +17,51 @@ export const metadata: Metadata = {
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
 
-const FOUNDATION_INCLUDED = [
-  "MLS + full web syndication",
-  "Zillow, Realtor.com & Homes.com",
-  "Professional photography (25 photos)",
-  "Yard sign + electronic lockbox",
-  "Seller's net sheet",
-  "Professional contract negotiations",
-  "Full closing coordination",
-  "Easy-exit listing agreement",
-];
-
-const FOUNDATION_NOT_INCLUDED = [
-  "Social media marketing",
-  "Open house",
-  "Video / Instagram Reel",
-  "Zillow Showcase",
-];
-
-const DISTINCTION_EXTRAS = [
+const GOLD_FEATURES = [
+  "HDR interior & exterior photos",
   "Professional market analysis",
-  "Social media marketing (Instagram + Facebook)",
-  "Email blast to buyer agent network",
-  "Property highlights flyer",
-  "1 hosted open house",
-  "Easy-exit listing agreement",
+  "Supra lock box",
+  "Yard sign",
+  "Listed on MLS and 500+ websites",
+  "24/7 showing service",
+  "Professional contract negotiation",
 ];
 
-const DISTINCTION_NOT_INCLUDED = [
-  "Video / Instagram Reel",
-  "Zillow Showcase",
-  "Coming soon pre-launch",
-  "Just Listed postcards",
+const GOLD_DISCLOSURES = [
+  "Owner shows unrepresented buyers",
+  "If Ammon Childs brings buyer, 1% fee added at closing",
+  "All buyer agent fees negotiated with offers",
+  "$295 transaction fee due at closing",
 ];
 
-const PRESTIGE_EXTRAS = [
-  "Zillow Showcase (premium placement)",
-  "Professional video + Instagram Reel",
-  "Coming soon pre-launch campaign",
-  "500+ Just Listed postcards to neighborhood",
-  "2 hosted open houses",
-  "Paid social ad boost",
-  "Weekly marketing activity report",
-  "Priority response & white-glove service",
-  "Easy-exit listing agreement",
+const DIAMOND_EXTRAS = [
+  "Professional drone photos",
+  "Dedicated showing agent assigned to your property",
+  "Featured open house",
+  "Weekly social media ads",
+];
+
+const DIAMOND_DISCLOSURES = [
+  "Childs Real Estate shows unrepresented buyers",
+  "If Ammon Childs brings buyer, 0.5% fee added at closing",
+  "All buyer agent fees negotiated with offers",
+  "$295 transaction fee due at closing",
+];
+
+const PLATINUM_EXTRAS = [
+  "Showcase listing on Zillow ★",
+  "Interactive 3D home tour",
+  "Virtual staging",
+  "Weekly market updates via call, text, or email",
+  "Paid social media ads",
+  "Multiple open houses",
+];
+
+const PLATINUM_DISCLOSURES = [
+  "Childs Real Estate shows unrepresented buyers",
+  "If Ammon Childs brings buyer, 0.5% fee added at closing",
+  "All buyer agent fees negotiated with offers",
+  "$295 transaction fee due at closing",
 ];
 
 const WHY_NOW = [
@@ -107,11 +108,10 @@ function IncludedItem({ text }: { text: string }) {
   );
 }
 
-function ExcludedItem({ text, light = false }: { text: string; light?: boolean }) {
+function DisclosureItem({ text, light = false }: { text: string; light?: boolean }) {
   return (
-    <li className="flex items-start gap-2.5 text-sm">
-      <Minus className={`h-4 w-4 flex-shrink-0 mt-0.5 ${light ? "text-white/25" : "text-muted-foreground/40"}`} />
-      <span className={light ? "text-white/30" : "text-muted-foreground/50"}>{text}</span>
+    <li className={`text-xs ${light ? "text-white/40" : "text-muted-foreground/60"}`}>
+      {text}
     </li>
   );
 }
@@ -140,7 +140,7 @@ export default function ClearCommissionPage() {
           <div className="flex items-center justify-center gap-3 mb-6">
             <div className="h-px w-12 bg-accent/60" />
             <span className="text-accent text-sm font-medium tracking-[0.2em] uppercase">
-              The Childs Clear Commission Program
+              Smart Seller Programs
             </span>
             <div className="h-px w-12 bg-accent/60" />
           </div>
@@ -176,7 +176,7 @@ export default function ClearCommissionPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
             <p className="text-xs font-semibold tracking-widest uppercase text-accent mb-2">
-              Variable Listing Program
+              Smart Seller Programs
             </p>
             <h2 className="font-heading text-3xl md:text-4xl text-primary mb-3">
               Choose Your Level of Service
@@ -189,26 +189,24 @@ export default function ClearCommissionPage() {
 
           <div className="grid md:grid-cols-3 gap-6 lg:gap-8 items-start">
 
-            {/* Foundation */}
+            {/* Gold */}
             <div className="bg-background rounded-2xl border border-border/60 p-8 flex flex-col shadow-sm">
               <div className="mb-6 pb-6 border-b border-border/50">
                 <p className="text-xs font-medium tracking-widest uppercase text-muted-foreground mb-1">Listing Fee</p>
-                <h3 className="font-heading text-3xl text-foreground mb-3">Foundation</h3>
+                <h3 className="font-heading text-3xl text-foreground mb-3">Gold</h3>
                 <div className="flex items-baseline gap-1">
                   <span className="font-heading text-5xl text-accent font-semibold">1%</span>
                   <span className="text-muted-foreground text-sm">listing fee</span>
                 </div>
-                <p className="text-xs text-muted-foreground italic mt-1">Minimum fee: $5,000</p>
               </div>
               <div className="flex-1 space-y-2.5">
                 <p className="text-xs font-semibold tracking-widest uppercase text-accent mb-3">What&apos;s Included</p>
                 <ul className="space-y-2.5">
-                  {FOUNDATION_INCLUDED.map((f) => <IncludedItem key={f} text={f} />)}
+                  {GOLD_FEATURES.map((f) => <IncludedItem key={f} text={f} />)}
                 </ul>
                 <div className="pt-4 border-t border-border/40">
-                  <p className="text-xs font-semibold tracking-widest uppercase text-muted-foreground/60 mb-3">Not Included</p>
-                  <ul className="space-y-2.5">
-                    {FOUNDATION_NOT_INCLUDED.map((f) => <ExcludedItem key={f} text={f} />)}
+                  <ul className="space-y-1.5">
+                    {GOLD_DISCLOSURES.map((d) => <DisclosureItem key={d} text={d} />)}
                   </ul>
                 </div>
               </div>
@@ -217,7 +215,7 @@ export default function ClearCommissionPage() {
               </Button>
             </div>
 
-            {/* Distinction */}
+            {/* Diamond */}
             <div className="bg-primary rounded-2xl border-2 border-primary p-8 flex flex-col relative shadow-xl">
               <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
                 <Badge variant="accent" className="text-xs font-semibold px-4 py-1 rounded-full shadow">
@@ -226,16 +224,16 @@ export default function ClearCommissionPage() {
               </div>
               <div className="mb-6 pb-6 border-b border-white/15">
                 <p className="text-xs font-medium tracking-widest uppercase text-white/50 mb-1">Listing Fee</p>
-                <h3 className="font-heading text-3xl text-white mb-3">Distinction</h3>
+                <h3 className="font-heading text-3xl text-white mb-3">Diamond</h3>
                 <div className="flex items-baseline gap-1">
                   <span className="font-heading text-5xl text-accent font-semibold">1.99%</span>
                   <span className="text-white/60 text-sm">listing fee</span>
                 </div>
               </div>
               <div className="flex-1 space-y-2.5">
-                <p className="text-xs font-semibold tracking-widest uppercase text-accent/80 mb-3">Everything in Foundation, plus:</p>
+                <p className="text-xs font-semibold tracking-widest uppercase text-accent/80 mb-3">Everything in Gold, plus:</p>
                 <ul className="space-y-2.5">
-                  {DISTINCTION_EXTRAS.map((f) => (
+                  {DIAMOND_EXTRAS.map((f) => (
                     <li key={f} className="flex items-start gap-2.5 text-sm">
                       <Check className="h-4 w-4 text-accent flex-shrink-0 mt-0.5" />
                       <span className="text-white/90">{f}</span>
@@ -243,9 +241,8 @@ export default function ClearCommissionPage() {
                   ))}
                 </ul>
                 <div className="pt-5 mt-5 border-t border-white/15">
-                  <p className="text-xs font-semibold tracking-widest uppercase text-white/30 mb-3">Not Included</p>
-                  <ul className="space-y-2.5">
-                    {DISTINCTION_NOT_INCLUDED.map((f) => <ExcludedItem key={f} text={f} light />)}
+                  <ul className="space-y-1.5">
+                    {DIAMOND_DISCLOSURES.map((d) => <DisclosureItem key={d} text={d} light />)}
                   </ul>
                 </div>
               </div>
@@ -254,7 +251,7 @@ export default function ClearCommissionPage() {
               </Button>
             </div>
 
-            {/* Prestige */}
+            {/* Platinum */}
             <div className="bg-background rounded-2xl border-2 border-accent/50 p-8 flex flex-col relative shadow-lg">
               <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
                 <Badge className="text-xs font-semibold px-4 py-1 rounded-full shadow bg-accent/20 text-accent border border-accent/40">
@@ -263,17 +260,22 @@ export default function ClearCommissionPage() {
               </div>
               <div className="mb-6 pb-6 border-b border-border/50">
                 <p className="text-xs font-medium tracking-widest uppercase text-muted-foreground mb-1">Listing Fee</p>
-                <h3 className="font-heading text-3xl text-foreground mb-3">Prestige</h3>
+                <h3 className="font-heading text-3xl text-foreground mb-3">Platinum</h3>
                 <div className="flex items-baseline gap-1">
                   <span className="font-heading text-5xl text-accent font-semibold">2.49%</span>
                   <span className="text-muted-foreground text-sm">listing fee</span>
                 </div>
               </div>
               <div className="flex-1 space-y-2.5">
-                <p className="text-xs font-semibold tracking-widest uppercase text-accent mb-3">Everything in Distinction, plus:</p>
+                <p className="text-xs font-semibold tracking-widest uppercase text-accent mb-3">Everything in Diamond, plus:</p>
                 <ul className="space-y-2.5">
-                  {PRESTIGE_EXTRAS.map((f) => <IncludedItem key={f} text={f} />)}
+                  {PLATINUM_EXTRAS.map((f) => <IncludedItem key={f} text={f} />)}
                 </ul>
+                <div className="pt-5 mt-5 border-t border-border/40">
+                  <ul className="space-y-1.5">
+                    {PLATINUM_DISCLOSURES.map((d) => <DisclosureItem key={d} text={d} />)}
+                  </ul>
+                </div>
               </div>
               <Button asChild variant="accent" className="mt-8 w-full">
                 <a href="#valuation">Get Started</a>
@@ -281,11 +283,12 @@ export default function ClearCommissionPage() {
             </div>
           </div>
 
-          {/* Disclaimers */}
+          {/* Notes & Disclaimers */}
           <div className="mt-10 max-w-3xl mx-auto border border-border/60 rounded-xl px-6 py-5 bg-muted/40 space-y-2">
             {[
+              "★ Homes featured on Zillow Showcase sell for 2% more on average.",
+              "Seller can cancel anytime.",
               "Buyer's agent commission is negotiated separately and is not included in the listing fee above.",
-              "Foundation package minimum fee: $5,000 regardless of sale price.",
               "Commission rates are negotiable and not set by law.",
               "All fees subject to listing agreement terms.",
             ].map((d) => (
