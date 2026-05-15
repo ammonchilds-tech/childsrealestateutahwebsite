@@ -8,7 +8,7 @@ export function PromoBanner() {
         <Sparkles className="h-5 w-5 flex-shrink-0" />
         <p className="text-base font-semibold">
           <span className="font-bold">Limited Time Offer:</span> List with us and get everything in our{" "}
-          <span className="font-bold">Prestige package</span> for the price of Distinction — just{" "}
+          <span className="font-bold">Platinum package</span> for the price of Diamond — just{" "}
           <span className="font-bold">2%</span>.
         </p>
         <Link
