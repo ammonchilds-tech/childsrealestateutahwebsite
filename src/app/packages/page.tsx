@@ -1,66 +1,64 @@
 import Link from "next/link";
-import { Check, Minus, ArrowRight, Phone } from "lucide-react";
+import { Check, Minus, ArrowRight, Phone, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { OFFICE, SITE_URL } from "@/lib/constants";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Listing Service Packages | The Childs Clear Commission Program",
+  title: "Listing Service Packages | Smart Seller Programs",
   description:
-    "Compare our Foundation, Distinction, and Prestige listing packages. Transparent flat-rate commissions — more service, less cost. Serving Utah County and the Salt Lake Valley.",
+    "Compare our Gold, Diamond, and Platinum Smart Seller Programs. Transparent flat-rate commissions — more service, less cost. Serving Utah County and the Salt Lake Valley.",
   alternates: { canonical: `${SITE_URL}/packages` },
 };
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
-const FOUNDATION_EXPOSURE = [
-  "MLS + full web syndication",
-  "Zillow, Realtor.com & Homes.com",
-  "Professional photography (25 photos)",
-  "Yard sign + electronic lockbox",
-];
-
-const FOUNDATION_TRANSACTION = [
-  "Seller's net sheet",
-  "Professional contract negotiations",
-  "Full closing coordination",
-  "Easy-exit listing agreement",
-];
-
-const FOUNDATION_NOT_INCLUDED = [
-  "Social media marketing",
-  "Open house",
-  "Video / Instagram Reel",
-  "Zillow Showcase",
-];
-
-const DISTINCTION_EXTRAS = [
+const GOLD_EXPOSURE = [
+  "HDR interior/exterior photos",
   "Professional market analysis",
-  "Social media marketing (Instagram + Facebook)",
-  "Email blast to buyer agent network",
-  "Property highlights flyer",
-  "1 hosted open house",
-  "Easy-exit listing agreement",
+  "Supra lock box",
+  "Yard sign",
+  "Listed on MLS and 500+ websites",
+  "24/7 showing service",
+  "Professional contract negotiation",
 ];
 
-const DISTINCTION_NOT_INCLUDED = [
-  "Video / Instagram Reel",
+const GOLD_TRANSACTION = [
+  "Owner shows unrepresented buyers",
+  "If Ammon brings buyer, 1% fee added at closing",
+  "Buyer agent fees negotiated with offers",
+  "$295 transaction fee due at closing",
+];
+
+const GOLD_NOT_INCLUDED = [
+  "Drone photos",
+  "Dedicated showing agent",
+  "Open house",
   "Zillow Showcase",
-  "Coming soon pre-launch",
-  "Just Listed postcards",
 ];
 
-const PRESTIGE_EXTRAS = [
-  "Zillow Showcase (premium placement)",
-  "Professional video + Instagram Reel",
-  "Coming soon pre-launch campaign",
-  "500+ Just Listed postcards to neighborhood",
-  "2 hosted open houses",
-  "Paid social ad boost",
-  "Weekly marketing activity report",
-  "Priority response & white-glove service",
-  "Easy-exit listing agreement",
+const DIAMOND_EXTRAS = [
+  "Professional drone photos",
+  "Dedicated showing agent assigned to your property",
+  "Featured open house",
+  "Weekly social media ads",
+];
+
+const DIAMOND_NOT_INCLUDED = [
+  "Interactive 3D home tour",
+  "Virtual staging",
+  "Zillow Showcase",
+  "Paid social media ads",
+];
+
+const PLATINUM_EXTRAS = [
+  "Showcase listing on Zillow ★",
+  "Interactive 3D home tour",
+  "Virtual staging",
+  "Weekly market updates via call, text, or email",
+  "Paid social media ads",
+  "Multiple open houses",
 ];
 
 // ─── Sub-components ──────────────────────────────────────────────────────────
@@ -115,12 +113,12 @@ export default function PackagesPage() {
           <div className="flex items-center justify-center gap-3 mb-6">
             <div className="h-px w-12 bg-accent/60" />
             <span className="text-accent text-sm font-medium tracking-[0.2em] uppercase">
-              The Childs Clear Commission Program
+              Childs Real Estate
             </span>
             <div className="h-px w-12 bg-accent/60" />
           </div>
           <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl text-white leading-tight mb-4">
-            Listing Service Packages
+            Smart Seller Programs
           </h1>
           <p className="text-white/70 text-lg md:text-xl max-w-2xl mx-auto mb-6">
             Choose the level of marketing and service that&apos;s right for your home.
@@ -141,32 +139,31 @@ export default function PackagesPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-3 gap-6 lg:gap-8 items-start">
 
-            {/* ── Foundation ── */}
+            {/* ── Gold ── */}
             <div className="bg-background rounded-2xl border border-border/60 p-8 flex flex-col shadow-sm">
               <div className="mb-6 pb-6 border-b border-border/50">
                 <p className="text-xs font-medium tracking-widest uppercase text-muted-foreground mb-1">
                   Listing Fee
                 </p>
-                <h2 className="font-heading text-3xl text-foreground mb-3">Foundation</h2>
+                <h2 className="font-heading text-3xl text-foreground mb-3">Gold</h2>
                 <div className="flex items-baseline gap-1">
                   <span className="font-heading text-5xl text-accent font-semibold">1%</span>
                   <span className="text-muted-foreground text-sm">listing fee</span>
                 </div>
-                <p className="text-xs text-muted-foreground italic mt-1">Minimum fee: $5,000</p>
               </div>
 
               <div className="flex-1 space-y-6">
                 <div>
-                  <SectionLabel>Listing &amp; Exposure</SectionLabel>
+                  <SectionLabel>What&apos;s Included</SectionLabel>
                   <ul className="space-y-2.5">
-                    {FOUNDATION_EXPOSURE.map((f) => <IncludedItem key={f} text={f} />)}
+                    {GOLD_EXPOSURE.map((f) => <IncludedItem key={f} text={f} />)}
                   </ul>
                 </div>
 
                 <div>
-                  <SectionLabel>Transaction Support</SectionLabel>
+                  <SectionLabel>Fine Print</SectionLabel>
                   <ul className="space-y-2.5">
-                    {FOUNDATION_TRANSACTION.map((f) => <IncludedItem key={f} text={f} />)}
+                    {GOLD_TRANSACTION.map((f) => <IncludedItem key={f} text={f} />)}
                   </ul>
                 </div>
 
@@ -175,7 +172,7 @@ export default function PackagesPage() {
                     Not Included
                   </p>
                   <ul className="space-y-2.5">
-                    {FOUNDATION_NOT_INCLUDED.map((f) => <ExcludedItem key={f} text={f} />)}
+                    {GOLD_NOT_INCLUDED.map((f) => <ExcludedItem key={f} text={f} />)}
                   </ul>
                 </div>
               </div>
@@ -185,7 +182,7 @@ export default function PackagesPage() {
               </Button>
             </div>
 
-            {/* ── Distinction ── */}
+            {/* ── Diamond ── */}
             <div className="bg-primary rounded-2xl border-2 border-primary p-8 flex flex-col relative shadow-xl">
               <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
                 <Badge variant="accent" className="text-xs font-semibold px-4 py-1 rounded-full shadow">
@@ -197,7 +194,7 @@ export default function PackagesPage() {
                 <p className="text-xs font-medium tracking-widest uppercase text-white/50 mb-1">
                   Listing Fee
                 </p>
-                <h2 className="font-heading text-3xl text-white mb-3">Distinction</h2>
+                <h2 className="font-heading text-3xl text-white mb-3">Diamond</h2>
                 <div className="flex items-baseline gap-1">
                   <span className="font-heading text-5xl text-accent font-semibold">1.99%</span>
                   <span className="text-white/60 text-sm">listing fee</span>
@@ -205,9 +202,9 @@ export default function PackagesPage() {
               </div>
 
               <div className="flex-1 space-y-2.5">
-                <SectionLabel light>Everything in Foundation, plus:</SectionLabel>
+                <SectionLabel light>Everything in Gold, plus:</SectionLabel>
                 <ul className="space-y-2.5">
-                  {DISTINCTION_EXTRAS.map((f) => (
+                  {DIAMOND_EXTRAS.map((f) => (
                     <li key={f} className="flex items-start gap-2.5 text-sm">
                       <Check className="h-4 w-4 text-accent flex-shrink-0 mt-0.5" />
                       <span className="text-white/90">{f}</span>
@@ -220,7 +217,7 @@ export default function PackagesPage() {
                     Not Included
                   </p>
                   <ul className="space-y-2.5">
-                    {DISTINCTION_NOT_INCLUDED.map((f) => <ExcludedItem key={f} text={f} light />)}
+                    {DIAMOND_NOT_INCLUDED.map((f) => <ExcludedItem key={f} text={f} light />)}
                   </ul>
                 </div>
               </div>
@@ -230,7 +227,7 @@ export default function PackagesPage() {
               </Button>
             </div>
 
-            {/* ── Prestige ── */}
+            {/* ── Platinum ── */}
             <div className="bg-background rounded-2xl border-2 border-accent/50 p-8 flex flex-col relative shadow-lg">
               <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
                 <Badge className="text-xs font-semibold px-4 py-1 rounded-full shadow bg-accent/20 text-accent border border-accent/40">
@@ -242,7 +239,7 @@ export default function PackagesPage() {
                 <p className="text-xs font-medium tracking-widest uppercase text-muted-foreground mb-1">
                   Listing Fee
                 </p>
-                <h2 className="font-heading text-3xl text-foreground mb-3">Prestige</h2>
+                <h2 className="font-heading text-3xl text-foreground mb-3">Platinum</h2>
                 <div className="flex items-baseline gap-1">
                   <span className="font-heading text-5xl text-accent font-semibold">2.49%</span>
                   <span className="text-muted-foreground text-sm">listing fee</span>
@@ -250,9 +247,9 @@ export default function PackagesPage() {
               </div>
 
               <div className="flex-1 space-y-2.5">
-                <SectionLabel>Everything in Distinction, plus:</SectionLabel>
+                <SectionLabel>Everything in Gold &amp; Diamond, plus:</SectionLabel>
                 <ul className="space-y-2.5">
-                  {PRESTIGE_EXTRAS.map((f) => <IncludedItem key={f} text={f} />)}
+                  {PLATINUM_EXTRAS.map((f) => <IncludedItem key={f} text={f} />)}
                 </ul>
               </div>
 
@@ -262,13 +259,23 @@ export default function PackagesPage() {
             </div>
           </div>
 
+          {/* Zillow stat */}
+          <div className="mt-10 text-center">
+            <div className="inline-flex items-center gap-2 bg-primary/5 border border-accent/30 rounded-xl px-6 py-3">
+              <Star className="h-4 w-4 text-accent fill-accent flex-shrink-0" />
+              <p className="text-sm font-semibold text-foreground">
+                Homes featured on Zillow Showcase sell for 2% more on average
+              </p>
+            </div>
+          </div>
+
           {/* Disclaimers */}
-          <div className="mt-10 max-w-3xl mx-auto border border-border/60 rounded-xl px-6 py-5 bg-muted/40 space-y-2">
+          <div className="mt-6 max-w-3xl mx-auto border border-border/60 rounded-xl px-6 py-5 bg-muted/40 space-y-2">
             {[
               "Buyer's agent commission is negotiated separately and is not included in the listing fee above.",
-              "Foundation package minimum fee: $5,000 regardless of sale price.",
+              "$295 transaction fee due at closing on all sales.",
               "Commission rates are negotiable and not set by law.",
-              "All fees subject to listing agreement terms.",
+              "All fees subject to listing agreement terms. Seller can cancel anytime.",
             ].map((d) => (
               <p key={d} className="text-xs text-muted-foreground flex items-start gap-2">
                 <span className="text-accent mt-0.5 flex-shrink-0">◆</span>
