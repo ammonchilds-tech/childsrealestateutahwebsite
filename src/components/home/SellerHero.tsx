@@ -44,14 +44,14 @@ export function SellerHero() {
 
         {/* Main heading */}
         <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white leading-[1.1] mb-6">
-          Utah&apos;s Premier
-          <span className="block text-accent mt-2">Listing Specialists</span>
+          Smart Seller
+          <span className="block text-accent mt-2">Program</span>
         </h1>
 
         {/* Subtitle */}
         <p className="text-white/70 text-lg md:text-xl max-w-2xl mx-auto mb-12 leading-relaxed">
-          Expert marketing, strategic pricing, and proven negotiation — backed
-          by Berkshire Hathaway HomeServices to sell your home for more.
+          I can sell your home for as little as 1% — full-service marketing,
+          expert negotiation, and white-glove support backed by Berkshire Hathaway HomeServices.
         </p>
 
         {/* CTAs */}
