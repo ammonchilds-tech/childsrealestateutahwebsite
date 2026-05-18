@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Check, Minus, Phone, Mail, CalendarDays, TrendingDown, DollarSign, Shield, Star } from "lucide-react";
+import { Check, Phone, Mail, CalendarDays, TrendingDown, DollarSign, Shield, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
@@ -8,66 +8,67 @@ import { ValuationForm } from "./_components/ValuationForm";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Free Home Valuation | Clear Commission Program — Childs Real Estate",
+  title: "Smart Seller Programs | Childs Real Estate — Utah",
   description:
-    "Find out what your Utah home is worth — free, no obligation. The Childs Clear Commission Program offers transparent flat-rate listing fees starting at just 1%. Serving Utah County and the Salt Lake Valley.",
+    "Choose from our Gold, Diamond, or Platinum Smart Seller Programs. Transparent listing fees starting at 1%. Get a free home valuation — no obligation. Serving Utah County and the Salt Lake Valley.",
   alternates: { canonical: `${SITE_URL}/clear-commission` },
   robots: { index: true, follow: true },
 };
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
 
-const FOUNDATION_INCLUDED = [
-  "MLS + full web syndication",
-  "Zillow, Realtor.com & Homes.com",
-  "Professional photography (25 photos)",
-  "Yard sign + electronic lockbox",
-  "Seller's net sheet",
-  "Professional contract negotiations",
-  "Full closing coordination",
-  "Easy-exit listing agreement",
-];
-
-const FOUNDATION_NOT_INCLUDED = [
-  "Social media marketing",
-  "Open house",
-  "Video / Instagram Reel",
-  "Zillow Showcase",
-];
-
-const DISTINCTION_EXTRAS = [
+const GOLD_INCLUDED = [
+  "HDR interior/exterior photos",
   "Professional market analysis",
-  "Social media marketing (Instagram + Facebook)",
-  "Email blast to buyer agent network",
-  "Property highlights flyer",
-  "1 hosted open house",
-  "Easy-exit listing agreement",
+  "Supra lock box",
+  "Yard sign",
+  "Listed on MLS and 500+ other websites",
+  "24/7 showing service",
+  "Professional contract negotiation",
 ];
 
-const DISTINCTION_NOT_INCLUDED = [
-  "Video / Instagram Reel",
-  "Zillow Showcase",
-  "Coming soon pre-launch",
-  "Just Listed postcards",
+const GOLD_FINE_PRINT = [
+  "Owner shows unrepresented buyers",
+  "If Ammon Childs brings buyer, 1% fee will be added at closing",
+  "All buyer agent fees are negotiated with offers",
+  "$295 transaction fee due at closing on all sales",
 ];
 
-const PRESTIGE_EXTRAS = [
-  "Zillow Showcase (premium placement)",
-  "Professional video + Instagram Reel",
-  "Coming soon pre-launch campaign",
-  "500+ Just Listed postcards to neighborhood",
-  "2 hosted open houses",
-  "Paid social ad boost",
-  "Weekly marketing activity report",
-  "Priority response & white-glove service",
-  "Easy-exit listing agreement",
+const DIAMOND_EXTRAS = [
+  "Professional drone photos",
+  "Dedicated showing agent assigned to your property",
+  "Featured open house",
+  "Weekly social media ads",
+];
+
+const DIAMOND_FINE_PRINT = [
+  "Childs Real Estate shows unrepresented buyers",
+  "If Ammon Childs brings buyer, .5% fee will be added at closing",
+  "All buyer agent fees are negotiated with offers",
+  "$295 transaction fee due at closing on all sales",
+];
+
+const PLATINUM_EXTRAS = [
+  "Showcase listing on Zillow",
+  "Interactive 3D home tour",
+  "Virtual staging",
+  "Weekly market updates via call, text or email",
+  "Paid social media ads",
+  "Multiple open houses",
+];
+
+const PLATINUM_FINE_PRINT = [
+  "Childs Real Estate shows unrepresented buyers",
+  "If Ammon Childs brings buyer, .5% fee will be added at closing",
+  "All buyer agent fees are negotiated with offers",
+  "$295 transaction fee due at closing on all sales",
 ];
 
 const WHY_NOW = [
   {
     icon: TrendingDown,
     title: "Keep More of Your Equity",
-    body: "Traditional 3% listing fees cost you thousands. Our variable program starts at just 1% — you choose the level of service that fits your situation.",
+    body: "Traditional 3% listing fees cost you thousands. Our Smart Seller Programs start at just 1% — you choose the level of service that fits your situation.",
   },
   {
     icon: DollarSign,
@@ -76,7 +77,7 @@ const WHY_NOW = [
   },
   {
     icon: Shield,
-    title: "Easy-Exit — Zero Risk",
+    title: "Seller Can Cancel Anytime",
     body: "Every package includes our easy-exit listing agreement. If you're not satisfied, you're not locked in. No fine print, no pressure.",
   },
 ];
@@ -98,20 +99,19 @@ const TESTIMONIALS = [
 
 // ─── Sub-components ───────────────────────────────────────────────────────────
 
-function IncludedItem({ text }: { text: string }) {
+function IncludedItem({ text, light = false }: { text: string; light?: boolean }) {
   return (
     <li className="flex items-start gap-2.5 text-sm">
-      <Check className="h-4 w-4 text-accent flex-shrink-0 mt-0.5" />
-      <span>{text}</span>
+      <Check className={`h-4 w-4 flex-shrink-0 mt-0.5 ${light ? "text-accent" : "text-accent"}`} />
+      <span className={light ? "text-white/90" : ""}>{text}</span>
     </li>
   );
 }
 
-function ExcludedItem({ text, light = false }: { text: string; light?: boolean }) {
+function FinePrintItem({ text, light = false }: { text: string; light?: boolean }) {
   return (
-    <li className="flex items-start gap-2.5 text-sm">
-      <Minus className={`h-4 w-4 flex-shrink-0 mt-0.5 ${light ? "text-white/25" : "text-muted-foreground/40"}`} />
-      <span className={light ? "text-white/30" : "text-muted-foreground/50"}>{text}</span>
+    <li className={`text-xs leading-relaxed ${light ? "text-white/40" : "text-muted-foreground/60"}`}>
+      {text}
     </li>
   );
 }
@@ -138,27 +138,27 @@ export default function ClearCommissionPage() {
         />
         <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
           <div className="flex items-center justify-center gap-3 mb-6">
-            <div className="h-px w-12 bg-accent/60" />
+            <Star className="h-4 w-4 text-accent fill-accent" />
             <span className="text-accent text-sm font-medium tracking-[0.2em] uppercase">
-              The Childs Clear Commission Program
+              Childs Real Estate
             </span>
-            <div className="h-px w-12 bg-accent/60" />
+            <Star className="h-4 w-4 text-accent fill-accent" />
           </div>
 
           <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl text-white leading-tight mb-5">
-            Find Out What Your<br className="hidden sm:block" /> Home Is Worth
+            Smart Seller Programs
           </h1>
 
           <p className="text-white/75 text-lg md:text-xl max-w-2xl mx-auto mb-8 leading-relaxed">
             Get a free, professional home valuation — no obligation, no pressure.
-            Then choose the listing package that keeps more money in your pocket.
+            Then choose the listing program that keeps more money in your pocket.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <div className="inline-flex items-center gap-2.5 bg-accent border-2 border-accent rounded-full px-6 py-2.5 shadow-md">
               <span className="w-2.5 h-2.5 rounded-full bg-primary animate-pulse flex-shrink-0" />
               <p className="text-sm font-bold text-primary tracking-wide">
-                Variable listing fees — starting at just 1%
+                Listing programs starting at just 1%
               </p>
             </div>
             <div className="inline-flex items-center gap-2 text-white/60 text-sm">
@@ -167,7 +167,6 @@ export default function ClearCommissionPage() {
             </div>
           </div>
         </div>
-
         <div className="absolute bottom-0 inset-x-0 h-16 bg-gradient-to-t from-background to-transparent" />
       </section>
 
@@ -175,40 +174,38 @@ export default function ClearCommissionPage() {
       <section className="py-16 md:py-24 bg-background">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
-            <p className="text-xs font-semibold tracking-widest uppercase text-accent mb-2">
-              Variable Listing Program
-            </p>
+            <div className="flex items-center justify-center gap-3 mb-3">
+              <Star className="h-5 w-5 text-accent fill-accent" />
+              <p className="text-xs font-semibold tracking-widest uppercase text-accent">Smart Seller Programs</p>
+              <Star className="h-5 w-5 text-accent fill-accent" />
+            </div>
             <h2 className="font-heading text-3xl md:text-4xl text-primary mb-3">
-              Choose Your Level of Service
+              Choose Your Program
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto">
-              Every package includes full MLS exposure, professional photography, and
-              expert negotiation — you decide how much marketing power you need.
+              Every program includes expert negotiation, MLS exposure, and a seller-can-cancel-anytime agreement — you decide how much marketing power you need.
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6 lg:gap-8 items-start">
 
-            {/* Foundation */}
+            {/* ── GOLD ── */}
             <div className="bg-background rounded-2xl border border-border/60 p-8 flex flex-col shadow-sm">
               <div className="mb-6 pb-6 border-b border-border/50">
-                <p className="text-xs font-medium tracking-widest uppercase text-muted-foreground mb-1">Listing Fee</p>
-                <h3 className="font-heading text-3xl text-foreground mb-3">Foundation</h3>
+                <p className="text-xs font-medium tracking-widest uppercase text-muted-foreground mb-1">Listing Program</p>
+                <h3 className="font-heading text-3xl text-accent font-bold mb-3">Gold</h3>
                 <div className="flex items-baseline gap-1">
-                  <span className="font-heading text-5xl text-accent font-semibold">1%</span>
+                  <span className="font-heading text-5xl text-primary font-semibold">1%</span>
                   <span className="text-muted-foreground text-sm">listing fee</span>
                 </div>
-                <p className="text-xs text-muted-foreground italic mt-1">Minimum fee: $5,000</p>
               </div>
-              <div className="flex-1 space-y-2.5">
-                <p className="text-xs font-semibold tracking-widest uppercase text-accent mb-3">What&apos;s Included</p>
+              <div className="flex-1 space-y-5">
                 <ul className="space-y-2.5">
-                  {FOUNDATION_INCLUDED.map((f) => <IncludedItem key={f} text={f} />)}
+                  {GOLD_INCLUDED.map((f) => <IncludedItem key={f} text={f} />)}
                 </ul>
                 <div className="pt-4 border-t border-border/40">
-                  <p className="text-xs font-semibold tracking-widest uppercase text-muted-foreground/60 mb-3">Not Included</p>
-                  <ul className="space-y-2.5">
-                    {FOUNDATION_NOT_INCLUDED.map((f) => <ExcludedItem key={f} text={f} />)}
+                  <ul className="space-y-1.5">
+                    {GOLD_FINE_PRINT.map((f) => <FinePrintItem key={f} text={f} />)}
                   </ul>
                 </div>
               </div>
@@ -217,7 +214,7 @@ export default function ClearCommissionPage() {
               </Button>
             </div>
 
-            {/* Distinction */}
+            {/* ── DIAMOND ── */}
             <div className="bg-primary rounded-2xl border-2 border-primary p-8 flex flex-col relative shadow-xl">
               <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
                 <Badge variant="accent" className="text-xs font-semibold px-4 py-1 rounded-full shadow">
@@ -225,27 +222,23 @@ export default function ClearCommissionPage() {
                 </Badge>
               </div>
               <div className="mb-6 pb-6 border-b border-white/15">
-                <p className="text-xs font-medium tracking-widest uppercase text-white/50 mb-1">Listing Fee</p>
-                <h3 className="font-heading text-3xl text-white mb-3">Distinction</h3>
+                <p className="text-xs font-medium tracking-widest uppercase text-white/50 mb-1">Listing Program</p>
+                <h3 className="font-heading text-3xl text-white font-bold mb-3">Diamond</h3>
                 <div className="flex items-baseline gap-1">
                   <span className="font-heading text-5xl text-accent font-semibold">1.99%</span>
                   <span className="text-white/60 text-sm">listing fee</span>
                 </div>
               </div>
-              <div className="flex-1 space-y-2.5">
-                <p className="text-xs font-semibold tracking-widest uppercase text-accent/80 mb-3">Everything in Foundation, plus:</p>
-                <ul className="space-y-2.5">
-                  {DISTINCTION_EXTRAS.map((f) => (
-                    <li key={f} className="flex items-start gap-2.5 text-sm">
-                      <Check className="h-4 w-4 text-accent flex-shrink-0 mt-0.5" />
-                      <span className="text-white/90">{f}</span>
-                    </li>
-                  ))}
-                </ul>
-                <div className="pt-5 mt-5 border-t border-white/15">
-                  <p className="text-xs font-semibold tracking-widest uppercase text-white/30 mb-3">Not Included</p>
+              <div className="flex-1 space-y-5">
+                <div>
+                  <p className="text-xs font-semibold tracking-widest uppercase text-accent/80 mb-3">Everything in Gold, plus:</p>
                   <ul className="space-y-2.5">
-                    {DISTINCTION_NOT_INCLUDED.map((f) => <ExcludedItem key={f} text={f} light />)}
+                    {DIAMOND_EXTRAS.map((f) => <IncludedItem key={f} text={f} light />)}
+                  </ul>
+                </div>
+                <div className="pt-4 border-t border-white/15">
+                  <ul className="space-y-1.5">
+                    {DIAMOND_FINE_PRINT.map((f) => <FinePrintItem key={f} text={f} light />)}
                   </ul>
                 </div>
               </div>
@@ -254,7 +247,7 @@ export default function ClearCommissionPage() {
               </Button>
             </div>
 
-            {/* Prestige */}
+            {/* ── PLATINUM ── */}
             <div className="bg-background rounded-2xl border-2 border-accent/50 p-8 flex flex-col relative shadow-lg">
               <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
                 <Badge className="text-xs font-semibold px-4 py-1 rounded-full shadow bg-accent/20 text-accent border border-accent/40">
@@ -262,18 +255,32 @@ export default function ClearCommissionPage() {
                 </Badge>
               </div>
               <div className="mb-6 pb-6 border-b border-border/50">
-                <p className="text-xs font-medium tracking-widest uppercase text-muted-foreground mb-1">Listing Fee</p>
-                <h3 className="font-heading text-3xl text-foreground mb-3">Prestige</h3>
+                <p className="text-xs font-medium tracking-widest uppercase text-muted-foreground mb-1">Listing Program</p>
+                <h3 className="font-heading text-3xl text-foreground font-bold mb-3">Platinum</h3>
                 <div className="flex items-baseline gap-1">
                   <span className="font-heading text-5xl text-accent font-semibold">2.49%</span>
                   <span className="text-muted-foreground text-sm">listing fee</span>
                 </div>
               </div>
-              <div className="flex-1 space-y-2.5">
-                <p className="text-xs font-semibold tracking-widest uppercase text-accent mb-3">Everything in Distinction, plus:</p>
-                <ul className="space-y-2.5">
-                  {PRESTIGE_EXTRAS.map((f) => <IncludedItem key={f} text={f} />)}
-                </ul>
+              <div className="flex-1 space-y-5">
+                <div>
+                  <p className="text-xs font-semibold tracking-widest uppercase text-accent mb-3">Everything in Gold &amp; Diamond, plus:</p>
+                  <ul className="space-y-2.5">
+                    {PLATINUM_EXTRAS.map((f) => (
+                      <li key={f} className="flex items-start gap-2.5 text-sm">
+                        {f === "Showcase listing on Zillow"
+                          ? <Star className="h-4 w-4 text-accent fill-accent flex-shrink-0 mt-0.5" />
+                          : <Check className="h-4 w-4 text-accent flex-shrink-0 mt-0.5" />}
+                        <span className={f === "Showcase listing on Zillow" ? "font-semibold text-accent" : ""}>{f}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="pt-4 border-t border-border/40">
+                  <ul className="space-y-1.5">
+                    {PLATINUM_FINE_PRINT.map((f) => <FinePrintItem key={f} text={f} />)}
+                  </ul>
+                </div>
               </div>
               <Button asChild variant="accent" className="mt-8 w-full">
                 <a href="#valuation">Get Started</a>
@@ -281,11 +288,23 @@ export default function ClearCommissionPage() {
             </div>
           </div>
 
-          {/* Disclaimers */}
-          <div className="mt-10 max-w-3xl mx-auto border border-border/60 rounded-xl px-6 py-5 bg-muted/40 space-y-2">
+          {/* Zillow callout */}
+          <div className="mt-10 max-w-3xl mx-auto rounded-xl px-6 py-5 text-center"
+            style={{ background: "linear-gradient(135deg, #2D1B4E 0%, #1B3A4B 100%)" }}>
+            <div className="flex items-center justify-center gap-2 mb-1">
+              <Star className="h-4 w-4 text-accent fill-accent" />
+              <p className="text-sm font-bold text-white tracking-wide uppercase">
+                Homes featured on Zillow Showcase sell for 2% more on average
+              </p>
+              <Star className="h-4 w-4 text-accent fill-accent" />
+            </div>
+            <p className="text-accent text-sm font-semibold">Seller can cancel anytime!</p>
+          </div>
+
+          {/* Legal disclaimers */}
+          <div className="mt-6 max-w-3xl mx-auto border border-border/60 rounded-xl px-6 py-5 bg-muted/40 space-y-2">
             {[
               "Buyer's agent commission is negotiated separately and is not included in the listing fee above.",
-              "Foundation package minimum fee: $5,000 regardless of sale price.",
               "Commission rates are negotiable and not set by law.",
               "All fees subject to listing agreement terms.",
             ].map((d) => (
@@ -390,7 +409,7 @@ export default function ClearCommissionPage() {
                   "15+ years of Utah real estate experience",
                   "Hundreds of homes sold across Utah County",
                   "Backed by Berkshire Hathaway HomeServices",
-                  "Easy-exit listing — no lock-in contracts",
+                  "Seller can cancel anytime — no lock-in",
                   "Transparent fees, no surprises at closing",
                 ].map((item) => (
                   <div key={item} className="flex items-start gap-2.5">
