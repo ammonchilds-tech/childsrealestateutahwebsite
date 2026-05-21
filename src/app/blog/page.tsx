@@ -21,6 +21,15 @@ export const metadata: Metadata = {
 
 const POSTS = [
   {
+    slug: "utah-may-2026-market-update-sales-volume-surges",
+    title: "Utah's May 2026 Market Update: Sales Volume Is Surging — Here's What That Means for You",
+    excerpt:
+      "Utah County sales jumped from 95 to 152. Salt Lake County went from 130 to 206. With prices climbing and volume surging, the summer market is here — and it's moving fast.",
+    date: "May 21, 2026",
+    readTime: "6 min read",
+    category: "Market Update",
+  },
+  {
     slug: "timing-the-market-vs-time-in-the-market",
     title: "Timing the Market vs. Time in the Market — Why Waiting Is Costing You More Than You Think",
     excerpt:
