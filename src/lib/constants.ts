@@ -22,8 +22,8 @@ export const TEAM = [
     image: "/images/team/ammon.jpg",
     imagePosition: "top",
     social: {
-      instagram: "https://instagram.com/childsrealestate",
-      facebook: "https://facebook.com/childsrealestate",
+      instagram: "https://www.instagram.com/childsrealestateutah",
+      facebook: "https://www.facebook.com/childsrealestateutah",
       linkedin: "https://linkedin.com/in/ammonchilds",
     },
   },
@@ -36,8 +36,8 @@ export const TEAM = [
     image: "/images/team/tasha.jpg",
     objectPosition: "50% 15%",
     social: {
-      instagram: "https://instagram.com/childsrealestate",
-      facebook: "https://facebook.com/childsrealestate",
+      instagram: "https://www.instagram.com/childsrealestateutah",
+      facebook: "https://www.facebook.com/childsrealestateutah",
     },
   },
 ];
