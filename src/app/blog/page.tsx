@@ -21,6 +21,15 @@ export const metadata: Metadata = {
 
 const POSTS = [
   {
+    slug: "selling-in-summer-vs-waiting-until-fall-utah-2026",
+    title: "Selling in Summer vs. Waiting Until Fall: What Utah's June Data Says",
+    excerpt:
+      "Utah County closed 185 homes in the first nine days of June. Salt Lake County closed 284. Summer is already here — and the data makes a strong case for sellers who are ready to move.",
+    date: "June 9, 2026",
+    readTime: "7 min read",
+    category: "Seller Strategy",
+  },
+  {
     slug: "utah-may-2026-market-update-sales-volume-surges",
     title: "Utah's May 2026 Market Update: Sales Volume Is Surging — Here's What That Means for You",
     excerpt:
