@@ -11,10 +11,10 @@ const COUNTIES = [
   {
     name: "Salt Lake County",
     stats: [
-      { label: "Avg Days on Market", value: "47" },
-      { label: "Avg List Price", value: "$716K" },
-      { label: "Avg Sold Price", value: "$709K" },
-      { label: "Number of Sales", value: "206" },
+      { label: "Avg Days on Market", value: "41" },
+      { label: "Avg List Price", value: "$658K" },
+      { label: "Avg Sold Price", value: "$655K" },
+      { label: "Number of Sales", value: "284" },
     ],
   },
 ];
@@ -31,7 +31,7 @@ export function MarketStats() {
             This Week&apos;s Market Snapshot
           </h2>
           <p className="mt-3 text-white/60 text-sm max-w-xl mx-auto leading-relaxed">
-            Utah County sits at 61 days on market with 185 homes sold and sold prices tracking closely to list at $652K. Salt Lake County is moving faster at 47 days with 206 sales. If you&apos;re thinking of selling, now is a great time to list.
+            Utah County sits at 61 days on market with 185 homes sold and sold prices tracking closely to list at $652K. Salt Lake County is moving faster at 41 days with 284 sales. If you&apos;re thinking of selling, now is a great time to list.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-0 md:divide-x md:divide-white/20">
