@@ -1,6 +1,33 @@
 import { NextRequest, NextResponse } from "next/server";
+import { escapeHtml } from "@/lib/sanitize";
+
+// In-memory rate limiter: max 5 submissions per IP per 10 minutes
+const rateLimitMap = new Map<string, { count: number; resetAt: number }>();
+const RATE_LIMIT = 5;
+const RATE_WINDOW_MS = 10 * 60 * 1000;
+
+function isRateLimited(ip: string): boolean {
+  const now = Date.now();
+  const entry = rateLimitMap.get(ip);
+  if (!entry || now > entry.resetAt) {
+    rateLimitMap.set(ip, { count: 1, resetAt: now + RATE_WINDOW_MS });
+    return false;
+  }
+  if (entry.count >= RATE_LIMIT) return true;
+  entry.count++;
+  return false;
+}
 
 export async function POST(req: NextRequest) {
+  const ip =
+    req.headers.get("cf-connecting-ip") ??
+    req.headers.get("x-forwarded-for")?.split(",")[0].trim() ??
+    "unknown";
+
+  if (isRateLimited(ip)) {
+    return NextResponse.json({ error: "Too many requests" }, { status: 429 });
+  }
+
   const { name, email, phone, subject, message } = await req.json();
 
   if (!name || !email || !message) {
@@ -13,6 +40,12 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Email service not configured" }, { status: 500 });
   }
 
+  const sName = escapeHtml(String(name));
+  const sEmail = escapeHtml(String(email));
+  const sPhone = phone ? escapeHtml(String(phone)) : "";
+  const sSubject = subject ? escapeHtml(String(subject)) : "";
+  const sMessage = escapeHtml(String(message)).replace(/\n/g, "<br>");
+
   const html = `
     <div style="font-family:sans-serif;max-width:600px;margin:0 auto;color:#1a1a2e;">
       <div style="background:#2D1B4E;padding:24px 32px;border-radius:8px 8px 0 0;">
@@ -23,27 +56,27 @@ export async function POST(req: NextRequest) {
         <table style="width:100%;border-collapse:collapse;">
           <tr>
             <td style="padding:10px 0;border-bottom:1px solid #e8e0d4;font-weight:600;color:#2D1B4E;width:140px;">Name</td>
-            <td style="padding:10px 0;border-bottom:1px solid #e8e0d4;">${name}</td>
+            <td style="padding:10px 0;border-bottom:1px solid #e8e0d4;">${sName}</td>
           </tr>
           <tr>
             <td style="padding:10px 0;border-bottom:1px solid #e8e0d4;font-weight:600;color:#2D1B4E;">Email</td>
-            <td style="padding:10px 0;border-bottom:1px solid #e8e0d4;"><a href="mailto:${email}" style="color:#C9A96E;">${email}</a></td>
+            <td style="padding:10px 0;border-bottom:1px solid #e8e0d4;"><a href="mailto:${sEmail}" style="color:#C9A96E;">${sEmail}</a></td>
           </tr>
           <tr>
             <td style="padding:10px 0;border-bottom:1px solid #e8e0d4;font-weight:600;color:#2D1B4E;">Phone</td>
-            <td style="padding:10px 0;border-bottom:1px solid #e8e0d4;">${phone ? `<a href="tel:${phone}" style="color:#C9A96E;">${phone}</a>` : "—"}</td>
+            <td style="padding:10px 0;border-bottom:1px solid #e8e0d4;">${sPhone ? `<a href="tel:${sPhone}" style="color:#C9A96E;">${sPhone}</a>` : "—"}</td>
           </tr>
           <tr>
             <td style="padding:10px 0;border-bottom:1px solid #e8e0d4;font-weight:600;color:#2D1B4E;">Subject</td>
-            <td style="padding:10px 0;border-bottom:1px solid #e8e0d4;">${subject || "—"}</td>
+            <td style="padding:10px 0;border-bottom:1px solid #e8e0d4;">${sSubject || "—"}</td>
           </tr>
           <tr>
             <td style="padding:10px 0;font-weight:600;color:#2D1B4E;vertical-align:top;">Message</td>
-            <td style="padding:10px 0;">${message.replace(/\n/g, "<br>")}</td>
+            <td style="padding:10px 0;">${sMessage}</td>
           </tr>
         </table>
         <div style="margin-top:24px;padding:16px;background:#fff;border:1px solid #e8e0d4;border-radius:6px;font-size:13px;color:#666;">
-          Reply directly to this email to reach ${name} at ${email}.
+          Reply directly to this email to reach ${sName} at ${sEmail}.
         </div>
       </div>
     </div>
@@ -59,7 +92,7 @@ export async function POST(req: NextRequest) {
       from: "Childs Real Estate <noreply@childsrealestateutah.com>",
       to: ["ammon@childsrealestateutah.com"],
       reply_to: email,
-      subject: `New Contact: ${subject || "General Inquiry"} — ${name}`,
+      subject: `New Contact: ${sSubject || "General Inquiry"} — ${sName}`,
       html,
     }),
   });
