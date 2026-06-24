@@ -21,6 +21,15 @@ export const metadata: Metadata = {
 
 const POSTS = [
   {
+    slug: "utah-june-2026-market-update",
+    title: "Utah June 2026 Market Update: What the Numbers Mean for Buyers and Sellers",
+    excerpt:
+      "Salt Lake County homes are selling in 49 days at $688K. Utah County sits at 60 days and $653K. Here's what the mid-June data means — and what to do about it.",
+    date: "June 24, 2026",
+    readTime: "7 min read",
+    category: "Market Update",
+  },
+  {
     slug: "selling-in-summer-vs-waiting-until-fall-utah-2026",
     title: "Selling in Summer vs. Waiting Until Fall: What Utah's June Data Says",
     excerpt:

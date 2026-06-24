@@ -2,19 +2,19 @@ const COUNTIES = [
   {
     name: "Utah County",
     stats: [
-      { label: "Avg Days on Market", value: "61" },
+      { label: "Avg Days on Market", value: "60" },
       { label: "Avg List Price", value: "$658K" },
-      { label: "Avg Sold Price", value: "$652K" },
-      { label: "Number of Sales", value: "185" },
+      { label: "Avg Sold Price", value: "$653K" },
+      { label: "Number of Sales", value: "199" },
     ],
   },
   {
     name: "Salt Lake County",
     stats: [
-      { label: "Avg Days on Market", value: "41" },
-      { label: "Avg List Price", value: "$658K" },
-      { label: "Avg Sold Price", value: "$655K" },
-      { label: "Number of Sales", value: "284" },
+      { label: "Avg Days on Market", value: "49" },
+      { label: "Avg List Price", value: "$696K" },
+      { label: "Avg Sold Price", value: "$688K" },
+      { label: "Number of Sales", value: "265" },
     ],
   },
 ];
@@ -25,13 +25,13 @@ export function MarketStats() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-8">
           <p className="text-accent text-xs font-medium tracking-[0.2em] uppercase mb-2">
-            June 1–9, 2026
+            June 15–24, 2026
           </p>
           <h2 className="font-heading text-2xl md:text-3xl text-white">
             This Week&apos;s Market Snapshot
           </h2>
           <p className="mt-3 text-white/60 text-sm max-w-xl mx-auto leading-relaxed">
-            Utah County sits at 61 days on market with 185 homes sold and sold prices tracking closely to list at $652K. Salt Lake County is moving faster at 41 days with 284 sales. If you&apos;re thinking of selling, now is a great time to list.
+            Utah County sits at 60 days on market with 199 homes sold and sold prices tracking closely to list at $653K. Salt Lake County is moving faster at 49 days with 265 sales at $688K. If you&apos;re thinking of selling, now is a great time to list.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-0 md:divide-x md:divide-white/20">
