@@ -27,7 +27,7 @@ const FAQ_SECTIONS = [
       },
       {
         q: "What marketing do you do for my listing?",
-        a: "Every listing gets professional photography, drone footage, a virtual tour, MLS syndication, targeted social media campaigns, email marketing to our buyer database, and placement on Berkshire Hathaway HomeServices' global network. Your home gets seen — not just listed.",
+        a: "Every listing gets professional photography, drone footage, a virtual tour, MLS syndication, targeted social media campaigns, email marketing to our buyer database, and placement on Simple Choice Real Estate's extensive buyer network. Your home gets seen — not just listed.",
       },
       {
         q: "Do I have to be home during showings?",
@@ -77,15 +77,15 @@ const FAQ_SECTIONS = [
       },
       {
         q: "Are you a team or individual agents?",
-        a: "Ammon and Tasha Childs operate as a husband-and-wife team, backed by a full support staff. You get two experienced perspectives, deep local expertise, and the resources of Berkshire Hathaway HomeServices Elite Real Estate — all with direct access to your agents.",
+        a: "Ammon and Tasha Childs operate as a husband-and-wife team, backed by a full support staff. You get two experienced perspectives, deep local expertise, and the resources of Simple Choice Real Estate — all with direct access to your agents.",
       },
       {
         q: "What credentials and certifications do you hold?",
         a: "Our team holds multiple designations including ABR® (Accredited Buyer's Representative), ALHS® (Accredited Listing & Home Selling Specialist), CNE® (Certified Negotiation Expert), CVE® (Certified Valuation Expert), CDC® (Certified Divorce Specialist), and SRES® (Senior Real Estate Specialist). These aren't just letters — they represent focused expertise we apply for our clients.",
       },
       {
-        q: "What is Berkshire Hathaway HomeServices Elite Real Estate?",
-        a: "BHHS Elite Real Estate is our brokerage — part of one of the most trusted and recognized real estate networks in the world. As a member, we give our clients access to a global buyer network, premium marketing tools, and the credibility of the Berkshire Hathaway brand.",
+        q: "What is Simple Choice Real Estate?",
+        a: "Simple Choice Real Estate is our brokerage. We give our clients access to a strong buyer network, premium marketing tools, and the personal attention you deserve when buying or selling a home.",
       },
       {
         q: "How do I get started?",

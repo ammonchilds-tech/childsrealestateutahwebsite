@@ -89,7 +89,7 @@ const BENEFITS = [
     icon: Sparkles,
     title: "Professional Marketing",
     description:
-      "High-end photography, drone footage, virtual tours, and targeted digital campaigns backed by the Berkshire Hathaway brand.",
+      "High-end photography, drone footage, virtual tours, and targeted digital campaigns backed by Simple Choice Real Estate.",
   },
   {
     icon: Users,

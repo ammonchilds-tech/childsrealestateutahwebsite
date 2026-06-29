@@ -20,7 +20,6 @@ export const metadata: Metadata = {
 };
 import { SellerHero } from "@/components/home/SellerHero";
 import { MarketStats } from "@/components/home/MarketStats";
-import { PromoBanner } from "@/components/home/PromoBanner";
 import { SellingProcessPreview } from "@/components/home/SellingProcessPreview";
 import { TeamPreview } from "@/components/home/TeamPreview";
 import { Testimonials } from "@/components/home/Testimonials";
@@ -87,7 +86,7 @@ const localBusinessJsonLd = {
   ],
   memberOf: {
     "@type": "Organization",
-    name: "Berkshire Hathaway HomeServices Elite Real Estate",
+    name: "Simple Choice Real Estate",
   },
   sameAs: [
     "https://www.facebook.com/childsrealestateutah",
@@ -103,7 +102,6 @@ export default function HomePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
       />
-      <PromoBanner />
       <SellerHero />
       <ListingPackages />
       <MarketStats />

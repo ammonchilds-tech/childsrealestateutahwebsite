@@ -114,13 +114,12 @@ export function Footer() {
         </div>
       </div>
 
-      {/* BHHS Compliance */}
+      {/* Compliance */}
       <div className="border-t border-white/10">
         <div className="mx-auto max-w-7xl px-6 py-8">
           <div className="flex flex-wrap items-center gap-4 mb-4">
-            {/* BHHS Logo placeholder */}
             <div className="bg-white/10 px-3 py-1.5 rounded text-xs font-semibold tracking-wider">
-              BHHS
+              Simple Choice Real Estate
             </div>
             {/* Equal Housing */}
             <div className="bg-white/10 px-3 py-1.5 rounded text-xs font-semibold tracking-wider">

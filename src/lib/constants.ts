@@ -4,7 +4,7 @@ export const SITE_DESCRIPTION =
 export const SITE_URL = "https://www.childsrealestateutah.com";
 
 export const OFFICE = {
-  name: "Berkshire Hathaway HomeServices Elite Real Estate",
+  name: "Simple Choice Real Estate",
   address: "825 E 1180 S Ste 300, American Fork, UT 84003",
   phone: "(801) 735-8460",
   email: "ammon@childsrealestateutah.com",
@@ -252,7 +252,7 @@ export const MLS_DISCLAIMER =
   "Listing information is provided in part by the Wasatch Front Regional MLS. IDX information is provided exclusively for consumers' personal, non-commercial use, and may not be used for any purpose other than to identify prospective properties consumers may be interested in purchasing. Listing data is deemed reliable but is not guaranteed accurate by the MLS. Updated daily.";
 
 export const BHHS_DISCLAIMER =
-  "© 2026 BHH Affiliates, LLC. An independently owned and operated franchisee of BHH Affiliates, LLC. Berkshire Hathaway HomeServices and the Berkshire Hathaway HomeServices symbol are registered service marks of Columbia Insurance Company, a Berkshire Hathaway affiliate. Equal Housing Opportunity.";
+  "© 2026 Simple Choice Real Estate. Equal Housing Opportunity.";
 
 export const FAIR_HOUSING_STATEMENT =
   "We are pledged to the letter and spirit of U.S. policy for the achievement of equal housing opportunity throughout the nation. We encourage and support an affirmative advertising and marketing program in which there are no barriers to obtaining housing because of race, color, religion, sex, handicap, familial status, or national origin. " +

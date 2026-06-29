@@ -408,7 +408,7 @@ export default function ClearCommissionPage() {
                 {[
                   "15+ years of Utah real estate experience",
                   "Hundreds of homes sold across Utah County",
-                  "Backed by Berkshire Hathaway HomeServices",
+                  "Backed by Simple Choice Real Estate",
                   "Seller can cancel anytime — no lock-in",
                   "Transparent fees, no surprises at closing",
                 ].map((item) => (

@@ -393,7 +393,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* BHHS Affiliation */}
+      {/* Brokerage Affiliation */}
       <section className="py-20 md:py-28">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <div className="flex items-center justify-center gap-3 mb-4">
@@ -405,32 +405,30 @@ export default function AboutPage() {
           </div>
           <h2 className="font-heading text-3xl md:text-4xl text-primary mb-6">
             Backed by{" "}
-            <span className="text-accent">Berkshire Hathaway HomeServices</span>
+            <span className="text-accent">Simple Choice Real Estate</span>
           </h2>
           <div className="space-y-4 text-muted-foreground leading-relaxed max-w-3xl mx-auto">
             <p>
-              As proud members of Berkshire Hathaway HomeServices Elite Real
-              Estate, we leverage one of the most trusted and respected brands in
-              the world. This affiliation gives our clients access to an
-              unmatched global network, cutting-edge marketing technology, and
-              the credibility that comes with the Berkshire Hathaway name.
+              As proud members of Simple Choice Real Estate, we have the
+              independence and resources to put our clients first — every time.
+              Our brokerage is built around the belief that buying and selling a
+              home should be straightforward, transparent, and stress-free.
             </p>
             <p>
-              The BHHS network spans over 50,000 agents across the globe,
-              ensuring your listing receives maximum exposure and that you have
-              access to the most comprehensive property search available. Our
-              partnership means your home is marketed with the prestige and reach
-              that only a world-class brand can provide.
+              Simple Choice Real Estate gives us the flexibility to offer
+              competitive, honest pricing and the support structure to deliver
+              exceptional service. Your home is marketed with expertise and
+              dedication — not just listed and forgotten.
             </p>
           </div>
           <div className="mt-10 inline-flex items-center gap-3 bg-muted rounded-xl px-8 py-4 border border-border/50">
             <Shield className="h-8 w-8 text-accent" />
             <div className="text-left">
               <p className="font-heading font-semibold text-primary">
-                Berkshire Hathaway HomeServices
+                Simple Choice Real Estate
               </p>
               <p className="text-sm text-muted-foreground">
-                Elite Real Estate - Independently Owned & Operated
+                Independently Owned & Operated
               </p>
             </div>
           </div>

@@ -51,7 +51,7 @@ export function SellerHero() {
         {/* Subtitle */}
         <p className="text-white/70 text-lg md:text-xl max-w-2xl mx-auto mb-12 leading-relaxed">
           I can sell your home for as little as 1% — full-service marketing,
-          expert negotiation, and white-glove support backed by Berkshire Hathaway HomeServices.
+          expert negotiation, and white-glove support backed by Simple Choice Real Estate.
         </p>
 
         {/* CTAs */}
