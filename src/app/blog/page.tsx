@@ -21,6 +21,15 @@ export const metadata: Metadata = {
 
 const POSTS = [
   {
+    slug: "utah-2026-midyear-market-review",
+    title: "Halfway Through 2026: What Utah's Housing Market Has Actually Done (and What's Next)",
+    excerpt:
+      "A slow winter, a June peak, and an early-July pullback. Here's what six months of Utah County and Salt Lake County closing data actually says — and where the market is headed next.",
+    date: "July 8, 2026",
+    readTime: "8 min read",
+    category: "Year in Review",
+  },
+  {
     slug: "utah-june-2026-market-update",
     title: "Utah June 2026 Market Update: What the Numbers Mean for Buyers and Sellers",
     excerpt:
