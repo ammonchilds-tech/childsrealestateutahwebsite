@@ -21,6 +21,15 @@ export const metadata: Metadata = {
 
 const POSTS = [
   {
+    slug: "utah-july-2026-market-update",
+    title: "Utah July 2026 Market Update: Sales Volume Hits a 2026 High",
+    excerpt:
+      "Salt Lake County closed 365 homes and Utah County closed 265 in the first three weeks of July — both 2026 highs. Here's what the surge in sales volume means for buyers and sellers.",
+    date: "July 21, 2026",
+    readTime: "7 min read",
+    category: "Market Update",
+  },
+  {
     slug: "utah-2026-midyear-market-review",
     title: "Halfway Through 2026: What Utah's Housing Market Has Actually Done (and What's Next)",
     excerpt:
