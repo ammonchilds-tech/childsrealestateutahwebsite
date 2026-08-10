@@ -21,6 +21,15 @@ export const metadata: Metadata = {
 
 const POSTS = [
   {
+    slug: "utah-august-2026-market-update",
+    title: "Utah August 2026 Market Update: Sales Volume Cools as County Prices Diverge",
+    excerpt:
+      "Utah County closed 195 homes and Salt Lake County closed 278 in the final days of July and first days of August — both down sharply from July's highs. Here's what the pullback in volume and a widening price gap between counties means for buyers and sellers.",
+    date: "August 10, 2026",
+    readTime: "7 min read",
+    category: "Market Update",
+  },
+  {
     slug: "utah-july-2026-market-update",
     title: "Utah July 2026 Market Update: Sales Volume Hits a 2026 High",
     excerpt:
