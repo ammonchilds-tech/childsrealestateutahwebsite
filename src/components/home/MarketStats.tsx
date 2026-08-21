@@ -2,19 +2,19 @@ const COUNTIES = [
   {
     name: "Utah County",
     stats: [
-      { label: "Avg Days on Market", value: "62" },
-      { label: "Avg List Price", value: "$575K" },
-      { label: "Avg Sold Price", value: "$568K" },
-      { label: "Number of Sales", value: "195" },
+      { label: "Avg Days on Market", value: "64" },
+      { label: "Avg List Price", value: "$619K" },
+      { label: "Avg Sold Price", value: "$609K" },
+      { label: "Number of Sales", value: "298" },
     ],
   },
   {
     name: "Salt Lake County",
     stats: [
-      { label: "Avg Days on Market", value: "55" },
-      { label: "Avg List Price", value: "$737K" },
-      { label: "Avg Sold Price", value: "$727K" },
-      { label: "Number of Sales", value: "278" },
+      { label: "Avg Days on Market", value: "56" },
+      { label: "Avg List Price", value: "$689K" },
+      { label: "Avg Sold Price", value: "$677K" },
+      { label: "Number of Sales", value: "374" },
     ],
   },
 ];
@@ -25,13 +25,13 @@ export function MarketStats() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-8">
           <p className="text-accent text-xs font-medium tracking-[0.2em] uppercase mb-2">
-            July 31–August 10, 2026
+            August 7–21, 2026
           </p>
           <h2 className="font-heading text-2xl md:text-3xl text-white">
             This Week&apos;s Market Snapshot
           </h2>
           <p className="mt-3 text-white/60 text-sm max-w-xl mx-auto leading-relaxed">
-            Utah County sits at 62 days on market with 195 homes sold and sold prices tracking closely to list at $568K. Salt Lake County is moving faster at 55 days with 278 sales at $727K. If you&apos;re thinking of selling, now is a great time to list.
+            Utah County sits at 64 days on market with 298 homes sold and sold prices tracking closely to list at $609K. Salt Lake County is moving at 56 days with 374 sales at $677K. If you&apos;re thinking of selling, now is a great time to list.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-0 md:divide-x md:divide-white/20">

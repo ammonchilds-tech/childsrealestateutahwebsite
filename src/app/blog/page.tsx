@@ -21,6 +21,15 @@ export const metadata: Metadata = {
 
 const POSTS = [
   {
+    slug: "end-of-summer-listing-smart-seller-vs-6-percent-agent",
+    title: "Listing at the End of Summer in Utah — and How the Smart Seller Program Beats a Traditional 6% Agent",
+    excerpt:
+      "Late August doesn't mean the selling season is over — Utah buyers are still active and closing near asking price. Here's what listing now actually looks like, and how the Smart Seller Program can save you over $11,000 compared to a traditional 6% agent.",
+    date: "August 21, 2026",
+    readTime: "8 min read",
+    category: "Seller Strategy",
+  },
+  {
     slug: "utah-august-2026-market-update",
     title: "Utah August 2026 Market Update: Sales Volume Cools as County Prices Diverge",
     excerpt:
