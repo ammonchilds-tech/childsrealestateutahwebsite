@@ -21,6 +21,15 @@ export const metadata: Metadata = {
 
 const POSTS = [
   {
+    slug: "utah-september-2026-market-update",
+    title: "Utah September 2026 Market Update: The Fall Slowdown Arrives as County Prices Split Again",
+    excerpt:
+      "Utah County closed 214 homes and Salt Lake County closed 296 in the back half of August — both down again as the market eases into fall. Days on market pushed past 70 in Utah County, prices climbed there and slipped in Salt Lake County, and sellers are still closing within about 1.6% of list.",
+    date: "September 3, 2026",
+    readTime: "7 min read",
+    category: "Market Update",
+  },
+  {
     slug: "end-of-summer-listing-smart-seller-vs-6-percent-agent",
     title: "Listing at the End of Summer in Utah — and How the Smart Seller Program Beats a Traditional 6% Agent",
     excerpt:
