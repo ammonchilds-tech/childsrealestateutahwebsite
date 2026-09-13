@@ -11,6 +11,7 @@ import {
   Home,
   Paintbrush,
   MapPin,
+  Leaf,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -72,6 +73,16 @@ const RESOURCES = [
     category: "Finance",
     readTime: "8 min read",
     href: "/resources/mortgage-tips",
+    isLive: true,
+  },
+  {
+    title: "Fall Home Maintenance Checklist",
+    description:
+      "A free, printable checklist to get your home ready for winter — sprinklers, gutters, furnace, weatherstripping, and safety checks before the first Utah cold snap.",
+    icon: Leaf,
+    category: "Planning",
+    readTime: "Printable PDF",
+    href: "/resources/fall-home-checklist",
     isLive: true,
   },
   {
