@@ -9,9 +9,11 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { TrackedDownloadLink } from "@/components/analytics/TrackedDownloadLink";
 import { SITE_NAME } from "@/lib/constants";
 
 const PDF_URL = "/downloads/fall-home-maintenance-checklist.pdf";
+const PDF_FILE_NAME = "fall-home-maintenance-checklist.pdf";
 
 export const metadata: Metadata = {
   title: `Fall Home Maintenance Checklist | ${SITE_NAME}`,
@@ -168,12 +170,16 @@ export default function FallHomeChecklistPage() {
             when the first Utah cold snap hits. Work through it, and head
             into winter with a home that&apos;s buttoned up tight.
           </p>
-          <Button asChild variant="accent" size="lg">
-            <a href={PDF_URL} download>
-              <Download className="mr-2 h-4 w-4" />
-              Download the Printable PDF
-            </a>
-          </Button>
+          <TrackedDownloadLink
+            href={PDF_URL}
+            eventName="fall_checklist_pdf_download"
+            fileName={PDF_FILE_NAME}
+            variant="accent"
+            size="lg"
+          >
+            <Download className="mr-2 h-4 w-4" />
+            Download the Printable PDF
+          </TrackedDownloadLink>
         </div>
       </section>
 
@@ -224,12 +230,16 @@ export default function FallHomeChecklistPage() {
           </div>
 
           <div className="text-center pt-4">
-            <Button asChild variant="accent" size="lg">
-              <a href={PDF_URL} download>
-                <Download className="mr-2 h-4 w-4" />
-                Download the Printable PDF
-              </a>
-            </Button>
+            <TrackedDownloadLink
+              href={PDF_URL}
+              eventName="fall_checklist_pdf_download"
+              fileName={PDF_FILE_NAME}
+              variant="accent"
+              size="lg"
+            >
+              <Download className="mr-2 h-4 w-4" />
+              Download the Printable PDF
+            </TrackedDownloadLink>
           </div>
         </div>
       </section>
