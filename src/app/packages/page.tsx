@@ -98,7 +98,7 @@ export default function PackagesPage() {
       <section
         className="relative py-20 md:py-28 flex items-center"
         style={{
-          background: "linear-gradient(135deg, #1a0e30 0%, #2D1B4E 50%, #1B3A4B 100%)",
+          background: "#0A0A0A",
         }}
       >
         <div
@@ -290,7 +290,7 @@ export default function PackagesPage() {
       <section
         className="relative py-16 md:py-20 overflow-hidden"
         style={{
-          background: "linear-gradient(135deg, #2D1B4E 0%, #3d2866 40%, #C9A96E 100%)",
+          background: "#0A0A0A",
         }}
       >
         <div className="relative z-10 max-w-3xl mx-auto px-6 text-center">

@@ -146,7 +146,7 @@ export function MortgageCalculator() {
                   setHomePrice(val);
                   setHomePriceInput(formatNumber(val));
                 }}
-                className="w-full accent-[#C9A96E]"
+                className="w-full accent-[#D8AA3F]"
               />
               <div className="flex justify-between text-xs text-muted-foreground mt-1">
                 <span>$100K</span><span>$3M</span>
@@ -188,7 +188,7 @@ export function MortgageCalculator() {
                   setDownPct(val);
                   setDownPctInput(String(val));
                 }}
-                className="w-full accent-[#C9A96E]"
+                className="w-full accent-[#D8AA3F]"
               />
               <div className="flex justify-between text-xs text-muted-foreground mt-1">
                 <span>3%</span><span>50%</span>
@@ -227,7 +227,7 @@ export function MortgageCalculator() {
                   setInterestRate(val);
                   setRateInput(val.toFixed(2));
                 }}
-                className="w-full accent-[#C9A96E]"
+                className="w-full accent-[#D8AA3F]"
               />
               <div className="flex justify-between text-xs text-muted-foreground mt-1">
                 <span>2%</span><span>12%</span>
@@ -261,7 +261,7 @@ export function MortgageCalculator() {
           {/* Results */}
           <div
             className="p-8 md:p-10 flex flex-col"
-            style={{ background: "linear-gradient(160deg, #2D1B4E 0%, #1B3A4B 100%)" }}
+            style={{ background: "#0A0A0A" }}
           >
             <p className="text-white/60 text-xs font-medium tracking-[0.15em] uppercase mb-2">
               Your Estimate
@@ -321,7 +321,7 @@ export function MortgageCalculator() {
       <div className="mt-16 relative rounded-2xl overflow-hidden">
         <div
           className="absolute inset-0"
-          style={{ background: "linear-gradient(135deg, #2D1B4E 0%, #3d2866 40%, #C9A96E 100%)" }}
+          style={{ background: "#0A0A0A" }}
         />
         <div
           className="absolute inset-0 opacity-[0.04]"

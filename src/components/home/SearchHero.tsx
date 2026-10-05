@@ -34,7 +34,7 @@ export function SearchHero() {
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(135deg, #1a0e30 0%, #2D1B4E 30%, #1B3A4B 70%, #0f2633 100%)",
+            "#0A0A0A",
         }}
       />
 
@@ -51,7 +51,7 @@ export function SearchHero() {
       {/* Subtle gold accent glow */}
       <div
         className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full opacity-10 blur-3xl"
-        style={{ background: "radial-gradient(circle, #C9A96E, transparent)" }}
+        style={{ background: "radial-gradient(circle, #D8AA3F, transparent)" }}
       />
 
       {/* Content */}

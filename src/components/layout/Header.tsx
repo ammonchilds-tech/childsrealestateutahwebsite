@@ -17,7 +17,7 @@ export function Header() {
   return (
     <>
       {/* Top bar */}
-      <div className="hidden md:block bg-primary text-white text-sm">
+      <div className="hidden md:block bg-ink text-white text-sm border-b border-white/10">
         <div className="mx-auto max-w-7xl px-6 py-2 flex items-center justify-between">
           <div className="flex items-center gap-6">
             <a
@@ -40,11 +40,11 @@ export function Header() {
       </div>
 
       {/* Main nav */}
-      <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-border">
+      <header className="sticky top-0 z-50 bg-ink/95 backdrop-blur-md border-b border-white/10">
         <div className="mx-auto max-w-7xl px-6 flex items-center justify-between h-20 md:h-24">
           <Link href="/" className="flex items-center">
             <Image
-              src="/images/logo.png"
+              src="/images/logo-white.png"
               alt="Childs Real Estate"
               width={480}
               height={180}
@@ -63,14 +63,14 @@ export function Header() {
                 className={cn(
                   "px-4 py-2 rounded-md text-sm font-medium transition-colors",
                   pathname === link.href
-                    ? "text-accent bg-accent/10"
-                    : "text-foreground/80 hover:text-accent hover:bg-accent/5"
+                    ? "text-gold bg-white/5"
+                    : "text-white/85 hover:text-gold hover:bg-white/5"
                 )}
               >
                 {link.label}
               </Link>
             ))}
-            <Button asChild className="ml-3 gap-2">
+            <Button asChild variant="accent" className="ml-3 gap-2 font-bold">
               <Link href="/contact">
                 <Image src="/images/logo-icon.png" alt="" width={18} height={18} className="w-[18px] h-[18px] shrink-0" />
                 Get In Touch
@@ -81,7 +81,7 @@ export function Header() {
           {/* Mobile nav trigger */}
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger asChild>
-              <button className="md:hidden p-2" aria-label="Open menu">
+              <button className="md:hidden p-2 text-white" aria-label="Open menu">
                 <Menu className="h-6 w-6" />
               </button>
             </SheetTrigger>

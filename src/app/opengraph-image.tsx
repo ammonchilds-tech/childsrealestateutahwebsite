@@ -10,7 +10,7 @@ export default async function Image() {
     (
       <div
         style={{
-          background: "linear-gradient(135deg, #2D1B4E 0%, #1a0f30 100%)",
+          background: "#0A0A0A",
           width: "100%",
           height: "100%",
           display: "flex",
@@ -25,7 +25,7 @@ export default async function Image() {
           style={{
             width: "80px",
             height: "4px",
-            background: "#C9A96E",
+            background: "#D8AA3F",
             marginBottom: "32px",
             borderRadius: "2px",
           }}
@@ -34,7 +34,7 @@ export default async function Image() {
         {/* Brand name */}
         <div
           style={{
-            color: "#C9A96E",
+            color: "#D8AA3F",
             fontSize: "22px",
             letterSpacing: "10px",
             textTransform: "uppercase",
@@ -81,7 +81,7 @@ export default async function Image() {
           style={{
             width: "80px",
             height: "4px",
-            background: "#C9A96E",
+            background: "#D8AA3F",
             borderRadius: "2px",
           }}
         />

@@ -47,31 +47,31 @@ export async function POST(req: NextRequest) {
   const sMessage = escapeHtml(String(message)).replace(/\n/g, "<br>");
 
   const html = `
-    <div style="font-family:sans-serif;max-width:600px;margin:0 auto;color:#1a1a2e;">
-      <div style="background:#2D1B4E;padding:24px 32px;border-radius:8px 8px 0 0;">
-        <h1 style="color:#C9A96E;margin:0;font-size:22px;">New Contact Form Submission</h1>
+    <div style="font-family:sans-serif;max-width:600px;margin:0 auto;color:#0A0A0A;">
+      <div style="background:#0A0A0A;padding:24px 32px;border-radius:8px 8px 0 0;">
+        <h1 style="color:#D8AA3F;margin:0;font-size:22px;">New Contact Form Submission</h1>
         <p style="color:rgba(255,255,255,0.6);margin:4px 0 0;font-size:14px;">Submitted via childsrealestateutah.com/contact</p>
       </div>
       <div style="background:#f9f7f4;padding:32px;border-radius:0 0 8px 8px;border:1px solid #e8e0d4;border-top:none;">
         <table style="width:100%;border-collapse:collapse;">
           <tr>
-            <td style="padding:10px 0;border-bottom:1px solid #e8e0d4;font-weight:600;color:#2D1B4E;width:140px;">Name</td>
+            <td style="padding:10px 0;border-bottom:1px solid #e8e0d4;font-weight:600;color:#0A0A0A;width:140px;">Name</td>
             <td style="padding:10px 0;border-bottom:1px solid #e8e0d4;">${sName}</td>
           </tr>
           <tr>
-            <td style="padding:10px 0;border-bottom:1px solid #e8e0d4;font-weight:600;color:#2D1B4E;">Email</td>
-            <td style="padding:10px 0;border-bottom:1px solid #e8e0d4;"><a href="mailto:${sEmail}" style="color:#C9A96E;">${sEmail}</a></td>
+            <td style="padding:10px 0;border-bottom:1px solid #e8e0d4;font-weight:600;color:#0A0A0A;">Email</td>
+            <td style="padding:10px 0;border-bottom:1px solid #e8e0d4;"><a href="mailto:${sEmail}" style="color:#D8AA3F;">${sEmail}</a></td>
           </tr>
           <tr>
-            <td style="padding:10px 0;border-bottom:1px solid #e8e0d4;font-weight:600;color:#2D1B4E;">Phone</td>
-            <td style="padding:10px 0;border-bottom:1px solid #e8e0d4;">${sPhone ? `<a href="tel:${sPhone}" style="color:#C9A96E;">${sPhone}</a>` : "—"}</td>
+            <td style="padding:10px 0;border-bottom:1px solid #e8e0d4;font-weight:600;color:#0A0A0A;">Phone</td>
+            <td style="padding:10px 0;border-bottom:1px solid #e8e0d4;">${sPhone ? `<a href="tel:${sPhone}" style="color:#D8AA3F;">${sPhone}</a>` : "—"}</td>
           </tr>
           <tr>
-            <td style="padding:10px 0;border-bottom:1px solid #e8e0d4;font-weight:600;color:#2D1B4E;">Subject</td>
+            <td style="padding:10px 0;border-bottom:1px solid #e8e0d4;font-weight:600;color:#0A0A0A;">Subject</td>
             <td style="padding:10px 0;border-bottom:1px solid #e8e0d4;">${sSubject || "—"}</td>
           </tr>
           <tr>
-            <td style="padding:10px 0;font-weight:600;color:#2D1B4E;vertical-align:top;">Message</td>
+            <td style="padding:10px 0;font-weight:600;color:#0A0A0A;vertical-align:top;">Message</td>
             <td style="padding:10px 0;">${sMessage}</td>
           </tr>
         </table>

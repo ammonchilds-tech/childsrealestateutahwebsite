@@ -27,7 +27,7 @@ export function PropertyMap({ lat, lng, address }: PropertyMapProps) {
           className="absolute inset-0 opacity-10"
           style={{
             backgroundImage:
-              "linear-gradient(#1B3A4B 1px, transparent 1px), linear-gradient(90deg, #1B3A4B 1px, transparent 1px)",
+              "linear-gradient(#1A1712 1px, transparent 1px), linear-gradient(90deg, #1A1712 1px, transparent 1px)",
             backgroundSize: "40px 40px",
           }}
         />

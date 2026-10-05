@@ -62,7 +62,7 @@ export default function AboutPage() {
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(135deg, #1a0e30 0%, #2D1B4E 30%, #1B3A4B 70%, #0f2633 100%)",
+              "#0A0A0A",
           }}
         />
         <div
@@ -519,7 +519,7 @@ export default function AboutPage() {
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(135deg, #2D1B4E 0%, #1B3A4B 100%)",
+              "#0A0A0A",
           }}
         />
         <div className="relative z-10 max-w-3xl mx-auto px-6 text-center">

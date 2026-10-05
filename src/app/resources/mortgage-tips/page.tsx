@@ -251,7 +251,7 @@ const MONEY_TIPS = [
 function SectionLabel({ n, label }: { n: number; label: string }) {
   return (
     <span className="inline-flex items-center gap-2 text-xs font-semibold text-accent bg-accent/10 px-3 py-1.5 rounded-full mb-5">
-      <span className="w-4 h-4 rounded-full bg-accent text-white flex items-center justify-center font-bold leading-none text-[10px]">
+      <span className="w-4 h-4 rounded-full bg-accent text-ink flex items-center justify-center font-bold leading-none text-[10px]">
         {n}
       </span>
       {label}
@@ -281,7 +281,7 @@ export default function MortgageTipsPage() {
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(135deg, #1a0e30 0%, #2D1B4E 30%, #1B3A4B 70%, #0f2633 100%)",
+              "#0A0A0A",
           }}
         />
         <div
@@ -338,7 +338,7 @@ export default function MortgageTipsPage() {
                   href={`#section-${item.step}`}
                   className="flex items-center gap-2 group p-2 rounded-lg hover:bg-background transition-colors"
                 >
-                  <span className="w-5 h-5 rounded-full bg-accent/10 text-accent text-[10px] font-bold flex items-center justify-center flex-shrink-0 group-hover:bg-accent group-hover:text-white transition-colors">
+                  <span className="w-5 h-5 rounded-full bg-accent/10 text-accent text-[10px] font-bold flex items-center justify-center flex-shrink-0 group-hover:bg-accent group-hover:text-ink transition-colors">
                     {item.step}
                   </span>
                   <span className="text-xs font-medium text-primary group-hover:text-accent transition-colors leading-tight">
@@ -914,7 +914,7 @@ export default function MortgageTipsPage() {
       <section className="relative py-20 md:py-28 overflow-hidden">
         <div
           className="absolute inset-0"
-          style={{ background: "linear-gradient(135deg, #2D1B4E 0%, #1B3A4B 100%)" }}
+          style={{ background: "#0A0A0A" }}
         />
         <div className="relative z-10 max-w-3xl mx-auto px-6 text-center">
           <h2 className="font-heading text-3xl md:text-4xl text-white mb-4">

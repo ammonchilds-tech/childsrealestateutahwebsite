@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { SITE_NAME, SITE_DESCRIPTION, SITE_URL, OFFICE } from "@/lib/constants";
-import { anton, dmSans } from "@/lib/fonts";
 
 export const metadata: Metadata = {
   title: `Utah's Top Listing Agents | ${SITE_NAME}`,
@@ -92,7 +91,7 @@ const localBusinessJsonLd = {
 
 export default function HomePage() {
   return (
-    <div className={`home-gs ${anton.variable} ${dmSans.variable}`}>
+    <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
@@ -151,6 +150,6 @@ export default function HomePage() {
       {/* <FeaturedAreas /> archived */}
       <TeamPreview />
       <HomeCTA />
-    </div>
+    </>
   );
 }

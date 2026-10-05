@@ -1,38 +1,38 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-background: #FDFBF7;
-  --color-foreground: #1a1a2e;
+  --color-background: #FFFFFF;
+  --color-foreground: #0A0A0A;
 
-  --color-primary: #2D1B4E;
-  --color-primary-light: #4A2D6B;
-  --color-primary-dark: #1A0F2E;
+  --color-primary: #0A0A0A;
+  --color-primary-light: #1F1F1F;
+  --color-primary-dark: #000000;
 
-  --color-accent: #C9A96E;
-  --color-accent-light: #DFC599;
-  --color-accent-dark: #A68B4B;
+  --color-accent: #D8AA3F;
+  --color-accent-light: #E6C46E;
+  --color-accent-dark: #A87F22;
 
-  --color-secondary: #1B3A4B;
-  --color-secondary-light: #2A5A6E;
+  --color-secondary: #1A1712;
+  --color-secondary-light: #2A2620;
 
-  --color-muted: #F5F0E8;
-  --color-muted-foreground: #6B6B80;
+  --color-muted: #F6F4EF;
+  --color-muted-foreground: #57534E;
 
-  --color-border: #E8E0D0;
-  --color-input: #E8E0D0;
-  --color-ring: #C9A96E;
+  --color-border: #E7E4DD;
+  --color-input: #E7E4DD;
+  --color-ring: #D8AA3F;
 
   --color-card: #FFFFFF;
-  --color-card-foreground: #1a1a2e;
+  --color-card-foreground: #0A0A0A;
 
   --color-destructive: #DC2626;
 
-  /* Gold Standard palette (homepage redesign) */
+  /* Gold Standard palette */
   --color-gold: #D8AA3F;
   --color-ink: #0A0A0A;
 
-  --font-heading: 'Playfair Display', Georgia, serif;
-  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-heading: var(--font-anton), Impact, sans-serif;
+  --font-sans: var(--font-dm-sans), system-ui, -apple-system, sans-serif;
 }
 
 * {
@@ -45,21 +45,25 @@ body {
   font-family: var(--font-sans);
 }
 
-h1, h2, h3, h4, h5, h6 {
+/* Anton display for page and section titles; DM Sans for everything else */
+h1, h2 {
   font-family: var(--font-heading);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.005em;
 }
 
-/* Gold Standard homepage: DM Sans body, Anton display */
-.home-gs {
-  font-family: var(--font-dm-sans), system-ui, sans-serif;
+h3, h4, h5, h6 {
+  font-family: var(--font-sans);
 }
 
-.home-gs :where(h1, h2, h3, h4, h5, h6) {
-  font-family: inherit;
+/* Anton ships one weight; never fake-bold it */
+h1, h2, .font-heading, .font-display {
+  font-synthesis: none;
 }
 
 .font-display {
-  font-family: var(--font-anton), Impact, sans-serif;
+  font-family: var(--font-heading);
   font-weight: 400;
   text-transform: uppercase;
 }

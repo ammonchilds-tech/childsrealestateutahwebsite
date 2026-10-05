@@ -125,7 +125,7 @@ export default function ClearCommissionPage() {
       <section
         className="relative py-20 md:py-28 overflow-hidden"
         style={{
-          background: "linear-gradient(135deg, #1a0e30 0%, #2D1B4E 50%, #1B3A4B 100%)",
+          background: "#0A0A0A",
         }}
       >
         <div
@@ -290,7 +290,7 @@ export default function ClearCommissionPage() {
 
           {/* Zillow callout */}
           <div className="mt-10 max-w-3xl mx-auto rounded-xl px-6 py-5 text-center"
-            style={{ background: "linear-gradient(135deg, #2D1B4E 0%, #1B3A4B 100%)" }}>
+            style={{ background: "#0A0A0A" }}>
             <div className="flex items-center justify-center gap-2 mb-1">
               <Star className="h-4 w-4 text-accent fill-accent" />
               <p className="text-sm font-bold text-white tracking-wide uppercase">
@@ -482,7 +482,7 @@ export default function ClearCommissionPage() {
       <section
         className="relative py-16 md:py-20 overflow-hidden"
         style={{
-          background: "linear-gradient(135deg, #2D1B4E 0%, #3d2866 40%, #C9A96E 100%)",
+          background: "#0A0A0A",
         }}
       >
         <div className="relative z-10 max-w-3xl mx-auto px-6 text-center">

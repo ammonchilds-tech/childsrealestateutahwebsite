@@ -21,7 +21,7 @@ export function HomeValuationCTA() {
             className="relative p-10 md:p-14 flex flex-col justify-center"
             style={{
               background:
-                "linear-gradient(135deg, #1a0e30 0%, #2D1B4E 60%, #1B3A4B 100%)",
+                "#0A0A0A",
             }}
           >
             <div

@@ -1,6 +1,6 @@
 import { Anton, DM_Sans } from "next/font/google";
 
-// Homepage "Gold Standard" type pairing
+// Site-wide "Gold Standard" type pairing
 export const anton = Anton({
   subsets: ["latin"],
   weight: "400",

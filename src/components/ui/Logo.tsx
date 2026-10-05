@@ -4,9 +4,9 @@ interface LogoProps {
 }
 
 export function Logo({ className = "", variant = "dark" }: LogoProps) {
-  const textFill = variant === "dark" ? "#2D1B4E" : "#FFFFFF";
-  const subtitleFill = variant === "dark" ? "#6B6B80" : "rgba(255,255,255,0.7)";
-  const gold = "#C9A96E";
+  const textFill = variant === "dark" ? "#0A0A0A" : "#FFFFFF";
+  const subtitleFill = variant === "dark" ? "#57534E" : "rgba(255,255,255,0.7)";
+  const gold = "#D8AA3F";
 
   return (
     <svg
