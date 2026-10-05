@@ -15,7 +15,7 @@ export function Footer() {
   const [mlsExpanded, setMlsExpanded] = useState(false);
 
   return (
-    <footer className="bg-primary text-white">
+    <footer className="bg-ink text-white border-t-4 border-gold">
       {/* Main footer */}
       <div className="mx-auto max-w-7xl px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">

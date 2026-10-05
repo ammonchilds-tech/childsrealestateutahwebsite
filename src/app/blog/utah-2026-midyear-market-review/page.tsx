@@ -97,14 +97,14 @@ export default function MidYearReviewPost() {
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(135deg, #1a0e30 0%, #2D1B4E 30%, #1B3A4B 70%, #0f2633 100%)",
+              "#0A0A0A",
           }}
         />
         <div
           className="absolute inset-0 opacity-[0.04]"
           style={{
             backgroundImage:
-              "radial-gradient(circle, #C9A96E 1px, transparent 1px)",
+              "radial-gradient(circle, #D8AA3F 1px, transparent 1px)",
             backgroundSize: "32px 32px",
           }}
         />

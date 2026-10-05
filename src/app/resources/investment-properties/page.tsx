@@ -186,7 +186,7 @@ export default function InvestmentPropertiesPage() {
         className="relative py-24 md:py-32 overflow-hidden"
         style={{
           background:
-            "linear-gradient(135deg, #1a0e30 0%, #2D1B4E 30%, #1B3A4B 70%, #0f2633 100%)",
+            "#0A0A0A",
         }}
       >
         <div
@@ -422,7 +422,7 @@ export default function InvestmentPropertiesPage() {
       {/* CTA */}
       <section
         className="relative py-20 overflow-hidden"
-        style={{ background: "linear-gradient(135deg, #2D1B4E 0%, #1B3A4B 100%)" }}
+        style={{ background: "#0A0A0A" }}
       >
         <div className="relative z-10 max-w-3xl mx-auto px-6 text-center">
           <h2 className="font-heading text-3xl md:text-4xl text-white mb-4">

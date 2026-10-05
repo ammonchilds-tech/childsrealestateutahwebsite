@@ -1,88 +1,47 @@
 import Link from "next/link";
-import { ArrowRight, Phone, CalendarDays } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { ArrowRight, CalendarDays } from "lucide-react";
 import { OFFICE } from "@/lib/constants";
 
 export function HomeCTA() {
   return (
-    <section className="relative py-20 md:py-28 overflow-hidden">
-      {/* Gradient background */}
-      <div
-        className="absolute inset-0"
-        style={{
-          background:
-            "linear-gradient(135deg, #2D1B4E 0%, #3d2866 40%, #C9A96E 100%)",
-        }}
-      />
-
-      {/* Decorative pattern */}
-      <div
-        className="absolute inset-0 opacity-[0.04]"
-        style={{
-          backgroundImage:
-            "radial-gradient(circle at 20% 50%, white 1px, transparent 1px), radial-gradient(circle at 80% 50%, white 1px, transparent 1px)",
-          backgroundSize: "40px 40px",
-        }}
-      />
-
-      {/* Content */}
-      <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
-        {/* Decorative line */}
-        <div className="flex items-center justify-center gap-3 mb-8">
-          <div className="h-px w-12 bg-white/30" />
-          <div className="w-2 h-2 rounded-full bg-white/40" />
-          <div className="h-px w-12 bg-white/30" />
+    <section className="bg-gold text-ink py-20 md:py-24">
+      <div className="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-10">
+        <div>
+          <h2 className="font-display text-6xl md:text-8xl leading-[0.92]">
+            What&apos;s your
+            <br />
+            home worth?
+          </h2>
+          <p className="mt-5 max-w-lg text-lg font-medium">
+            Get a free valuation and a personalized selling strategy built for
+            the best possible outcome.
+          </p>
         </div>
 
-        <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl text-white leading-tight">
-          Ready to List Your
-          <span className="block mt-1">Home?</span>
-        </h2>
-
-        <p className="mt-6 text-white/70 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-          Find out what your home is worth and let our team create a
-          personalized selling strategy to get you the best possible outcome.
-        </p>
-
-        {/* Buttons */}
-        <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Button
-            asChild
-            size="lg"
-            className="bg-white text-primary hover:bg-white/90 font-semibold h-13 px-8 rounded-lg group"
+        <div className="flex flex-col gap-3.5 lg:min-w-[340px]">
+          <Link
+            href="/sell"
+            className="group inline-flex items-center justify-center gap-2.5 h-15 min-h-[60px] px-8 bg-ink text-white font-bold text-lg hover:bg-ink/85 transition-colors"
           >
-            <Link href="/sell">
-              Get Free Home Valuation
-              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Link>
-          </Button>
-          <Button
-            asChild
-            size="lg"
-            variant="outline"
-            className="border-white/30 text-white hover:bg-white/10 hover:text-white font-semibold h-13 px-8 rounded-lg"
+            Get My Free Valuation
+            <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+          </Link>
+          <a
+            href="https://calendar.app.google/pLYzk4KoBHBjjhgG8"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2.5 min-h-[60px] px-8 border-2 border-ink font-bold text-lg hover:bg-ink hover:text-white transition-colors"
           >
-            <a
-              href="https://calendar.app.google/pLYzk4KoBHBjjhgG8"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <CalendarDays className="mr-2 h-4 w-4" />
-              Schedule a Meeting
-            </a>
-          </Button>
-        </div>
-
-        {/* Phone number */}
-        <p className="mt-8 text-white/50 text-sm">
-          Or call us directly at{" "}
+            <CalendarDays className="h-5 w-5" />
+            Schedule a Meeting
+          </a>
           <a
             href={`tel:${OFFICE.phone}`}
-            className="text-white/70 hover:text-white underline underline-offset-4 transition-colors"
+            className="text-center font-semibold underline underline-offset-4 mt-1"
           >
-            {OFFICE.phone}
+            Or call {OFFICE.phone}
           </a>
-        </p>
+        </div>
       </div>
     </section>
   );

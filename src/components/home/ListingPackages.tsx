@@ -1,7 +1,6 @@
 import Link from "next/link";
-import { Check, ArrowRight, Star } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
+import { ArrowRight, Star } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 const PACKAGES = [
   {
@@ -69,112 +68,137 @@ const PACKAGES = [
 
 export function ListingPackages() {
   return (
-    <section id="listing-packages" className="py-20 md:py-28 bg-muted scroll-mt-20">
+    <section id="listing-packages" className="py-20 md:py-28 bg-white text-ink scroll-mt-20">
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
-        <div className="text-center mb-12">
-          <p className="text-accent text-sm font-medium tracking-[0.2em] uppercase mb-3">
-            Childs Real Estate
-          </p>
-          <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl text-foreground">
-            Smart Seller Programs
-          </h2>
-          <div className="mt-4 mx-auto w-16 h-0.5 bg-accent rounded-full" />
-          <p className="mt-6 text-muted-foreground text-lg max-w-2xl mx-auto">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12 md:mb-14">
+          <div>
+            <h2 className="font-display text-5xl md:text-7xl leading-[0.95]">
+              Smart Seller
+              <br />
+              Programs
+            </h2>
+            <div className="mt-6 inline-flex items-center gap-2.5 bg-gold rounded-full px-5 py-2">
+              <span className="w-2.5 h-2.5 rounded-full bg-ink animate-pulse flex-shrink-0" />
+              <p className="text-sm font-bold tracking-wide">Seller can cancel anytime!</p>
+            </div>
+          </div>
+          <p className="max-w-md text-lg text-neutral-700">
             Choose the level of service that fits your goals — every program includes
             full MLS exposure, professional photography, and expert negotiation.
           </p>
-
-          {/* Value callout */}
-          <div className="mt-8 inline-flex items-center gap-2.5 bg-accent border-2 border-accent rounded-full px-6 py-2.5 shadow-md">
-            <span className="w-2.5 h-2.5 rounded-full bg-primary animate-pulse flex-shrink-0" />
-            <p className="text-sm font-bold text-primary tracking-wide">
-              Seller can cancel anytime!
-            </p>
-          </div>
         </div>
 
-        {/* Compact 3-tier grid */}
-        <div className="grid md:grid-cols-3 gap-6">
+        {/* 3-tier grid */}
+        <div className="grid md:grid-cols-3 gap-5">
           {PACKAGES.map((pkg) => (
             <div
               key={pkg.name}
-              className={`relative rounded-2xl p-8 flex flex-col ${
-                pkg.featured
-                  ? "bg-primary border-2 border-primary shadow-xl"
-                  : "bg-background border border-border/60"
-              }`}
-            >
-              {pkg.badge && (
-                <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
-                  <Badge
-                    variant={pkg.featured ? "accent" : undefined}
-                    className={
-                      pkg.featured
-                        ? "text-xs font-semibold px-4 py-1 rounded-full shadow"
-                        : "text-xs font-semibold px-4 py-1 rounded-full shadow bg-accent/20 text-accent border border-accent/40"
-                    }
-                  >
-                    {pkg.badge}
-                  </Badge>
-                </div>
+              className={cn(
+                "rounded-[20px] p-8 md:p-10 flex flex-col",
+                pkg.featured ? "bg-ink text-white" : "bg-white border border-[#E7E4DD]"
               )}
-
-              <h3 className={`font-heading text-2xl mb-1 ${pkg.featured ? "text-white" : "text-foreground"}`}>
-                {pkg.name}
-              </h3>
-              <div className="flex items-baseline gap-1 mt-2 mb-1">
-                <span className="font-heading text-4xl text-accent font-semibold">{pkg.fee}</span>
-                <span className={`text-sm ${pkg.featured ? "text-white/60" : "text-muted-foreground"}`}>
-                  listing fee
-                </span>
+            >
+              <div className="flex items-center justify-between gap-3">
+                <h3 className="text-lg font-bold">{pkg.name}</h3>
+                {pkg.featured ? (
+                  <span className="bg-gold text-ink text-xs font-extrabold uppercase tracking-wider px-3 py-1.5 rounded-full">
+                    {pkg.badge}
+                  </span>
+                ) : pkg.badge ? (
+                  <span className="border border-ink text-ink text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-full">
+                    {pkg.badge}
+                  </span>
+                ) : (
+                  <span className="w-3.5 h-3.5 rounded-full bg-gold" aria-hidden="true" />
+                )}
               </div>
-              <ul className="space-y-2.5 mt-4 flex-1">
+
+              <p
+                className={cn(
+                  "mt-5 text-7xl md:text-[80px] font-extrabold leading-[0.9] tracking-[-0.04em]",
+                  pkg.featured && "text-gold"
+                )}
+              >
+                {pkg.fee}
+              </p>
+              <p className={cn("mt-2 text-sm", pkg.featured ? "text-white/70" : "text-neutral-600")}>
+                listing fee
+              </p>
+
+              <ul
+                className={cn(
+                  "mt-6 pt-6 border-t space-y-2.5 flex-1",
+                  pkg.featured ? "border-white/20" : "border-[#E7E4DD]"
+                )}
+              >
                 {pkg.highlights.map((h) => (
-                  <li key={h} className={`flex items-start gap-2.5 text-sm ${h.endsWith(':') ? 'font-semibold mt-1' : ''}`}>
-                    {!h.endsWith(':') && (
-                      <Check className="h-4 w-4 text-accent flex-shrink-0 mt-0.5" />
+                  <li
+                    key={h}
+                    className={cn(
+                      "text-[15px]",
+                      h.endsWith(":")
+                        ? "font-bold"
+                        : pkg.featured
+                          ? "text-white/85"
+                          : "text-neutral-700"
                     )}
-                    <span className={pkg.featured ? "text-white/90" : "text-foreground"}>
-                      {h}
-                    </span>
+                  >
+                    {h}
                   </li>
                 ))}
               </ul>
 
-              <ul className={`mt-5 pt-4 space-y-1.5 border-t ${pkg.featured ? "border-white/20" : "border-border/60"}`}>
+              <ul
+                className={cn(
+                  "mt-6 pt-4 border-t space-y-1.5",
+                  pkg.featured ? "border-white/20" : "border-[#E7E4DD]"
+                )}
+              >
                 {pkg.footer.map((note) => (
-                  <li key={note} className={`text-xs ${pkg.featured ? "text-white/50" : "text-muted-foreground"} text-center`}>
+                  <li
+                    key={note}
+                    className={cn("text-xs", pkg.featured ? "text-white/60" : "text-neutral-500")}
+                  >
                     {note}
                   </li>
                 ))}
               </ul>
+
+              <Link
+                href="/sell"
+                className={cn(
+                  "mt-8 inline-flex items-center justify-center h-13 min-h-[52px] rounded-full font-bold transition-colors",
+                  pkg.featured
+                    ? "bg-gold text-ink hover:bg-gold/90"
+                    : "border-2 border-ink hover:bg-ink hover:text-white"
+                )}
+              >
+                Choose {pkg.name}
+              </Link>
             </div>
           ))}
         </div>
 
-        {/* Zillow stat callout */}
-        <div className="mt-10 text-center">
-          <div className="inline-flex items-center gap-2 bg-primary/5 border border-accent/30 rounded-xl px-6 py-3">
-            <Star className="h-4 w-4 text-accent fill-accent flex-shrink-0" />
-            <p className="text-sm font-semibold text-foreground">
+        {/* Zillow stat + details link */}
+        <div className="mt-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+          <div className="inline-flex items-center gap-2.5">
+            <Star className="h-4 w-4 text-gold fill-gold flex-shrink-0" />
+            <p className="text-sm font-semibold">
               Homes featured on Zillow Showcase sell for 2% more on average
             </p>
           </div>
+          <Link
+            href="/packages"
+            className="group inline-flex items-center gap-2 font-bold border-b-2 border-ink pb-1 self-start"
+          >
+            See full package details
+            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+          </Link>
         </div>
-
-        {/* Link to full details */}
-        <div className="mt-8 text-center">
-          <Button asChild variant="accent" size="lg" className="group">
-            <Link href="/packages">
-              See full package details
-              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Link>
-          </Button>
-          <p className="mt-4 text-xs text-muted-foreground">
-            Buyer&apos;s agent commission negotiated separately. All fees subject to listing agreement.
-          </p>
-        </div>
+        <p className="mt-6 text-xs text-neutral-500">
+          Buyer&apos;s agent commission negotiated separately. All fees subject to listing agreement.
+        </p>
       </div>
     </section>
   );
