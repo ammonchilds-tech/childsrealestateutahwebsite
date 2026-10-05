@@ -4,8 +4,8 @@ import { ArrowRight } from "lucide-react";
 export function SellerHero() {
   return (
     <section className="bg-gold text-ink overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 pt-16 md:pt-20 flex flex-col lg:flex-row lg:items-end gap-6 lg:gap-10">
-        <div className="flex-1 min-w-0 lg:pb-20">
+      <div className="max-w-7xl mx-auto px-6 pt-16 md:pt-20 flex flex-col xl:flex-row xl:items-end gap-6 xl:gap-10">
+        <div className="flex-1 min-w-0 xl:pb-20">
           <p className="text-sm font-bold tracking-[0.18em] uppercase mb-5">
             Smart Seller Program
           </p>
@@ -41,7 +41,7 @@ export function SellerHero() {
           </div>
         </div>
 
-        <div className="flex lg:justify-end" aria-hidden="true">
+        <div className="flex xl:justify-end" aria-hidden="true">
           <span className="font-display text-[150px] sm:text-[260px] lg:text-[380px] leading-[0.78] tracking-[-0.02em]">
             1%
           </span>

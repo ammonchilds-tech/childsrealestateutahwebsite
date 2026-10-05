@@ -54,7 +54,7 @@ export function Header() {
           </Link>
 
           {/* Desktop nav */}
-          <nav className="hidden md:flex items-center gap-1">
+          <nav className="hidden xl:flex items-center gap-1">
             {NAV_LINKS.map((link) => (
               <Link
                 key={link.href}
@@ -81,7 +81,7 @@ export function Header() {
           {/* Mobile nav trigger */}
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger asChild>
-              <button className="md:hidden p-2 text-white" aria-label="Open menu">
+              <button className="xl:hidden p-2 text-white" aria-label="Open menu">
                 <Menu className="h-6 w-6" />
               </button>
             </SheetTrigger>
