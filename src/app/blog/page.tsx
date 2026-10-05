@@ -21,6 +21,15 @@ export const metadata: Metadata = {
 
 const POSTS = [
   {
+    slug: "mortgage-rates-rise-october-2026-what-it-means",
+    title: "Mortgage Rates Just Jumped to 7.28% — Here's What It Means for Utah Buyers and Sellers",
+    excerpt:
+      "The 30-year fixed rate jumped from 7.03% to 7.28% in a single week, its highest level since November 2023. Here's what that does to monthly payments and buying power in Utah County and Salt Lake County, and how buyers and sellers can respond.",
+    date: "October 5, 2026",
+    readTime: "6 min read",
+    category: "Rates & Financing",
+  },
+  {
     slug: "utah-september-2026-market-update",
     title: "Utah September 2026 Market Update: The Fall Slowdown Arrives as County Prices Split Again",
     excerpt:
