@@ -21,32 +21,37 @@ const COUNTIES = [
 
 export function MarketStats() {
   return (
-    <section className="bg-primary py-10 border-b border-white/10">
+    <section className="bg-ink text-white py-16 md:py-20">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-8">
-          <p className="text-accent text-xs font-medium tracking-[0.2em] uppercase mb-2">
-            August 21 – September 3, 2026
-          </p>
-          <h2 className="font-heading text-2xl md:text-3xl text-white">
-            This Week&apos;s Market Snapshot
-          </h2>
-          <p className="mt-3 text-white/60 text-sm max-w-xl mx-auto leading-relaxed">
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10">
+          <div>
+            <p className="text-gold text-xs font-bold tracking-[0.18em] uppercase mb-2">
+              August 21 – September 3, 2026
+            </p>
+            <h2 className="font-display text-4xl md:text-5xl leading-none">
+              This Week&apos;s Market Snapshot
+            </h2>
+          </div>
+          <p className="text-white/70 text-sm max-w-xl leading-relaxed">
             Utah County sits at 72 days on market with 214 homes sold and sold prices tracking closely to list at $676K. Salt Lake County is moving at 57 days with 296 sales at $640K. If you&apos;re thinking of selling, now is a great time to list.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-0 md:divide-x md:divide-white/20">
-          {COUNTIES.map((county) => (
-            <div key={county.name} className="px-6">
-              <p className="text-center text-white/50 text-xs font-medium tracking-widest uppercase mb-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12">
+          {COUNTIES.map((county, i) => (
+            <div key={county.name}>
+              <p className="text-white/60 text-xs font-bold tracking-[0.18em] uppercase mb-4">
                 {county.name}
               </p>
-              <div className="grid grid-cols-4 divide-x divide-white/20">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-5">
                 {county.stats.map((stat) => (
-                  <div key={stat.label} className="text-center px-3 py-2">
-                    <p className="font-heading text-2xl md:text-3xl text-accent font-semibold">
+                  <div
+                    key={stat.label}
+                    className={`border-t-4 pt-3 ${i === 0 ? "border-gold" : "border-white"}`}
+                  >
+                    <p className="font-display text-4xl md:text-[44px] leading-none">
                       {stat.value}
                     </p>
-                    <p className="text-white/90 text-xs font-medium mt-0.5 leading-tight">
+                    <p className="text-white/70 text-xs font-medium mt-1.5 leading-tight">
                       {stat.label}
                     </p>
                   </div>

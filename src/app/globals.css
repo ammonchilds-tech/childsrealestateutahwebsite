@@ -27,6 +27,10 @@
 
   --color-destructive: #DC2626;
 
+  /* Gold Standard palette (homepage redesign) */
+  --color-gold: #D8AA3F;
+  --color-ink: #0A0A0A;
+
   --font-heading: 'Playfair Display', Georgia, serif;
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
 }
@@ -43,6 +47,21 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
+}
+
+/* Gold Standard homepage: DM Sans body, Anton display */
+.home-gs {
+  font-family: var(--font-dm-sans), system-ui, sans-serif;
+}
+
+.home-gs :where(h1, h2, h3, h4, h5, h6) {
+  font-family: inherit;
+}
+
+.font-display {
+  font-family: var(--font-anton), Impact, sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
 }
 
 /* Smooth scrolling */
