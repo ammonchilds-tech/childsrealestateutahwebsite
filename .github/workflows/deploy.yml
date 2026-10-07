@@ -24,4 +24,16 @@ jobs:
         run: npm run cf:deploy
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+
+      # The contact and valuation forms read RESEND_API_KEY at runtime, so it
+      # must exist as a Worker secret — a build-time env var is not enough.
+      - name: Sync Resend API key to Worker
+        run: |
+          if [ -z "$RESEND_API_KEY" ]; then
+            echo "::error::RESEND_API_KEY GitHub secret is not set — contact forms will fail"
+            exit 1
+          fi
+          printf '%s' "$RESEND_API_KEY" | npx wrangler secret put RESEND_API_KEY
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
