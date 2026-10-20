@@ -85,9 +85,9 @@ export function Header() {
                 <Menu className="h-6 w-6" />
               </button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-80 p-0">
+            <SheetContent side="right" className="w-80 p-0 h-dvh">
               <div className="flex flex-col h-full">
-                <div className="p-6 border-b border-border">
+                <div className="p-6 border-b border-border shrink-0">
                   <Image
                     src="/images/logo.png"
                     alt="Childs Real Estate"
@@ -96,7 +96,7 @@ export function Header() {
                     className="h-9 w-auto"
                   />
                 </div>
-                <nav className="flex-1 p-6 space-y-1">
+                <nav className="flex-1 min-h-0 overflow-y-auto overscroll-contain p-6 space-y-1">
                   {NAV_LINKS.map((link) => (
                     <SheetClose asChild key={link.href}>
                       <Link
@@ -114,7 +114,7 @@ export function Header() {
                     </SheetClose>
                   ))}
                 </nav>
-                <div className="p-6 border-t border-border space-y-3 text-sm text-muted-foreground">
+                <div className="p-6 border-t border-border shrink-0 space-y-3 text-sm text-muted-foreground">
                   <a href={`tel:${OFFICE.phone}`} className="flex items-center gap-2">
                     <Phone className="h-4 w-4" /> {OFFICE.phone}
                   </a>
