@@ -21,6 +21,15 @@ export const metadata: Metadata = {
 
 const POSTS = [
   {
+    slug: "utah-october-2026-market-update",
+    title: "Utah October 2026 Market Update: Sales Thin Out and Utah County Prices Reset Lower",
+    excerpt:
+      "Utah County closed just 66 homes and Salt Lake County 137 in mid-to-late October as higher mortgage rates and the fall season thinned out the market. Days on market rose in both counties, Utah County's average sold price fell below Salt Lake County's, and sellers are still closing within about 2% of list.",
+    date: "October 28, 2026",
+    readTime: "7 min read",
+    category: "Market Update",
+  },
+  {
     slug: "mortgage-rates-rise-october-2026-what-it-means",
     title: "Mortgage Rates Just Jumped to 7.28% — Here's What It Means for Utah Buyers and Sellers",
     excerpt:
