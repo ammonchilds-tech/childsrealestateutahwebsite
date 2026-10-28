@@ -2,19 +2,19 @@ const COUNTIES = [
   {
     name: "Utah County",
     stats: [
-      { label: "Avg Days on Market", value: "72" },
-      { label: "Avg List Price", value: "$686K" },
-      { label: "Avg Sold Price", value: "$676K" },
-      { label: "Number of Sales", value: "214" },
+      { label: "Avg Days on Market", value: "76" },
+      { label: "Avg List Price", value: "$581K" },
+      { label: "Avg Sold Price", value: "$572K" },
+      { label: "Number of Sales", value: "66" },
     ],
   },
   {
     name: "Salt Lake County",
     stats: [
-      { label: "Avg Days on Market", value: "57" },
-      { label: "Avg List Price", value: "$650K" },
-      { label: "Avg Sold Price", value: "$640K" },
-      { label: "Number of Sales", value: "296" },
+      { label: "Avg Days on Market", value: "68" },
+      { label: "Avg List Price", value: "$617K" },
+      { label: "Avg Sold Price", value: "$606K" },
+      { label: "Number of Sales", value: "137" },
     ],
   },
 ];
@@ -26,14 +26,14 @@ export function MarketStats() {
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10">
           <div>
             <p className="text-gold text-xs font-bold tracking-[0.18em] uppercase mb-2">
-              August 21 – September 3, 2026
+              October 15 – 28, 2026
             </p>
             <h2 className="font-display text-4xl md:text-5xl leading-none">
               This Week&apos;s Market Snapshot
             </h2>
           </div>
           <p className="text-white/70 text-sm max-w-xl leading-relaxed">
-            Utah County sits at 72 days on market with 214 homes sold and sold prices tracking closely to list at $676K. Salt Lake County is moving at 57 days with 296 sales at $640K. If you&apos;re thinking of selling, now is a great time to list.
+            Utah County sits at 76 days on market with 66 homes sold at an average of $572K, about 1.5% under list. Salt Lake County is moving at 68 days with 137 sales at $606K. With fewer homes competing for buyers this fall, a well-priced listing stands out.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12">
