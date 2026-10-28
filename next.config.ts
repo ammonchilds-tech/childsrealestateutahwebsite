@@ -27,12 +27,8 @@ const securityHeaders = [
 
 const nextConfig: NextConfig = {
   outputFileTracingRoot: path.join(__dirname),
-  webpack: (config) => {
-    config.resolve.modules = [
-      path.join(__dirname, "node_modules"),
-      "node_modules",
-    ];
-    return config;
+  turbopack: {
+    root: path.join(__dirname),
   },
   images: {
     unoptimized: true, // Required for Cloudflare Workers deployment
