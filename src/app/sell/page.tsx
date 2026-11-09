@@ -144,7 +144,7 @@ export default function SellPage() {
       </section>
 
       {/* Valuation Form */}
-      <section className="py-20 md:py-28">
+      <section id="home-value" className="py-20 md:py-28 scroll-mt-28">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div>
