@@ -69,7 +69,7 @@ export default function RootLayout({
           `}
         </Script>
         <Header />
-        <main className="flex-1">{children}</main>
+        <main id="main" tabIndex={-1} className="flex-1 focus:outline-none">{children}</main>
         <Footer />
         <FAB />
       </body>

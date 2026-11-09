@@ -42,18 +42,49 @@ export const TEAM = [
   },
 ];
 
-export const NAV_LINKS: Array<{ label: string; href: string; external?: boolean }> = [
-  { label: "Home", href: "/" },
-  { label: "Packages", href: "/packages" },
-  { label: "Sell", href: "/sell" },
-  { label: "Buy", href: "/buyers" },
-  { label: "Resources", href: "/resources" },
-  { label: "Blog", href: "/blog" },
-  { label: "Vendors", href: "/vendors" },
-  { label: "Calculator", href: "/mortgage-calculator" },
-  { label: "About", href: "/about" },
-  { label: "FAQ", href: "/faq" },
+export type NavItem = { label: string; href: string; description?: string };
+export type NavGroup = { label: string; items: NavItem[] };
+
+/** Main site navigation, grouped by what a visitor is trying to do. */
+export const NAV_GROUPS: NavGroup[] = [
+  {
+    label: "Sell",
+    items: [
+      { label: "Selling Your Home", href: "/sell", description: "How we sell your home for top dollar" },
+      { label: "Free Home Value", href: "/sell#home-value", description: "Find out what your home is worth" },
+      { label: "Listing Packages", href: "/packages", description: "Compare our seller packages" },
+      { label: "Clear Commission", href: "/clear-commission", description: "Simple, upfront pricing" },
+    ],
+  },
+  {
+    label: "Buy",
+    items: [
+      { label: "Buying a Home", href: "/buyers", description: "Our step-by-step buyer guide" },
+      { label: "Mortgage Calculator", href: "/mortgage-calculator", description: "Estimate your monthly payment" },
+    ],
+  },
+  {
+    label: "Resources",
+    items: [
+      { label: "Blog", href: "/blog", description: "Market news and home tips" },
+      { label: "Utah Market Update", href: "/resources/utah-market-update", description: "Latest local numbers" },
+      { label: "Investment Properties", href: "/resources/investment-properties", description: "Guides for investors" },
+      { label: "All Resources", href: "/resources", description: "Guides and downloads" },
+      { label: "Trusted Vendors", href: "/vendors", description: "Lenders, inspectors and more" },
+      { label: "FAQ", href: "/faq", description: "Answers to common questions" },
+    ],
+  },
+  {
+    label: "About",
+    items: [
+      { label: "Our Team", href: "/about", description: "Meet Ammon and Tasha" },
+      { label: "Testimonials", href: "/testimonials", description: "What our clients say" },
+      { label: "Contact Us", href: "/contact", description: "Call, email or send a message" },
+    ],
+  },
 ];
+
+export const SCHEDULE_MEETING_URL = "https://calendar.app.google/pLYzk4KoBHBjjhgG8";
 
 export const FEATURED_AREAS = [
   {

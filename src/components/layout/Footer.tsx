@@ -5,8 +5,9 @@ import Image from "next/image";
 import { useState } from "react";
 import { ChevronDown, ChevronUp, Phone, Mail, MapPin } from "lucide-react";
 import {
-  NAV_LINKS,
+  NAV_GROUPS,
   OFFICE,
+  SCHEDULE_MEETING_URL,
   MLS_DISCLAIMER,
   BHHS_DISCLAIMER,
 } from "@/lib/constants";
@@ -18,9 +19,9 @@ export function Footer() {
     <footer className="bg-ink text-white border-t-4 border-gold">
       {/* Main footer */}
       <div className="mx-auto max-w-7xl px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div className="grid grid-cols-2 lg:grid-cols-6 gap-x-8 gap-y-10">
           {/* Brand */}
-          <div className="space-y-4">
+          <div className="col-span-2 space-y-4">
             <Image
               src="/images/logo-white.png"
               alt="Childs Real Estate"
@@ -53,64 +54,35 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Navigation */}
-          <div>
-            <h4 className="font-heading text-lg font-semibold mb-4 text-white">
-              Quick Links
-            </h4>
-            <ul className="space-y-2 text-sm">
-              {NAV_LINKS.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    {...(link.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                    className="text-white hover:text-accent transition-colors"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-              <li>
-                <a
-                  href="https://calendar.app.google/pLYzk4KoBHBjjhgG8"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-white hover:text-accent transition-colors"
-                >
-                  Schedule a Meeting
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Legal */}
-          <div>
-            <h4 className="font-heading text-lg font-semibold mb-4 text-white">
-              Legal
-            </h4>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <Link href="/terms" className="text-white hover:text-accent transition-colors">
-                  Terms of Service
-                </Link>
-              </li>
-              <li>
-                <Link href="/privacy" className="text-white hover:text-accent transition-colors">
-                  Privacy Policy
-                </Link>
-              </li>
-              <li>
-                <Link href="/accessibility" className="text-white hover:text-accent transition-colors">
-                  Accessibility
-                </Link>
-              </li>
-              <li>
-                <Link href="/fair-housing" className="text-white hover:text-accent transition-colors">
-                  Fair Housing Statement
-                </Link>
-              </li>
-            </ul>
-          </div>
+          {/* Navigation, grouped the same way as the header menu */}
+          {NAV_GROUPS.map((group) => (
+            <nav key={group.label} aria-label={`${group.label} links`}>
+              <h4 className="font-heading text-lg font-semibold mb-4 text-gold">
+                {group.label}
+              </h4>
+              <ul className="space-y-2.5 text-sm">
+                {group.items.map((item) => (
+                  <li key={item.href}>
+                    <Link href={item.href} className="text-white/85 hover:text-accent transition-colors">
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
+                {group.label === "About" && (
+                  <li>
+                    <a
+                      href={SCHEDULE_MEETING_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-white/85 hover:text-accent transition-colors"
+                    >
+                      Schedule a Meeting
+                    </a>
+                  </li>
+                )}
+              </ul>
+            </nav>
+          ))}
         </div>
       </div>
 
@@ -126,6 +98,21 @@ export function Footer() {
               EQUAL HOUSING OPPORTUNITY
             </div>
           </div>
+
+          <ul className="flex flex-wrap gap-x-6 gap-y-2 text-xs mb-4">
+            {[
+              { label: "Terms of Service", href: "/terms" },
+              { label: "Privacy Policy", href: "/privacy" },
+              { label: "Accessibility", href: "/accessibility" },
+              { label: "Fair Housing Statement", href: "/fair-housing" },
+            ].map((link) => (
+              <li key={link.href}>
+                <Link href={link.href} className="text-white underline-offset-2 hover:text-accent hover:underline">
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
 
           <p className="text-white text-xs leading-relaxed mb-4">
             {BHHS_DISCLAIMER}
