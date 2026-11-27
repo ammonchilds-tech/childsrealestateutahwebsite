@@ -28,7 +28,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Too many requests" }, { status: 429 });
   }
 
-  const { name, email, phone, subject, message } = await req.json();
+  const { name, email, phone, subject, message, smsConsent } = await req.json();
 
   if (!name || !email || !message) {
     return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
@@ -65,6 +65,10 @@ export async function POST(req: NextRequest) {
           <tr>
             <td style="padding:10px 0;border-bottom:1px solid #e8e0d4;font-weight:600;color:#0A0A0A;">Phone</td>
             <td style="padding:10px 0;border-bottom:1px solid #e8e0d4;">${sPhone ? `<a href="tel:${sPhone}" style="color:#D8AA3F;">${sPhone}</a>` : "—"}</td>
+          </tr>
+          <tr>
+            <td style="padding:10px 0;border-bottom:1px solid #e8e0d4;font-weight:600;color:#0A0A0A;">Text consent</td>
+            <td style="padding:10px 0;border-bottom:1px solid #e8e0d4;">${smsConsent === true ? "Yes — opted in to texts" : "No — do not text"}</td>
           </tr>
           <tr>
             <td style="padding:10px 0;border-bottom:1px solid #e8e0d4;font-weight:600;color:#0A0A0A;">Subject</td>

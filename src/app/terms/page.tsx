@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SITE_NAME, OFFICE } from "@/lib/constants";
+import { SmsTermsList } from "@/components/legal/SmsTerms";
 
 export const metadata: Metadata = {
-  title: `Terms of Service | ${SITE_NAME}`,
+  title: "Terms of Service",
   description: `Terms of Service for ${SITE_NAME}. Please read these terms carefully before using our website.`,
 };
 
-const LAST_UPDATED = "March 1, 2025";
+const LAST_UPDATED = "November 27, 2026";
 
 export default function TermsPage() {
   return (
@@ -105,36 +106,46 @@ export default function TermsPage() {
               </p>
             </div>
 
+            <div id="sms-terms" className="scroll-mt-24">
+              <h2 className="font-heading text-2xl font-semibold text-primary mb-3">8. SMS Terms and Conditions</h2>
+              <p className="mb-3">
+                By checking the text-message consent box on one of our forms, you agree to receive
+                text messages from {SITE_NAME} at the number you provided. Consent is not required to
+                submit a form or to work with us.
+              </p>
+              <SmsTermsList />
+            </div>
+
             <div>
-              <h2 className="font-heading text-2xl font-semibold text-primary mb-3">8. Disclaimer of Warranties</h2>
+              <h2 className="font-heading text-2xl font-semibold text-primary mb-3">9. Disclaimer of Warranties</h2>
               <p>
                 This Site is provided on an &ldquo;as is&rdquo; and &ldquo;as available&rdquo; basis without any warranties of any kind, either express or implied, including but not limited to implied warranties of merchantability, fitness for a particular purpose, or non-infringement. We do not warrant that the Site will be uninterrupted, error-free, or free of viruses or other harmful components.
               </p>
             </div>
 
             <div>
-              <h2 className="font-heading text-2xl font-semibold text-primary mb-3">9. Limitation of Liability</h2>
+              <h2 className="font-heading text-2xl font-semibold text-primary mb-3">10. Limitation of Liability</h2>
               <p>
                 To the fullest extent permitted by applicable law, {SITE_NAME} and its agents, employees, and affiliates shall not be liable for any indirect, incidental, special, consequential, or punitive damages — including loss of profits, data, or goodwill — arising out of or in connection with your use of, or inability to use, the Site or its content, even if advised of the possibility of such damages.
               </p>
             </div>
 
             <div>
-              <h2 className="font-heading text-2xl font-semibold text-primary mb-3">10. Indemnification</h2>
+              <h2 className="font-heading text-2xl font-semibold text-primary mb-3">11. Indemnification</h2>
               <p>
                 You agree to defend, indemnify, and hold harmless {SITE_NAME} and its agents, employees, and affiliates from and against any claims, liabilities, damages, judgments, awards, losses, costs, expenses, or fees (including reasonable attorneys&apos; fees) arising out of or relating to your violation of these Terms or your use of the Site.
               </p>
             </div>
 
             <div>
-              <h2 className="font-heading text-2xl font-semibold text-primary mb-3">11. Governing Law</h2>
+              <h2 className="font-heading text-2xl font-semibold text-primary mb-3">12. Governing Law</h2>
               <p>
                 These Terms shall be governed by and construed in accordance with the laws of the State of Utah, without regard to its conflict of law provisions. Any legal action or proceeding arising under these Terms shall be brought exclusively in the state or federal courts located in Utah County, Utah.
               </p>
             </div>
 
             <div>
-              <h2 className="font-heading text-2xl font-semibold text-primary mb-3">12. Contact Us</h2>
+              <h2 className="font-heading text-2xl font-semibold text-primary mb-3">13. Contact Us</h2>
               <p>If you have any questions about these Terms of Service, please contact us:</p>
               <div className="mt-3 space-y-1">
                 <p><span className="font-medium text-foreground">{SITE_NAME}</span></p>

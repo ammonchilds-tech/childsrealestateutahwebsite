@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { OFFICE } from "@/lib/constants";
+import { SmsConsent } from "@/components/legal/SmsConsent";
 
 type Status = "idle" | "submitting" | "sent" | "error";
 
@@ -25,6 +26,7 @@ export function HomeValueForm() {
           address: form.get("address"),
           email: form.get("email"),
           phone: form.get("phone") || undefined,
+          smsConsent: form.get("smsConsent") === "yes",
           source: "homepage",
         }),
       });
@@ -106,6 +108,8 @@ export function HomeValueForm() {
           and we&apos;ll take care of you.
         </p>
       )}
+
+      <SmsConsent id="hv-sms-consent" tone="gold" />
 
       <button
         type="submit"
