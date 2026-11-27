@@ -1,18 +1,8 @@
 import { MetadataRoute } from "next";
 import { SITE_URL } from "@/lib/constants";
-import { getMLSAdapter } from "@/lib/mls";
+import { CITIES_SERVED } from "@/lib/cities";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const adapter = getMLSAdapter();
-  const { properties } = await adapter.searchProperties({ limit: 1000 });
-
-  const propertyUrls = properties.map((property) => ({
-    url: `${SITE_URL}/properties/${property.slug}`,
-    lastModified: new Date(property.listDate),
-    changeFrequency: "daily" as const,
-    priority: 0.7,
-  }));
-
   return [
     {
       url: SITE_URL,
@@ -57,6 +47,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.7,
     },
     {
+      url: `${SITE_URL}/blog/should-you-list-in-december-or-wait-for-spring`,
+      lastModified: new Date("2026-11-27"),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
       url: `${SITE_URL}/blog/utah-october-2026-market-update`,
       lastModified: new Date(),
       changeFrequency: "monthly",
@@ -98,6 +94,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "monthly",
       priority: 0.6,
     },
+    {
+      url: `${SITE_URL}/areas`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    ...CITIES_SERVED.map((c) => ({
+      url: `${SITE_URL}/areas/${c.slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    })),
     {
       url: `${SITE_URL}/faq`,
       lastModified: new Date(),
@@ -224,6 +232,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "monthly",
       priority: 0.5,
     },
-    ...propertyUrls,
   ];
 }

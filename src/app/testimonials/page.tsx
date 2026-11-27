@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Star } from "lucide-react";
-import { TESTIMONIALS, SITE_NAME, SITE_URL } from "@/lib/constants";
+import { TESTIMONIALS, SITE_NAME, SITE_URL, GOOGLE_REVIEWS_URL, GOOGLE_WRITE_REVIEW_URL } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Client Reviews & Testimonials",
@@ -135,20 +135,34 @@ export default function TestimonialsPage() {
             ))}
           </div>
 
-          {/* Leave a review CTA */}
-          <div className="mt-16 text-center">
-            <p className="text-muted-foreground mb-4">
-              Had a great experience? We&apos;d love to hear from you.
-            </p>
-            <a
-              href="https://g.page/r/review"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 h-12 px-8 rounded-lg font-semibold text-sm bg-accent text-ink hover:bg-accent/90 transition-colors"
-            >
-              <GoogleIcon />
-              Leave a Google Review
-            </a>
+          {/* Read / leave a review */}
+          <div className="mt-16 bg-ink text-white p-8 md:p-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+            <div>
+              <h2 className="font-heading text-2xl md:text-3xl">Worked with us recently?</h2>
+              <p className="mt-2 text-white/75 max-w-xl">
+                A quick Google review helps the next family find us. Two sentences about
+                how it went is plenty — thank you!
+              </p>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-3 shrink-0">
+              <a
+                href={GOOGLE_WRITE_REVIEW_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 h-12 px-7 font-semibold text-sm bg-accent text-ink hover:bg-accent/90 transition-colors"
+              >
+                <GoogleIcon />
+                Leave a Google Review
+              </a>
+              <a
+                href={GOOGLE_REVIEWS_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center h-12 px-7 font-semibold text-sm border border-white/30 hover:bg-white/10 transition-colors"
+              >
+                Read our Google reviews
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -164,8 +178,8 @@ export default function TestimonialsPage() {
             Ready to become our next success story?
           </h2>
           <p className="text-white/70 text-lg mb-8 max-w-xl mx-auto">
-            Join hundreds of Utah homeowners who trusted Childs Real Estate to
-            sell smarter and for more.
+            Find out what your home could sell for, and how much you could keep
+            with the Smart Seller Program.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link

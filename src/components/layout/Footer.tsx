@@ -11,6 +11,7 @@ import {
   MLS_DISCLAIMER,
   BHHS_DISCLAIMER,
 } from "@/lib/constants";
+import { SocialLinks } from "./SocialLinks";
 
 export function Footer() {
   const [mlsExpanded, setMlsExpanded] = useState(false);
@@ -52,6 +53,7 @@ export function Footer() {
                 {OFFICE.address}
               </p>
             </div>
+            <SocialLinks className="pt-2" />
           </div>
 
           {/* Navigation, grouped the same way as the header menu */}

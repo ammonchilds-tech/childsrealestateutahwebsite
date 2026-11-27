@@ -3,6 +3,7 @@ import { Phone, Mail, MapPin, Clock, MessageSquare, CalendarDays } from "lucide-
 import { Card, CardContent } from "@/components/ui/card";
 import { TEAM, OFFICE, SITE_NAME } from "@/lib/constants";
 import { ContactForm } from "./_components/ContactForm";
+import { SocialLinks } from "@/components/layout/SocialLinks";
 
 export const metadata: Metadata = {
   title: "Contact Us",
@@ -164,6 +165,17 @@ export default function ContactPage() {
                     </a>
                   </CardContent>
                 </Card>
+              </div>
+
+              {/* Social */}
+              <div>
+                <h2 className="font-heading text-2xl font-semibold text-primary mb-2">
+                  Follow Along
+                </h2>
+                <p className="text-sm text-muted-foreground mb-4">
+                  New listings, market updates, and home tips — most of it lands on social first.
+                </p>
+                <SocialLinks variant="light" />
               </div>
 
               {/* Office Details */}

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { SITE_NAME, SITE_DESCRIPTION, SITE_URL, OFFICE } from "@/lib/constants";
+import { SITE_NAME, SITE_DESCRIPTION, SITE_URL, OFFICE, SOCIAL_LINKS } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: `Utah's Top Listing Agents | ${SITE_NAME}`,
@@ -23,6 +23,7 @@ import { MarketStats } from "@/components/home/MarketStats";
 import { TeamPreview } from "@/components/home/TeamPreview";
 import { HomeCTA } from "@/components/home/HomeCTA";
 import { ListingPackages } from "@/components/home/ListingPackages";
+import { ClientProof } from "@/components/home/ClientProof";
 
 const SELLER_BENEFITS = [
   {
@@ -38,7 +39,7 @@ const SELLER_BENEFITS = [
   {
     title: "Expert Negotiation",
     description:
-      "Proven track record of securing top-dollar offers and favorable terms for our sellers.",
+      "Skilled, hands-on negotiation focused on top-dollar offers and favorable terms for our sellers.",
   },
   {
     title: "Concierge Service",
@@ -82,11 +83,7 @@ const localBusinessJsonLd = {
     "@type": "Organization",
     name: "Simple Choice Real Estate",
   },
-  sameAs: [
-    "https://www.facebook.com/childsrealestateutah",
-    "https://www.instagram.com/childsrealestateutah",
-    SITE_URL,
-  ],
+  sameAs: SOCIAL_LINKS.map((l) => l.href),
 };
 
 export default function HomePage() {
@@ -115,7 +112,7 @@ export default function HomePage() {
                 getting you the best outcome — not just a sign in the yard.
               </p>
               <p className="text-base">
-                Childs Real Estate specializes in listing representation across Utah. As top listing agents, we focus exclusively on helping homeowners maximize their sale price, minimize days on market, and navigate every step of the selling process with confidence.
+                Childs Real Estate specializes in listing representation across Utah. As listing specialists, we focus on helping homeowners maximize their sale price, minimize days on market, and navigate every step of the selling process with confidence.
               </p>
             </div>
           </div>
@@ -148,6 +145,7 @@ export default function HomePage() {
       </section>
 
       {/* <FeaturedAreas /> archived */}
+      <ClientProof />
       <TeamPreview />
       <HomeCTA />
     </>

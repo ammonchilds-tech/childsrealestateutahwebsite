@@ -7,38 +7,49 @@ export const OFFICE = {
   name: "Simple Choice Real Estate",
   address: "825 E 1180 S Ste 300, American Fork, UT 84003",
   phone: "(801) 735-8460",
-  email: "ammon@childsrealestateutah.com",
+  email: "ammonchilds@gmail.com",
   lat: 40.3766,
   lng: -111.7465,
 };
 
+export type SocialLink = {
+  platform: "instagram" | "youtube" | "tiktok" | "facebook";
+  label: string;
+  href: string;
+};
+
+/**
+ * Social profiles, in display order (professional Instagram first).
+ * Each was checked to load and belong to Childs on Nov 27, 2026.
+ * Facebook is left out until Ammon supplies the correct page URL —
+ * facebook.com/childsrealestateutah and /childsrealestate both show
+ * "This content isn't available".
+ */
+export const SOCIAL_LINKS: SocialLink[] = [
+  { platform: "instagram", label: "Instagram @childsrealestateteam", href: "https://www.instagram.com/childsrealestateteam/" },
+  { platform: "instagram", label: "Instagram @ammonchilds", href: "https://www.instagram.com/ammonchilds/" },
+  { platform: "youtube", label: "YouTube @reelestatewithammon", href: "https://www.youtube.com/@reelestatewithammon" },
+  { platform: "tiktok", label: "TikTok @reelestatewithammon", href: "https://www.tiktok.com/@reelestatewithammon" },
+];
+
 export const TEAM = [
   {
     name: "Ammon Childs",
-    title: "Broker / Owner",
+    title: "Realtor / Co-Owner",
     phone: "(801) 735-8460",
-    email: "ammon@childsrealestateutah.com",
-    bio: "With over 15 years of experience in Utah real estate, Ammon brings deep market knowledge and a commitment to exceptional client service. As broker and owner, he leads the Childs Real Estate team with integrity and results-driven strategies.",
+    email: "ammonchilds@gmail.com",
+    bio: "With over 15 years of experience in Utah real estate, Ammon brings deep market knowledge and a commitment to exceptional client service. As co-owner of Childs Real Estate, he leads the team with integrity and results-driven strategies.",
     image: "/images/team/ammon.jpg",
     imagePosition: "top",
-    social: {
-      instagram: "https://www.instagram.com/childsrealestateutah",
-      facebook: "https://www.facebook.com/childsrealestateutah",
-      linkedin: "https://linkedin.com/in/ammonchilds",
-    },
   },
   {
     name: "Tasha Childs",
     title: "Realtor / Co-Owner",
     phone: "(801) 602-8856",
-    email: "tasha@childsrealestateutah.com",
+    email: "tashalchilds@gmail.com",
     bio: "Tasha is passionate about helping families find their dream homes throughout Utah County. Her attention to detail, design eye, and warm approach make the buying and selling process seamless and enjoyable.",
     image: "/images/team/tasha.jpg",
     objectPosition: "50% 15%",
-    social: {
-      instagram: "https://www.instagram.com/childsrealestateutah",
-      facebook: "https://www.facebook.com/childsrealestateutah",
-    },
   },
 ];
 
@@ -59,6 +70,7 @@ export const NAV_GROUPS: NavGroup[] = [
   {
     label: "Buy",
     items: [
+      { label: "Current Listings", href: "/properties", description: "Homes we're listing right now" },
       { label: "Buying a Home", href: "/buyers", description: "Our step-by-step buyer guide" },
       { label: "Mortgage Calculator", href: "/mortgage-calculator", description: "Estimate your monthly payment" },
     ],
@@ -78,6 +90,7 @@ export const NAV_GROUPS: NavGroup[] = [
     label: "About",
     items: [
       { label: "Our Team", href: "/about", description: "Meet Ammon and Tasha" },
+      { label: "Areas We Serve", href: "/areas", description: "Lehi, Highland, American Fork and more" },
       { label: "Testimonials", href: "/testimonials", description: "What our clients say" },
       { label: "Contact Us", href: "/contact", description: "Call, email or send a message" },
     ],
@@ -125,6 +138,11 @@ export const FEATURED_AREAS = [
   },
 ];
 
+/**
+ * Google reviews, in display order. Real clients lead; reviews from people
+ * with the Childs surname stay at the bottom of the full Testimonials page
+ * and are never shown on the homepage (see HOMEPAGE_TESTIMONIALS).
+ */
 export const TESTIMONIALS = [
   {
     name: "Jeff Brady",
@@ -133,27 +151,33 @@ export const TESTIMONIALS = [
     rating: 5,
   },
   {
-    name: "Tara Childs",
+    name: "Dantzel Piercy",
     location: "Google Review",
-    text: "Ammon and Tasha have an amazing way of making their clients feel seen and taken care of. I've never met a more hardworking duo and couldn't recommend them more.",
+    text: "We have purchased two homes and sold one with Ammon. He is an experienced professional who always helps us make the best decisions for our family. I would highly recommend him to anyone looking to buy or sell their home!",
     rating: 5,
   },
   {
-    name: "Kevin Childs",
+    name: "Grant Piercy",
     location: "Google Review",
-    text: "Stellar service and knowledge as always!",
+    text: "Ammon handled the sale of our home professionally and effortlessly. He also was extremely helpful with the purchase of our new home. Going through these events can be very hard navigating but Ammon was smart with great advice and recommendations. The next time I do this, it will be Ammon handling my interest.",
+    rating: 5,
+  },
+  {
+    name: "Doug Smith",
+    location: "Google Review",
+    text: "Ammon Childs is an exceptional realtor! His professionalism and extensive knowledge of the real estate market made the entire process smooth and stress-free. He always had answers to my questions and provided clear guidance at every step. If you're looking for someone who truly knows the business and puts clients first, Ammon is the one to call. Highly recommend!",
+    rating: 5,
+  },
+  {
+    name: "Callie Bramall",
+    location: "Google Review",
+    text: "I've worked with Ammon for 2 years. He helped me a few years ago when I searched for a townhouse and then helped my husband and I find our current home. He is amazing! Very patient, detail oriented, responds quickly and met our every need. I would recommend him any day",
     rating: 5,
   },
   {
     name: "Casey Jensen",
     location: "Google Review",
     text: "Ammon and Tasha are the best at what they do. We have used them multiple times in the last decade and have only had great experiences.",
-    rating: 5,
-  },
-  {
-    name: "Kenyon Childs",
-    location: "Google Review",
-    text: "The best…. Couldn't ask for better",
     rating: 5,
   },
   {
@@ -187,27 +211,9 @@ export const TESTIMONIALS = [
     rating: 5,
   },
   {
-    name: "Tenley Childs",
-    location: "Google Review",
-    text: "We loved working with Ammon. He's so good at what he does and made sure we were getting the best deal we possibly could so we could buy our new home! The level of care and attention he gives to his clients is unbeatable",
-    rating: 5,
-  },
-  {
-    name: "Doug Smith",
-    location: "Google Review",
-    text: "Ammon Childs is an exceptional realtor! His professionalism and extensive knowledge of the real estate market made the entire process smooth and stress-free. He always had answers to my questions and provided clear guidance at every step. If you're looking for someone who truly knows the business and puts clients first, Ammon is the one to call. Highly recommend!",
-    rating: 5,
-  },
-  {
     name: "Nathan",
     location: "Google Review",
     text: "Ammon is an unstoppable force of charm and wisdom. He's got the best connections of anyone out there. He never skips leg day. Hire him ASAP!",
-    rating: 5,
-  },
-  {
-    name: "Callie Bramall",
-    location: "Google Review",
-    text: "I've worked with Ammon for 2 years. He helped me a few years ago when I searched for a townhouse and then helped my husband and I find our current home. He is amazing! Very patient, detail oriented, responds quickly and met our every need. I would recommend him any day",
     rating: 5,
   },
   {
@@ -217,9 +223,27 @@ export const TESTIMONIALS = [
     rating: 5,
   },
   {
-    name: "Dantzel Piercy",
+    name: "Tara Childs",
     location: "Google Review",
-    text: "We have purchased two homes and sold one with Ammon. He is an experienced professional who always helps us make the best decisions for our family. I would highly recommend him to anyone looking to buy or sell their home!",
+    text: "Ammon and Tasha have an amazing way of making their clients feel seen and taken care of. I've never met a more hardworking duo and couldn't recommend them more.",
+    rating: 5,
+  },
+  {
+    name: "Kevin Childs",
+    location: "Google Review",
+    text: "Stellar service and knowledge as always!",
+    rating: 5,
+  },
+  {
+    name: "Kenyon Childs",
+    location: "Google Review",
+    text: "The best…. Couldn't ask for better",
+    rating: 5,
+  },
+  {
+    name: "Tenley Childs",
+    location: "Google Review",
+    text: "We loved working with Ammon. He's so good at what he does and made sure we were getting the best deal we possibly could so we could buy our new home! The level of care and attention he gives to his clients is unbeatable",
     rating: 5,
   },
   {
@@ -234,13 +258,19 @@ export const TESTIMONIALS = [
     text: "Ammon Childs has been in the real estate business for over 15 years with a deep understanding of the local market. He and his team are passionate about helping clients find their dream home, taking the time to understand each client's individual needs and goals. They have a proven track record of success, having helped hundreds of clients buy and sell homes. If you are looking for a real estate agent in American Fork, Utah, I highly recommend Ammon Childs Real Estate Services.",
     rating: 5,
   },
-  {
-    name: "Grant Piercy",
-    location: "Google Review",
-    text: "Ammon handled the sale of our home professionally and effortlessly. He also was extremely helpful with the purchase of our new home. Going through these events can be very hard navigating but Ammon was smart with great advice and recommendations. The next time I do this, it will be Ammon handling my interest.",
-    rating: 5,
-  },
 ];
+
+/** Non-family reviews for the homepage, strongest first. */
+export const HOMEPAGE_TESTIMONIALS = TESTIMONIALS.filter((t) => !t.name.endsWith("Childs")).slice(0, 4);
+
+/**
+ * TODO(Ammon): replace with the Google Business Profile links
+ * (the "Reviews" link and the "Ask for reviews" share link from Google Business Profile).
+ * Until then both point at the Google Maps listing search.
+ */
+export const GOOGLE_REVIEWS_URL =
+  "https://www.google.com/maps/search/?api=1&query=Childs+Real+Estate+American+Fork+UT";
+export const GOOGLE_WRITE_REVIEW_URL = GOOGLE_REVIEWS_URL;
 
 export const PROPERTY_TYPES = [
   "Single Family",
