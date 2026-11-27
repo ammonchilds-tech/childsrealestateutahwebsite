@@ -21,15 +21,13 @@ export type SocialLink = {
 /**
  * Social profiles, in display order (professional Instagram first).
  * Each was checked to load and belong to Childs on Nov 27, 2026.
- * Facebook is left out until Ammon supplies the correct page URL —
- * facebook.com/childsrealestateutah and /childsrealestate both show
- * "This content isn't available".
  */
 export const SOCIAL_LINKS: SocialLink[] = [
   { platform: "instagram", label: "Instagram @childsrealestateteam", href: "https://www.instagram.com/childsrealestateteam/" },
   { platform: "instagram", label: "Instagram @ammonchilds", href: "https://www.instagram.com/ammonchilds/" },
   { platform: "youtube", label: "YouTube @reelestatewithammon", href: "https://www.youtube.com/@reelestatewithammon" },
   { platform: "tiktok", label: "TikTok @reelestatewithammon", href: "https://www.tiktok.com/@reelestatewithammon" },
+  { platform: "facebook", label: "Facebook — Ammon Childs", href: "https://www.facebook.com/ammonchilds/" },
 ];
 
 export const TEAM = [
@@ -263,14 +261,10 @@ export const TESTIMONIALS = [
 /** Non-family reviews for the homepage, strongest first. */
 export const HOMEPAGE_TESTIMONIALS = TESTIMONIALS.filter((t) => !t.name.endsWith("Childs")).slice(0, 4);
 
-/**
- * TODO(Ammon): replace with the Google Business Profile links
- * (the "Reviews" link and the "Ask for reviews" share link from Google Business Profile).
- * Until then both point at the Google Maps listing search.
- */
-export const GOOGLE_REVIEWS_URL =
-  "https://www.google.com/maps/search/?api=1&query=Childs+Real+Estate+American+Fork+UT";
-export const GOOGLE_WRITE_REVIEW_URL = GOOGLE_REVIEWS_URL;
+/** Google Business Profile ("Ammon Childs Real Estate"). */
+export const GOOGLE_REVIEWS_URL = "https://g.page/r/CWFRH-qjeYuXEBM";
+/** Opens the "write a review" box directly. */
+export const GOOGLE_WRITE_REVIEW_URL = "https://g.page/r/CWFRH-qjeYuXEBM/review";
 
 export const PROPERTY_TYPES = [
   "Single Family",

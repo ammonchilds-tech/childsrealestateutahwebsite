@@ -38,7 +38,9 @@ export const LISTINGS: Listing[] = [
     city: "Herriman",
     community: "Henley",
     price: 1_279_900,
-    // beds / baths / sqft: waiting on Ammon to confirm
+    beds: 5,
+    baths: 2.5,
+    sqft: 4886,
     status: "Active",
     photo:
       "https://cdn.aryeo.com/listings/4839-s-step-rock-ln-herriman-ut-84096-28042266/resized/large/large-01a01f91-d2d0-71ea-a30e-cf88ff317155.jpeg",
@@ -65,7 +67,9 @@ export const LISTINGS: Listing[] = [
     city: "Santaquin",
     community: "Langs",
     price: 575_000,
-    // beds / baths / sqft: waiting on Ammon to confirm
+    beds: 5,
+    baths: 3,
+    sqft: 2827,
     status: "Active",
     photo:
       "https://cdn.aryeo.com/listings/1079-270-s-santaquin-ut-84655-27421352/resized/large/large-019fd24e-5529-70b6-b27f-103a8afb4cd7.jpeg",
@@ -91,8 +95,7 @@ export const LISTINGS: Listing[] = [
     slug: "551-s-1020-w-j302-american-fork",
     address: "551 S 1020 W #J302",
     city: "American Fork",
-    // price: not supplied yet. Kept hidden until liveFrom AND a price is set.
-    price: 0,
+    price: 365_000,
     status: "Active",
     photo:
       "https://cdn.aryeo.com/listings/551-s-1020-w-american-fork-ut-84003-31240307/resized/large/large-01a212dd-f8eb-71a5-b079-b4b4680cff79.jpeg",
@@ -100,9 +103,6 @@ export const LISTINGS: Listing[] = [
       "https://value-productions.aryeo.com/sites/551-s-1020-w-american-fork-ut-84003-31240307/branded",
     liveFrom: "2026-12-03",
   },
-  // ON HOLD — 723 S Harrison Dr, Springville. MLS shows $475,000 and 4 bd / 3 ba
-  // (MLS #2194820) but Ammon confirmed 3 bd / 2.5 ba and had not set the price.
-  // No landing-page URL supplied. Do not add until Ammon answers.
 ];
 
 /** Today's date in Utah as YYYY-MM-DD. */
