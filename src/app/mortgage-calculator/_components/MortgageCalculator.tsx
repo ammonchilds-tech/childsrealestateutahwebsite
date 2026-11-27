@@ -354,7 +354,7 @@ export function MortgageCalculator() {
               size="lg"
               className="bg-white/10 text-white border border-white/20 hover:bg-white/20"
             >
-              <Link href="/properties">Browse Homes</Link>
+              <Link href="/properties">See Current Listings</Link>
             </Button>
           </div>
           <p className="mt-6 text-white/40 text-sm">

@@ -545,7 +545,7 @@ export default function HomeBuyingGuidePage() {
                   Explore current listings in Utah County and the Wasatch Front.
                 </p>
                 <Button asChild variant="accent" size="lg">
-                  <Link href="/properties">Browse Listings</Link>
+                  <Link href="/properties">See Current Listings</Link>
                 </Button>
               </div>
             </div>
@@ -859,7 +859,7 @@ export default function HomeBuyingGuidePage() {
               size="lg"
               className="bg-white/10 text-white border border-white/20 hover:bg-white/20"
             >
-              <Link href="/properties">Browse Properties</Link>
+              <Link href="/properties">See Current Listings</Link>
             </Button>
           </div>
         </div>

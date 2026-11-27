@@ -31,20 +31,19 @@ export function TeamPreview() {
             <span className="text-gold">your top dollar.</span>
           </h2>
           <p className="text-white/80 text-lg">
-            Broker/Owner Ammon brings 15+ years of Utah market expertise.
+            Realtor and co-owner Ammon brings 15+ years of Utah market expertise.
             Co-owner Tasha brings a designer&apos;s eye and relentless attention to
             detail. Together, they work every listing side by side.
           </p>
 
           <figure className="bg-[#1A1712] border-t-4 border-gold p-6">
             <blockquote className="text-lg italic">
-              &ldquo;Ammon and Tasha are amazing people. They are always willing to
-              answer questions, explain options, and offer honest advice. Their
-              experience and local knowledge set them apart from other real estate
-              agents.&rdquo;
+              &ldquo;I have purchased two homes and had the pleasure of working with
+              Ammon through both. Ammon has always been attentive and given more
+              than expected.&rdquo;
             </blockquote>
             <figcaption className="mt-3 text-sm font-bold text-gold">
-              Jeff Brady · Google Review
+              Justin Beach · Google Review
             </figcaption>
           </figure>
 

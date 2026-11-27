@@ -273,7 +273,7 @@ export default function ResourcesPage() {
               size="lg"
               className="bg-white/10 text-white border border-white/20 hover:bg-white/20"
             >
-              <Link href="/properties">Browse Properties</Link>
+              <Link href="/properties">See Current Listings</Link>
             </Button>
           </div>
         </div>

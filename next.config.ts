@@ -20,6 +20,7 @@ const securityHeaders = [
       "img-src 'self' data: https:",
       "font-src 'self'",
       "connect-src 'self' https://api.resend.com https://www.google-analytics.com https://*.google-analytics.com https://www.googletagmanager.com",
+      "frame-src https://maps.google.com https://www.google.com",
       "frame-ancestors 'none'",
     ].join("; "),
   },
@@ -35,6 +36,12 @@ const nextConfig: NextConfig = {
     dangerouslyAllowSVG: true,
     contentDispositionType: "attachment",
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+  },
+  async redirects() {
+    return [
+      // Old placeholder property-detail pages were removed; send any saved links to Current Listings.
+      { source: "/properties/:slug", destination: "/properties", permanent: true },
+    ];
   },
   async headers() {
     return [

@@ -28,11 +28,21 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Too many requests" }, { status: 429 });
   }
 
-  const { name, phone, email, address, timeline, notes } = await req.json();
+  const { name, phone, email, address, timeline, notes, source } = await req.json();
 
-  if (!name || !phone || !address) {
+  // Every form needs an address plus at least one way to reach the person.
+  // The /sell and /clear-commission forms also send name + phone; the short
+  // homepage form sends address + email (phone optional).
+  if (!address || (!phone && !email)) {
     return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
   }
+
+  const sourceLabels: Record<string, string> = {
+    homepage: "childsrealestateutah.com (homepage home-value form)",
+    sell: "childsrealestateutah.com/sell",
+    "clear-commission": "childsrealestateutah.com/clear-commission",
+  };
+  const sSource = sourceLabels[source] ?? "childsrealestateutah.com";
 
   const apiKey = process.env.RESEND_API_KEY;
   if (!apiKey) {
@@ -47,8 +57,8 @@ export async function POST(req: NextRequest) {
     "6plus": "6+ months / Just exploring",
   };
 
-  const sName = escapeHtml(String(name));
-  const sPhone = escapeHtml(String(phone));
+  const sName = name ? escapeHtml(String(name)) : "";
+  const sPhone = phone ? escapeHtml(String(phone)) : "";
   const sEmail = email ? escapeHtml(String(email)) : "";
   const sAddress = escapeHtml(String(address));
   const sNotes = notes ? escapeHtml(String(notes)) : "";
@@ -59,17 +69,17 @@ export async function POST(req: NextRequest) {
     <div style="font-family:sans-serif;max-width:600px;margin:0 auto;color:#0A0A0A;">
       <div style="background:#0A0A0A;padding:24px 32px;border-radius:8px 8px 0 0;">
         <h1 style="color:#D8AA3F;margin:0;font-size:22px;">New Home Valuation Request</h1>
-        <p style="color:rgba(255,255,255,0.6);margin:4px 0 0;font-size:14px;">Submitted via childsrealestateutah.com/clear-commission</p>
+        <p style="color:rgba(255,255,255,0.6);margin:4px 0 0;font-size:14px;">Submitted via ${sSource}</p>
       </div>
       <div style="background:#f9f7f4;padding:32px;border-radius:0 0 8px 8px;border:1px solid #e8e0d4;border-top:none;">
         <table style="width:100%;border-collapse:collapse;">
           <tr>
             <td style="padding:10px 0;border-bottom:1px solid #e8e0d4;font-weight:600;color:#0A0A0A;width:140px;">Name</td>
-            <td style="padding:10px 0;border-bottom:1px solid #e8e0d4;">${sName}</td>
+            <td style="padding:10px 0;border-bottom:1px solid #e8e0d4;">${sName || "—"}</td>
           </tr>
           <tr>
             <td style="padding:10px 0;border-bottom:1px solid #e8e0d4;font-weight:600;color:#0A0A0A;">Phone</td>
-            <td style="padding:10px 0;border-bottom:1px solid #e8e0d4;"><a href="tel:${sPhone}" style="color:#D8AA3F;">${sPhone}</a></td>
+            <td style="padding:10px 0;border-bottom:1px solid #e8e0d4;">${sPhone ? `<a href="tel:${sPhone}" style="color:#D8AA3F;">${sPhone}</a>` : "—"}</td>
           </tr>
           <tr>
             <td style="padding:10px 0;border-bottom:1px solid #e8e0d4;font-weight:600;color:#0A0A0A;">Email</td>
@@ -89,7 +99,7 @@ export async function POST(req: NextRequest) {
           </tr>
         </table>
         <div style="margin-top:24px;padding:16px;background:#fff;border:1px solid #e8e0d4;border-radius:6px;font-size:13px;color:#666;">
-          Reply directly to this email to reach ${sName}${sEmail ? ` at ${sEmail}` : ""}.
+          ${sEmail ? `Reply directly to this email to reach ${sName || "them"} at ${sEmail}.` : `No email given — call ${sName || "them"} at ${sPhone}.`}
         </div>
       </div>
     </div>
@@ -103,9 +113,9 @@ export async function POST(req: NextRequest) {
     },
     body: JSON.stringify({
       from: "Childs Real Estate <noreply@childsrealestateutah.com>",
-      to: ["ammon@childsrealestateutah.com"],
+      to: ["ammonchilds@gmail.com", "tashalchilds@gmail.com"],
       reply_to: email || undefined,
-      subject: `New Home Valuation Request — ${sName}`,
+      subject: `New Home Valuation Request — ${sName || sAddress}`,
       html,
     }),
   });

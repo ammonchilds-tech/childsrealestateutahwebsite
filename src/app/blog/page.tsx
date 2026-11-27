@@ -21,6 +21,15 @@ export const metadata: Metadata = {
 
 const POSTS = [
   {
+    slug: "should-you-list-in-december-or-wait-for-spring",
+    title: "Should You List in December, or Wait for Spring? A Plain Answer for Utah Sellers",
+    excerpt:
+      "December listings face fewer competing homes and more serious buyers. Spring brings more buyers and better curb appeal. Here's how to decide which one fits your home and your timeline.",
+    date: "November 27, 2026",
+    readTime: "5 min read",
+    category: "Seller Strategy",
+  },
+  {
     slug: "utah-october-2026-market-update",
     title: "Utah October 2026 Market Update: Sales Thin Out and Utah County Prices Reset Lower",
     excerpt:

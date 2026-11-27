@@ -90,7 +90,7 @@ export async function POST(req: NextRequest) {
     },
     body: JSON.stringify({
       from: "Childs Real Estate <noreply@childsrealestateutah.com>",
-      to: ["ammon@childsrealestateutah.com"],
+      to: ["ammonchilds@gmail.com", "tashalchilds@gmail.com"],
       reply_to: email,
       subject: `New Contact: ${sSubject || "General Inquiry"} — ${sName}`,
       html,

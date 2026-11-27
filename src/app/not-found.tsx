@@ -26,7 +26,7 @@ export default function NotFound() {
             <Link href="/">Go Home</Link>
           </Button>
           <Button variant="outline" asChild>
-            <Link href="/properties">Browse Properties</Link>
+            <Link href="/properties">See Current Listings</Link>
           </Button>
         </div>
       </div>

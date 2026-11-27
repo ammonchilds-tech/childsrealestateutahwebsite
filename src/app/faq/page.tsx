@@ -4,6 +4,7 @@ import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import Link from "next/link";
 import { SITE_NAME, OFFICE } from "@/lib/constants";
+import { CITIES_SERVED } from "@/lib/cities";
 
 const FAQ_SECTIONS = [
   {
@@ -201,6 +202,27 @@ export default function FAQPage() {
               </div>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* City guides */}
+      <section className="pb-20 bg-background">
+        <div className="max-w-3xl mx-auto px-6">
+          <p className="text-accent text-sm font-medium tracking-[0.2em] uppercase mb-4">City Guides</p>
+          <div className="flex flex-wrap gap-3">
+            {CITIES_SERVED.map((c) => (
+              <Link
+                key={c.slug}
+                href={`/areas/${c.slug}`}
+                className="px-5 py-3 bg-ink text-white font-semibold text-sm hover:bg-ink/85 transition-colors"
+              >
+                {c.name}
+              </Link>
+            ))}
+            <Link href="/areas" className="px-5 py-3 border border-ink font-semibold text-sm hover:bg-ink hover:text-white transition-colors">
+              All areas
+            </Link>
+          </div>
         </div>
       </section>
 

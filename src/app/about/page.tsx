@@ -5,9 +5,6 @@ import {
   Phone,
   Mail,
   MapPin,
-  Instagram,
-  Facebook,
-  Linkedin,
   Award,
   Users,
   Shield,
@@ -15,7 +12,9 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { TEAM, OFFICE, SITE_NAME } from "@/lib/constants";
+import { TEAM, OFFICE, SITE_NAME, TESTIMONIALS } from "@/lib/constants";
+import { RecentlySold } from "@/components/home/RecentlySold";
+import { SocialLinks } from "@/components/layout/SocialLinks";
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -38,19 +37,6 @@ function getInitials(name: string) {
     .split(" ")
     .map((n) => n[0])
     .join("");
-}
-
-function getSocialIcon(platform: string) {
-  switch (platform) {
-    case "instagram":
-      return <Instagram className="h-4 w-4" />;
-    case "facebook":
-      return <Facebook className="h-4 w-4" />;
-    case "linkedin":
-      return <Linkedin className="h-4 w-4" />;
-    default:
-      return null;
-  }
 }
 
 export default function AboutPage() {
@@ -134,7 +120,7 @@ export default function AboutPage() {
                     Ammon &amp; Tasha Childs
                   </h3>
                   <p className="text-accent font-medium text-sm mt-1">
-                    Broker / Owner &amp; Realtor / Co-Owner
+                    Realtors / Co-Owners
                   </p>
                   <div className="text-muted-foreground text-sm leading-relaxed mt-4 space-y-3">
                     <p>
@@ -170,11 +156,11 @@ export default function AboutPage() {
                         Ammon: (801) 735-8460
                       </a>
                       <a
-                        href="mailto:ammon@childsrealestateutah.com"
+                        href="mailto:ammonchilds@gmail.com"
                         className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
                       >
                         <Mail className="h-3.5 w-3.5 text-accent" />
-                        ammon@childsrealestateutah.com
+                        ammonchilds@gmail.com
                       </a>
                     </div>
                     <div className="space-y-2">
@@ -186,31 +172,15 @@ export default function AboutPage() {
                         Tasha: (801) 602-8856
                       </a>
                       <a
-                        href="mailto:tasha@childsrealestateutah.com"
+                        href="mailto:tashalchilds@gmail.com"
                         className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
                       >
                         <Mail className="h-3.5 w-3.5 text-accent" />
-                        tasha@childsrealestateutah.com
+                        tashalchilds@gmail.com
                       </a>
                     </div>
                   </div>
-                  <div className="flex items-center gap-2 mt-5">
-                    {[
-                      ["instagram", "https://instagram.com/childsrealestate"],
-                      ["facebook", "https://facebook.com/childsrealestate"],
-                      ["linkedin", "https://linkedin.com/in/ammonchilds"],
-                    ].map(([platform, url]) => (
-                      <a
-                        key={platform}
-                        href={url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-accent hover:text-white transition-colors"
-                      >
-                        {getSocialIcon(platform)}
-                      </a>
-                    ))}
-                  </div>
+                  <SocialLinks variant="light" className="mt-5" />
                 </div>
               </div>
             </CardContent>
@@ -271,23 +241,6 @@ export default function AboutPage() {
                           {member.email}
                         </a>
                       </div>
-                      {member.social && (
-                        <div className="flex items-center justify-center sm:justify-start gap-2 mt-4">
-                          {Object.entries(member.social).map(
-                            ([platform, url]) => (
-                              <a
-                                key={platform}
-                                href={url}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-accent hover:text-white transition-colors"
-                              >
-                                {getSocialIcon(platform)}
-                              </a>
-                            )
-                          )}
-                        </div>
-                      )}
                     </div>
                   </div>
                 </CardContent>
@@ -322,13 +275,12 @@ export default function AboutPage() {
                   attention to every client relationship.
                 </p>
                 <p>
-                  With over 26 years of combined experience and hundreds of
-                  successful closings, our team has the track record and local
-                  expertise to deliver exceptional results. We don&apos;t just
+                  With over 26 years of combined experience, our team has the
+                  track record and local expertise to deliver exceptional results. We don&apos;t just
                   close deals — we build lasting relationships.
                 </p>
                 <p>
-                  Childs Real Estate specializes in listing representation across Utah. As top listing agents, we focus exclusively on helping homeowners maximize their sale price, minimize days on market, and navigate every step of the selling process with confidence.
+                  Childs Real Estate specializes in listing representation across Utah. As listing specialists, we focus on helping homeowners maximize their sale price, minimize days on market, and navigate every step of the selling process with confidence.
                 </p>
               </div>
             </div>
@@ -341,8 +293,8 @@ export default function AboutPage() {
                 },
                 {
                   icon: Users,
-                  label: "Happy Clients",
-                  value: "550+",
+                  label: "Five-Star Google Reviews",
+                  value: String(TESTIMONIALS.length),
                 },
                 {
                   icon: BadgeCheck,
@@ -390,6 +342,13 @@ export default function AboutPage() {
               ))}
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Recently Sold */}
+      <section className="bg-ink py-16 md:py-20">
+        <div className="max-w-6xl mx-auto px-6">
+          <RecentlySold variant="dark" />
         </div>
       </section>
 
@@ -540,7 +499,7 @@ export default function AboutPage() {
               size="lg"
               className="bg-white/10 text-white border border-white/20 hover:bg-white/20"
             >
-              <Link href="/properties">Browse Properties</Link>
+              <Link href="/properties">See Current Listings</Link>
             </Button>
           </div>
         </div>
