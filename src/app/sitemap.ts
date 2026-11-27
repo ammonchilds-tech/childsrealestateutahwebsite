@@ -47,6 +47,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.7,
     },
     {
+      url: `${SITE_URL}/blog/utah-november-2026-market-update`,
+      lastModified: new Date("2026-11-27"),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
       url: `${SITE_URL}/blog/should-you-list-in-december-or-wait-for-spring`,
       lastModified: new Date("2026-11-27"),
       changeFrequency: "monthly",

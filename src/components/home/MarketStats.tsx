@@ -5,26 +5,26 @@ import Link from "next/link";
  * Figures are the latest ones we have published, date-stamped in the small print.
  * When new numbers are published, update COUNTIES, FIGURES_PERIOD and FIGURES_SOURCE together.
  */
-const FIGURES_PERIOD = "closed sales, October 15–28, 2026. Source: WFRMLS";
-const FIGURES_SOURCE = { label: "October 2026 market update", href: "/blog/utah-october-2026-market-update" };
+const FIGURES_PERIOD = "closed sales, November 2026. Source: WFRMLS";
+const FIGURES_SOURCE = { label: "November 2026 market update", href: "/blog/utah-november-2026-market-update" };
 
 const COUNTIES = [
   {
     name: "Utah County",
     stats: [
-      { label: "Avg Days on Market", value: "76" },
-      { label: "Avg List Price", value: "$581K" },
-      { label: "Avg Sold Price", value: "$572K" },
-      { label: "Number of Sales", value: "66" },
+      { label: "Avg Days on Market", value: "78" },
+      { label: "Avg List Price", value: "$640K" },
+      { label: "Avg Sold Price", value: "$635K" },
+      { label: "Number of Sales", value: "500" },
     ],
   },
   {
     name: "Salt Lake County",
     stats: [
       { label: "Avg Days on Market", value: "68" },
-      { label: "Avg List Price", value: "$617K" },
-      { label: "Avg Sold Price", value: "$606K" },
-      { label: "Number of Sales", value: "137" },
+      { label: "Avg List Price", value: "$657K" },
+      { label: "Avg Sold Price", value: "$639K" },
+      { label: "Number of Sales", value: "698" },
     ],
   },
 ];
@@ -43,9 +43,9 @@ export function MarketStats() {
             </h2>
           </div>
           <p className="text-white/70 text-sm max-w-xl leading-relaxed">
-            In our latest numbers, Utah County homes took 76 days on average to sell
-            and closed about 1.5% under list. Salt Lake County homes took 68 days. In a
-            slower market, a well-priced listing stands out.
+            In November, Utah County homes averaged 78 days on market and sold for
+            about 99% of list price. Salt Lake County homes averaged 68 days and sold
+            for about 97% of list. Pricing right from day one is what holds that gap.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12">

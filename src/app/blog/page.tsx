@@ -21,6 +21,15 @@ export const metadata: Metadata = {
 
 const POSTS = [
   {
+    slug: "utah-november-2026-market-update",
+    title: "Utah November 2026 Market Update: Utah County Sells Near Asking While Salt Lake Buyers Negotiate",
+    excerpt:
+      "Utah County closed 500 homes in November at an average of $634,905, about 99% of list price. Salt Lake County closed 698 at $639,420, about 97% of list. Days on market held at 78 and 68. Here's what it means for sellers and buyers heading into winter.",
+    date: "November 27, 2026",
+    readTime: "6 min read",
+    category: "Market Update",
+  },
+  {
     slug: "should-you-list-in-december-or-wait-for-spring",
     title: "Should You List in December, or Wait for Spring? A Plain Answer for Utah Sellers",
     excerpt:
