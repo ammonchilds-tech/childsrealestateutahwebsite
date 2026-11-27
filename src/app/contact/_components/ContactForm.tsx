@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Send, CheckCircle, AlertCircle } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { SmsConsent } from "@/components/legal/SmsConsent";
 import {
   Select,
   SelectContent,
@@ -32,6 +33,7 @@ export function ContactForm() {
       phone: (form.elements.namedItem("contact-phone") as HTMLInputElement).value,
       subject,
       message: (form.elements.namedItem("contact-message") as HTMLTextAreaElement).value,
+      smsConsent: (form.elements.namedItem("smsConsent") as HTMLInputElement).checked,
     };
 
     try {
@@ -169,6 +171,8 @@ export function ContactForm() {
           className="flex w-full rounded-md border border-border bg-white px-3 py-2 text-sm ring-offset-white placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 resize-none"
         />
       </div>
+
+      <SmsConsent id="contact-sms-consent" />
 
       <Button
         type="submit"

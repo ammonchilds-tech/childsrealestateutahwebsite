@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Send, CheckCircle, AlertCircle } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { SmsConsent } from "@/components/legal/SmsConsent";
 import { OFFICE } from "@/lib/constants";
 
 export function ValuationForm() {
@@ -24,6 +25,7 @@ export function ValuationForm() {
       address: (form.elements.namedItem("val-address") as HTMLInputElement).value,
       timeline: (form.elements.namedItem("val-timeline") as HTMLSelectElement).value,
       notes: (form.elements.namedItem("val-notes") as HTMLTextAreaElement).value,
+      smsConsent: (form.elements.namedItem("smsConsent") as HTMLInputElement).checked,
     };
 
     try {
@@ -138,6 +140,8 @@ export function ValuationForm() {
           className="flex w-full rounded-md border border-border bg-white px-3 py-2 text-sm ring-offset-white placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 resize-none"
         />
       </div>
+
+      <SmsConsent id="sell-sms-consent" />
 
       <Button type="submit" variant="accent" size="lg" className="w-full mt-2" disabled={isSubmitting}>
         {isSubmitting ? (

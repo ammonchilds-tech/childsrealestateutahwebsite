@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SITE_NAME, OFFICE } from "@/lib/constants";
+import { SmsNoSharingStatement, SmsTermsList } from "@/components/legal/SmsTerms";
 
 export const metadata: Metadata = {
-  title: `Privacy Policy | ${SITE_NAME}`,
+  title: "Privacy Policy",
   description: `Privacy Policy for ${SITE_NAME}. Learn how we collect, use, and protect your personal information.`,
 };
 
-const LAST_UPDATED = "March 1, 2025";
+const LAST_UPDATED = "November 27, 2026";
 
 export default function PrivacyPage() {
   return (
@@ -60,7 +61,7 @@ export default function PrivacyPage() {
                 <li>Pages viewed and time spent on the Site</li>
                 <li>Referring website addresses</li>
                 <li>Device type and operating system</li>
-                <li>Cookies and similar tracking technologies (see Section 6)</li>
+                <li>Cookies and similar tracking technologies (see Section 7)</li>
               </ul>
             </div>
 
@@ -80,7 +81,8 @@ export default function PrivacyPage() {
 
             <div>
               <h2 className="font-heading text-2xl font-semibold text-primary mb-3">3. Sharing Your Information</h2>
-              <p className="mb-3">We do not sell, trade, or rent your personal information to third parties. We may share your information only in the following limited circumstances:</p>
+              <SmsNoSharingStatement />
+              <p className="mb-3">We do not sell, trade, or rent your personal information to third parties. We may share your information only in the following limited circumstances, none of which include sharing your phone number or text-messaging consent for anyone&apos;s marketing:</p>
               <ul className="list-disc pl-6 space-y-1.5">
                 <li><span className="font-medium text-foreground">Service Providers:</span> Trusted third parties who assist us in operating our website or conducting our business (e.g., email platforms, CRM software), subject to confidentiality agreements</li>
                 <li><span className="font-medium text-foreground">Legal Requirements:</span> When required by law, subpoena, court order, or governmental authority</li>
@@ -89,22 +91,30 @@ export default function PrivacyPage() {
               </ul>
             </div>
 
+            <div id="sms">
+              <h2 className="font-heading text-2xl font-semibold text-primary mb-3">4. Text Messaging (SMS) Terms and Conditions</h2>
+              <p className="mb-3">
+                If you give us your mobile number and agree to receive text messages, these terms apply:
+              </p>
+              <SmsTermsList />
+            </div>
+
             <div>
-              <h2 className="font-heading text-2xl font-semibold text-primary mb-3">4. Data Retention</h2>
+              <h2 className="font-heading text-2xl font-semibold text-primary mb-3">5. Data Retention</h2>
               <p>
                 We retain your personal information for as long as necessary to fulfill the purposes outlined in this Privacy Policy, unless a longer retention period is required or permitted by law. When your information is no longer needed, we will securely delete or anonymize it.
               </p>
             </div>
 
             <div>
-              <h2 className="font-heading text-2xl font-semibold text-primary mb-3">5. Security of Your Information</h2>
+              <h2 className="font-heading text-2xl font-semibold text-primary mb-3">6. Security of Your Information</h2>
               <p>
                 We use administrative, technical, and physical security measures to protect your personal information. While we take reasonable precautions to safeguard your data, no method of transmission over the Internet or electronic storage is 100% secure. We cannot guarantee absolute security, and you provide information at your own risk.
               </p>
             </div>
 
             <div>
-              <h2 className="font-heading text-2xl font-semibold text-primary mb-3">6. Cookies &amp; Tracking Technologies</h2>
+              <h2 className="font-heading text-2xl font-semibold text-primary mb-3">7. Cookies &amp; Tracking Technologies</h2>
               <p className="mb-3">
                 We may use cookies, web beacons, and similar tracking technologies to enhance your experience on our Site. Cookies are small data files stored on your device that help us recognize you on return visits and understand how you use our Site.
               </p>
@@ -120,43 +130,43 @@ export default function PrivacyPage() {
             </div>
 
             <div>
-              <h2 className="font-heading text-2xl font-semibold text-primary mb-3">7. Third-Party Services</h2>
+              <h2 className="font-heading text-2xl font-semibold text-primary mb-3">8. Third-Party Services</h2>
               <p>
                 Our Site may contain links to third-party websites or integrate third-party services (such as Google Maps or social media platforms). These third parties have their own privacy policies, and we have no control over their practices. We encourage you to review their privacy policies before providing any personal information.
               </p>
             </div>
 
             <div>
-              <h2 className="font-heading text-2xl font-semibold text-primary mb-3">8. Your Rights &amp; Choices</h2>
+              <h2 className="font-heading text-2xl font-semibold text-primary mb-3">9. Your Rights &amp; Choices</h2>
               <p className="mb-3">Depending on your location, you may have certain rights regarding your personal information, including the right to:</p>
               <ul className="list-disc pl-6 space-y-1.5">
                 <li>Access the personal information we hold about you</li>
                 <li>Request correction of inaccurate or incomplete information</li>
                 <li>Request deletion of your personal information, subject to legal limitations</li>
-                <li>Opt out of marketing communications at any time by clicking &ldquo;unsubscribe&rdquo; in any email or contacting us directly</li>
+                <li>Opt out of marketing communications at any time by clicking &ldquo;unsubscribe&rdquo; in any email, replying STOP to any text message, or contacting us directly</li>
                 <li>Request that we limit how we use your data</li>
               </ul>
               <p className="mt-3">
-                To exercise any of these rights, please contact us using the information in Section 10 below.
+                To exercise any of these rights, please contact us using the information in Section 12 below.
               </p>
             </div>
 
             <div>
-              <h2 className="font-heading text-2xl font-semibold text-primary mb-3">9. Children&apos;s Privacy</h2>
+              <h2 className="font-heading text-2xl font-semibold text-primary mb-3">10. Children&apos;s Privacy</h2>
               <p>
                 Our Site is not directed to children under the age of 13, and we do not knowingly collect personal information from children. If we become aware that we have inadvertently received personal information from a child under 13, we will delete that information promptly. If you believe we have collected information from a child, please contact us immediately.
               </p>
             </div>
 
             <div>
-              <h2 className="font-heading text-2xl font-semibold text-primary mb-3">10. Changes to This Policy</h2>
+              <h2 className="font-heading text-2xl font-semibold text-primary mb-3">11. Changes to This Policy</h2>
               <p>
                 We may update this Privacy Policy from time to time. When we do, we will revise the &ldquo;Last Updated&rdquo; date at the top of this page. We encourage you to review this policy periodically to stay informed about how we protect your information. Your continued use of the Site after any changes constitutes your acceptance of the updated policy.
               </p>
             </div>
 
             <div>
-              <h2 className="font-heading text-2xl font-semibold text-primary mb-3">11. Contact Us</h2>
+              <h2 className="font-heading text-2xl font-semibold text-primary mb-3">12. Contact Us</h2>
               <p className="mb-3">If you have questions or concerns about this Privacy Policy or our data practices, please contact us:</p>
               <div className="space-y-1">
                 <p><span className="font-medium text-foreground">{SITE_NAME}</span></p>

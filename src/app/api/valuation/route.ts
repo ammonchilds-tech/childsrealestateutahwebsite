@@ -28,7 +28,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Too many requests" }, { status: 429 });
   }
 
-  const { name, phone, email, address, timeline, notes, source } = await req.json();
+  const { name, phone, email, address, timeline, notes, source, smsConsent } = await req.json();
 
   // Every form needs an address plus at least one way to reach the person.
   // The /sell and /clear-commission forms also send name + phone; the short
@@ -80,6 +80,10 @@ export async function POST(req: NextRequest) {
           <tr>
             <td style="padding:10px 0;border-bottom:1px solid #e8e0d4;font-weight:600;color:#0A0A0A;">Phone</td>
             <td style="padding:10px 0;border-bottom:1px solid #e8e0d4;">${sPhone ? `<a href="tel:${sPhone}" style="color:#D8AA3F;">${sPhone}</a>` : "—"}</td>
+          </tr>
+          <tr>
+            <td style="padding:10px 0;border-bottom:1px solid #e8e0d4;font-weight:600;color:#0A0A0A;">Text consent</td>
+            <td style="padding:10px 0;border-bottom:1px solid #e8e0d4;">${smsConsent === true ? "Yes — opted in to texts" : "No — do not text"}</td>
           </tr>
           <tr>
             <td style="padding:10px 0;border-bottom:1px solid #e8e0d4;font-weight:600;color:#0A0A0A;">Email</td>

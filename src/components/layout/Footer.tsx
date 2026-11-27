@@ -105,6 +105,7 @@ export function Footer() {
             {[
               { label: "Terms of Service", href: "/terms" },
               { label: "Privacy Policy", href: "/privacy" },
+              { label: "SMS Terms", href: "/terms#sms-terms" },
               { label: "Accessibility", href: "/accessibility" },
               { label: "Fair Housing Statement", href: "/fair-housing" },
             ].map((link) => (
